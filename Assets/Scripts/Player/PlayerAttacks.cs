@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerAttacks : MonoBehaviour
 {
@@ -42,6 +43,8 @@ public class PlayerAttacks : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        var gamepad = Gamepad.current;
+
         DashAttackTimer -= Time.deltaTime;
 
         if (Attacking != 0)
@@ -113,7 +116,7 @@ public class PlayerAttacks : MonoBehaviour
             CanMove = true;
         }
 
-        if (Input.GetButtonDown("Fire1"))
+        if (gamepad.buttonWest.isPressed)
         {
             if (Attacking == 0 && actionable == true)
             {

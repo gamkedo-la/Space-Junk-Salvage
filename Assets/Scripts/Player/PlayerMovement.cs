@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -58,6 +59,8 @@ public class PlayerMovement : MonoBehaviour
     public float DashCooldown;
     float DCReset;
 
+    public float StickDeadzone = .1f;
+
     public GameObject DashParticles;
 
     // Start is called before the first frame update
@@ -94,8 +97,10 @@ public class PlayerMovement : MonoBehaviour
 
 
     // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
+        var gamepad = Gamepad.current;
+
         DashCooldown -= Time.deltaTime;
 
         if(SwitchingRooms == true)
@@ -131,7 +136,8 @@ public class PlayerMovement : MonoBehaviour
         if (GetComponent<PlayerAttacks>().CanMove == true && falling == false)
         {
 
-            if (Input.GetKeyDown(KeyCode.H) && dashing == false && DashCooldown <= 0)
+            if ((gamepad.leftTrigger.isPressed || gamepad.rightTrigger.isPressed)
+                && dashing == false && DashCooldown <= 0)
             {
                 dashing = true;
                 DashDestination = transform.position + transform.forward * DashLength;
@@ -159,31 +165,30 @@ public class PlayerMovement : MonoBehaviour
                 }
             }
 
-            //V.x = Input.GetAxis("Horizontal");
-            //V.z = Input.GetAxis("Vertical");
-
             else
             {
-                if (Input.GetKey("up") || Input.GetKey("w"))
-                {
-                    V += north;
-                }
-                if (Input.GetKey("down") || Input.GetKey("s"))
-                {
-                    V += south;
-                }
-                if (Input.GetKey("left") || Input.GetKey("a"))
-                {
-                    V += west;
-                }
-                if (Input.GetKey("right") || Input.GetKey("d"))
-                {
-                    V += east;
-                }
+                V = gamepad.leftStick.ReadValue();
+
+                V.z = V.y;
+                V.y = 0;
+
+                V = Quaternion.AngleAxis(-45, Vector3.up) * V;
+
             }
-        }        
+        }  
+               
+        if(Mathf.Abs(V.x) < Mathf.Abs(StickDeadzone))
+        {
+            V.x = 0;
+        }
+
+        if(Mathf.Abs(V.z) < Mathf.Abs(StickDeadzone))
+        {
+            V.z = 0;
+        }
 
         V.Normalize();
+
         if (V.magnitude > 0)
         {
             Q.SetLookRotation(V, Vector3.up);
