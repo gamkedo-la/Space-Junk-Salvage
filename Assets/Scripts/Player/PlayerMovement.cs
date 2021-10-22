@@ -5,20 +5,17 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    Vector3 V = new Vector3(0,0,0);
+    public Vector3 V = new Vector3(0,0,0);
 
     public float speed;
 
     Quaternion Q = new Quaternion();
 
-    Vector3 north = new Vector3(-1, 0, 1);
-    Vector3 east = new Vector3(1, 0, 1);
-    Vector3 south = new Vector3(1, 0, -1);
-    Vector3 west = new Vector3(-1, 0, -1);
-
     public List<GameObject> RaycastDownPoints = new List<GameObject>();
 
     float direction;
+
+    public bool CanMove = true;
 
     public bool Moving = false;
 
@@ -56,12 +53,14 @@ public class PlayerMovement : MonoBehaviour
 
     Vector3 DashStart;
 
+    bool StartDash;
+
     public float DashCooldown;
     float DCReset;
 
-    public float StickDeadzone = .1f;
-
     public GameObject DashParticles;
+
+    public bool CanAttack = true;
 
     // Start is called before the first frame update
     void Start()
@@ -99,139 +98,16 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     private void FixedUpdate()
     {
+
         var gamepad = Gamepad.current;
 
         DashCooldown -= Time.deltaTime;
 
-        if(SwitchingRooms == true)
-        {
-            myRigidbody.velocity = Vector3.zero;
-            transform.position = Vector3.MoveTowards(transform.position, OtherRoom.position, speed * Time.deltaTime/* *.7f*/);
-
-            if(Vector3.Distance(transform.position, OtherRoom.position) < speed * Time.deltaTime/* * .7f*/)
-            {
-                SwitchingRooms = false;
-            }
-            return;
-        }
-
-
-        if (knockback == true)
-        {
-            transform.position = Vector3.Lerp(tempPosition, KnockbackDestination, t);
-
-            t += (Time.deltaTime * KBSpeed);
-
-            if(t >= 1)
-            {
-                knockback = false;
-            }
-
-            return;
-        }
-
-
-        V = Vector3.zero;
-
-        if (GetComponent<PlayerAttacks>().CanMove == true && falling == false)
-        {
-
-            if ((gamepad.leftTrigger.isPressed || gamepad.rightTrigger.isPressed)
-                && dashing == false && DashCooldown <= 0)
-            {
-                dashing = true;
-                DashDestination = transform.position + transform.forward * DashLength;
-                DashStart = transform.position;
-                t = 0;
-
-                Quaternion Q = transform.rotation;
-                Q.eulerAngles = new Vector3(Q.eulerAngles.x, Q.eulerAngles.y + 180, Q.eulerAngles.z);
-
-                Instantiate(DashParticles, transform.position, Q, transform);
-
-
-            }
-
-            if (dashing == true)
-            {
-                transform.position = Vector3.Lerp(DashStart, DashDestination, t);
-                t += Time.deltaTime * DashSpeed;
-
-                if(t >= 1)
-                {
-                    dashing = false;
-                    DashCooldown = DCReset;
-                    GetComponent<PlayerAttacks>().ResetDashAttackTimer();
-                }
-            }
-
-            else
-            {
-                V = gamepad.leftStick.ReadValue();
-
-                V.z = V.y;
-                V.y = 0;
-
-                V = Quaternion.AngleAxis(-45, Vector3.up) * V;
-
-            }
-        }  
-               
-        if(Mathf.Abs(V.x) < Mathf.Abs(StickDeadzone))
-        {
-            V.x = 0;
-        }
-
-        if(Mathf.Abs(V.z) < Mathf.Abs(StickDeadzone))
-        {
-            V.z = 0;
-        }
-
-        V.Normalize();
-
-        if (V.magnitude > 0)
-        {
-            Q.SetLookRotation(V, Vector3.up);
-            Moving = true;
-        }
-        else
-        {
-            Moving = false;
-        }
-        V *= speed;
-
-        myRigidbody.velocity = V;
-
-        V = Vector3.zero;
-
-        //bool didHit = Physics.Raycast(transform.position, Vector3.down, out down, 5.0f);
-        //if (didHit)
-        //{
-        //    distanceToGround = down.distance;
-
-        //    if (distanceToGround > height + .1f)
-        //    {
-        //        falling = true;
-
-        //        if (FallSpeed >= distanceToGround)
-        //        {
-        //            V.y = -(distanceToGround - height);
-        //        }
-        //        else
-        //        {
-        //            V.y -= FallSpeed;
-        //        }
-        //    }
-        //    else
-        //    {
-        //        falling = false;
-        //        V.y = -(distanceToGround - height);
-        //    }
-        //}
-
         falling = true;
 
-        foreach(GameObject G in RaycastDownPoints)
+        myRigidbody.velocity = Vector3.zero;
+
+        foreach (GameObject G in RaycastDownPoints)
         {
             bool didHit = Physics.Raycast(G.transform.position, Vector3.down, out down, 10.0f);
 
@@ -242,32 +118,129 @@ public class PlayerMovement : MonoBehaviour
         }
 
 
-        bool didHitAgain = Physics.Raycast(transform.position, Vector3.down, out down, 10.0f);
-        if (didHitAgain)
+        if (SwitchingRooms == true)
         {
-            distanceToGround = down.distance;
-        }
+            CanAttack = false;
+            myRigidbody.velocity = Vector3.zero;
+            transform.position = Vector3.MoveTowards(transform.position, OtherRoom.position, speed * Time.deltaTime);
 
-        if (falling == true)
+            if (Vector3.Distance(transform.position, OtherRoom.position) < speed * Time.deltaTime)
+            {
+                SwitchingRooms = false;
+            }
+            return;
+        }
+        else if (falling == true)
         {
+            CanAttack = false;
+            bool didHitAgain = Physics.Raycast(transform.position, Vector3.down, out down, 10.0f);
+            if (didHitAgain)
+            {
+                distanceToGround = down.distance;
+            }
+
             if ((FallSpeed * Time.deltaTime) >= distanceToGround)
             {
                 V.y = -(distanceToGround - height);
+
+                falling = false;
             }
             else
             {
                 V.y -= (FallSpeed * Time.deltaTime);
             }
+
+            Vector3 temp = transform.position;
+            temp.y += V.y;
+            transform.position = temp;
+
+            V.y = 0;
+
+            return;
         }
-        else
+        else if (knockback == true)
         {
-            //V.y = -(distanceToGround - height);
+            CanAttack = false;
+            transform.position = Vector3.Lerp(tempPosition, KnockbackDestination, t);
+
+            t += (Time.deltaTime * KBSpeed);
+
+            if (t >= 1)
+            {
+                knockback = false;
+            }
+
+            return;
         }
+        else if (GetComponent<PlayerAttacks>().CanMove == true && falling == false)
+        {
+            if (StartDash == true)
+            {
+                CanAttack = false;
+                StartDash = false;
+                if (dashing == false && DashCooldown <= 0)
+                {
+                    dashing = true;
+
+                    DashDestination = transform.position + transform.forward * DashLength;
+                    DashStart = transform.position;
+                    t = 0;
+
+                    Quaternion Q = transform.rotation;
+                    Q.eulerAngles = new Vector3(Q.eulerAngles.x, Q.eulerAngles.y + 180, Q.eulerAngles.z);
+
+                    Instantiate(DashParticles, transform.position, Q, transform);
+                }
+            }
+            else if (dashing == true)
+            {
+                CanAttack = false;
+                transform.position = Vector3.Lerp(DashStart, DashDestination, t);
+                t += Time.deltaTime * DashSpeed;
+
+                if (t >= 1)
+                {
+                    dashing = false;
+                    DashCooldown = DCReset;
+                    GetComponent<PlayerAttacks>().ResetDashAttackTimer();
+                }
+            }
+            else
+            {
+                CanAttack = true;
+                V.Normalize();
+
+                if (V.magnitude > 0)
+                {
+                    Q.SetLookRotation(V, Vector3.up);
+                    Moving = true;
+                }
+                else
+                {
+                    Moving = false;
+                }
+                V *= speed;
+                
+                myRigidbody.velocity = V;
+
+                transform.rotation = Q;
+            }
+        }
+    }
+
+    public void OnMove(InputAction.CallbackContext value)
+    {
+        Vector2 input = value.ReadValue<Vector2>();
+        V = new Vector3(input.x, 0, input.y);
+
+        V = Quaternion.AngleAxis(-45, Vector3.up) * V;
 
 
-        transform.position += V;
-        transform.rotation = Q;
+    }
 
+    public void OnDash()
+    {
+        StartDash = true;
     }
 
     public void Alert(float Radius)

@@ -28,6 +28,8 @@ public class PlayerAttacks : MonoBehaviour
 
     public bool DashCombo;
 
+    bool StartAttack;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -116,9 +118,11 @@ public class PlayerAttacks : MonoBehaviour
             CanMove = true;
         }
 
-        if (gamepad.buttonWest.isPressed)
+        if (StartAttack == true)
         {
-            if (Attacking == 0 && actionable == true)
+
+            StartAttack = false;
+            if (Attacking == 0 && actionable == true && GetComponent<PlayerMovement>().CanAttack == true)
             {
                 Quaternion Q = transform.rotation;
 
@@ -166,5 +170,10 @@ public class PlayerAttacks : MonoBehaviour
        
 
 
+    }
+
+    public void OnAttack()
+    {
+        StartAttack = true;
     }
 }
