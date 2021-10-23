@@ -34,4 +34,13 @@ public class BasicEnemyHitbox : MonoBehaviour
 
         }
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Player")
+            {
+                collision.gameObject.GetComponent<PlayerHP>().TakeDamage(Damage, KnockbackPower, Owner.transform.position);
+
+            }
+    }
 }

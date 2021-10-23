@@ -10,6 +10,7 @@ public class PlayerHP : MonoBehaviour
     public int MaxHP;
 
     public PlayerMovement movement;
+    public PlayerAttacks attacks;
 
     public MeshRenderer mesh;
 
@@ -44,11 +45,13 @@ public class PlayerHP : MonoBehaviour
         }
     }
 
-    public void TakeDamage(int Damage)
+    public void TakeDamage(int Damage, float knockbackPower, Vector3 Source)
     {
-
         if (movement.knockback == false)
         {
+            movement.ApplyKnockback(Source, knockbackPower);
+            attacks.TakeDamage();
+
             CurrentHP -= Damage;
 
             if (CurrentHP <= 0)
@@ -69,18 +72,19 @@ public class PlayerHP : MonoBehaviour
             InvulnTimer = ITreset;
 
         }
+
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        //Debug.Log("player enter trigger");
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    //Debug.Log("player enter trigger");
 
-        if(other.gameObject.tag == "EnemyWeapon")
-        {
-            TakeDamage(other.gameObject.GetComponent<BasicEnemyHitbox>().Damage);
-            movement.ApplyKnockback(other.gameObject.GetComponent<BasicEnemyHitbox>().Owner.position, other.gameObject.GetComponent<BasicEnemyHitbox>().KnockbackPower);
-        }
-    }
+    //    if(other.gameObject.tag == "EnemyWeapon")
+    //    {
+    //        TakeDamage(other.gameObject.GetComponent<BasicEnemyHitbox>().Damage);
+    //        movement.ApplyKnockback(other.gameObject.GetComponent<BasicEnemyHitbox>().Owner.position, other.gameObject.GetComponent<BasicEnemyHitbox>().KnockbackPower);
+    //    }
+    //}
 
 
 

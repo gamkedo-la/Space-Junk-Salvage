@@ -30,6 +30,8 @@ public class BasicEnemyAttack : MonoBehaviour
     void Start()
     {
         fullTime = WindUp + Active + Ending;
+
+        BroadcastMessage("SetAttackDuration", (WindUp + Active + Ending));
     }
 
     // Update is called once per frame

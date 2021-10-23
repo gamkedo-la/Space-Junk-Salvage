@@ -15,6 +15,8 @@ public class Sword : MonoBehaviour
 
     public bool DashAttack;
 
+    public PlayerAttacks myPlayerAttacks;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -51,5 +53,10 @@ public class Sword : MonoBehaviour
 
         }
 
+    }
+
+    private void OnDestroy()
+    {
+        myPlayerAttacks.SWORD = null;
     }
 }

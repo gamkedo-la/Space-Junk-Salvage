@@ -57,8 +57,8 @@ public class BasicEnemyMovement : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         PPreset = PatrolPause;
         CPreset = ChasePause;
-        AttackDuration = GetComponent<BasicEnemyAttack>().WindUp + GetComponent<BasicEnemyAttack>().Active + GetComponent<BasicEnemyAttack>().Ending;
-        ADreset = AttackDuration;
+        //AttackDuration = GetComponent<BasicEnemyAttack>().WindUp + GetComponent<BasicEnemyAttack>().Active + GetComponent<BasicEnemyAttack>().Ending;
+        //ADreset = AttackDuration;
         GHSreset = GetHitStunTimer;
 
         agent.updateRotation = false;
@@ -141,7 +141,7 @@ public class BasicEnemyMovement : MonoBehaviour
                 transform.LookAt(Player.transform, Vector3.up);
 
                 AttackDuration = ADreset;
-                GetComponent<BasicEnemyAttack>().Attack();
+                BroadcastMessage("Attack");
                 return;
             }
             else
@@ -283,6 +283,12 @@ public class BasicEnemyMovement : MonoBehaviour
         AlertLoc.y -= h;
         AlertLoc.y += height;
 
+    }
+
+    public void SetAttackDuration(float D)
+    {
+        AttackDuration = D;
+        ADreset = AttackDuration;
     }
 
 }

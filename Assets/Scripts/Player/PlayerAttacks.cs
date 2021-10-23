@@ -30,6 +30,8 @@ public class PlayerAttacks : MonoBehaviour
 
     bool StartAttack;
 
+    public GameObject SWORD;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -63,13 +65,14 @@ public class PlayerAttacks : MonoBehaviour
 
             Q.eulerAngles += new Vector3(0, -Arc, 0);
 
-            GameObject SWORD = Instantiate(s, transform.position, Q, gameObject.transform);
+            SWORD = Instantiate(s, transform.position, Q, gameObject.transform);
             SWORD.GetComponent<Sword>().speed = -SwingSpeed;
             SWORD.GetComponent<Sword>().timer = SwingTime;
             SWORD.GetComponent<Sword>().Combo = 2;
             SWORD.GetComponent<Sword>().dam = damage;
+            SWORD.GetComponent<Sword>().myPlayerAttacks = this;
 
-            if(DashCombo == true)
+            if (DashCombo == true)
             {
                 SWORD.GetComponent<Sword>().DashAttack = true;
             }
@@ -89,11 +92,12 @@ public class PlayerAttacks : MonoBehaviour
 
             Q.eulerAngles += new Vector3(0, Arc, 0);
 
-            GameObject SWORD = Instantiate(s, transform.position, Q, gameObject.transform);
+            SWORD = Instantiate(s, transform.position, Q, gameObject.transform);
             SWORD.GetComponent<Sword>().timer = EndSwingTime;
             SWORD.GetComponent<Sword>().speed = SwingSpeed;
             SWORD.GetComponent<Sword>().Combo = 3;
             SWORD.GetComponent<Sword>().dam = damage;
+            SWORD.GetComponent<Sword>().myPlayerAttacks = this;
 
             if (DashCombo == true)
             {
@@ -128,13 +132,14 @@ public class PlayerAttacks : MonoBehaviour
 
                 Q.eulerAngles += new Vector3(0, Arc, 0);
 
-                GameObject SWORD = Instantiate(s, transform.position, Q, gameObject.transform);
+                SWORD = Instantiate(s, transform.position, Q, gameObject.transform);
                 SWORD.GetComponent<Sword>().timer = SwingTime;
                 SWORD.GetComponent<Sword>().speed = SwingSpeed;
                 SWORD.GetComponent<Sword>().Combo = 1;
                 SWORD.GetComponent<Sword>().dam = damage;
+                SWORD.GetComponent<Sword>().myPlayerAttacks = this;
 
-                if(DashAttackTimer > 0)
+                if (DashAttackTimer > 0)
                 {
                     SWORD.GetComponent<Sword>().DashAttack = true;
                     DashCombo = true;
@@ -175,5 +180,11 @@ public class PlayerAttacks : MonoBehaviour
     public void OnAttack()
     {
         StartAttack = true;
+    }
+
+    public void TakeDamage()
+    {
+        Destroy(SWORD);
+        SWORD = null;
     }
 }
