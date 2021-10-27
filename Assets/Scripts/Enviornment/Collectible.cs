@@ -2,8 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Key : MonoBehaviour
+public class Collectible : MonoBehaviour
 {
+    [Header ("0:Key, 1:Potion")]
+    public int Type;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +24,7 @@ public class Key : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
-            collision.gameObject.GetComponent<Inventory>().Pickup(0, 1);
+            collision.gameObject.GetComponent<Inventory>().Pickup(Type, 1);
             Destroy(gameObject);
         }
     }

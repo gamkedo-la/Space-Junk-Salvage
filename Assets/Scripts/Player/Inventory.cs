@@ -1,15 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class Inventory : MonoBehaviour
 {
 
-    private int[] Items = new int[1];
+    private int[] Items = new int[2];
     // index 0: keys
+    // index 2: health potions
 
-    
+    public int PotionHealAmount = 25;
 
+    public TextMeshProUGUI Keys;
+    public TextMeshProUGUI Potions;
 
 
     // Start is called before the first frame update
@@ -27,6 +32,7 @@ public class Inventory : MonoBehaviour
     public void Pickup(int index, int amount)
     {
         Items[index] += amount;
+        UIUpdate();
     }
 
     public bool Drop(int index, int amount)
@@ -34,6 +40,7 @@ public class Inventory : MonoBehaviour
         if (Items[index] >= amount)
         {
             Items[index] -= amount;
+            UIUpdate();
             return true;
         }
 
@@ -41,6 +48,23 @@ public class Inventory : MonoBehaviour
         {
             return false;
         }
+    }
+
+    public void UsePotion()
+    {
+        if(Drop(1,1) == true)
+        {
+
+            GetComponent<PlayerHP>().TakeDamage(-PotionHealAmount, 0, Vector3.zero);
+
+        }
+
+    }
+
+    public void UIUpdate()
+    {
+        Keys.text = Items[0].ToString();
+        Potions.text = Items[1].ToString();
     }
 
 }

@@ -67,10 +67,13 @@ public class PlayerHP : MonoBehaviour
             }
 
             HPBar.SetFill(CurrentHP);
-            invuln = true;
-            mesh.material = Damaged;
-            InvulnTimer = ITreset;
 
+            if (Damage > 0)
+            {
+                invuln = true;
+                mesh.material = Damaged;
+                InvulnTimer = ITreset;
+            }
         }
 
     }
