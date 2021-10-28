@@ -16,17 +16,21 @@ public class Inventory : MonoBehaviour
     public TextMeshProUGUI Keys;
     public TextMeshProUGUI Potions;
 
+    public float HealCooldown = 3.0f;
+    float HCReset;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        HCReset = HealCooldown;
+        HealCooldown = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        HealCooldown -= Time.deltaTime;
+
     }
 
     public void Pickup(int index, int amount)
@@ -52,11 +56,10 @@ public class Inventory : MonoBehaviour
 
     public void UsePotion()
     {
-        if(Drop(1,1) == true)
+        if(Drop(1,1) == true && HealCooldown <= 0)
         {
-
             GetComponent<PlayerHP>().TakeDamage(-PotionHealAmount, 0, Vector3.zero);
-
+            HealCooldown = HCReset;
         }
 
     }
