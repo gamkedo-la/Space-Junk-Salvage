@@ -19,6 +19,8 @@ public class Inventory : MonoBehaviour
     public float HealCooldown = 3.0f;
     float HCReset;
 
+    public GameObject HealEffect;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -56,10 +58,14 @@ public class Inventory : MonoBehaviour
 
     public void UsePotion()
     {
-        if(Drop(1,1) == true && HealCooldown <= 0)
+        if (HealCooldown <= 0)
         {
-            GetComponent<PlayerHP>().TakeDamage(-PotionHealAmount, 0, Vector3.zero);
-            HealCooldown = HCReset;
+            if (Drop(1, 1) == true)
+            {
+                GetComponent<PlayerHP>().TakeDamage(-PotionHealAmount, 0, Vector3.zero);
+                HealCooldown = HCReset;
+                Instantiate(HealEffect, transform.position, Quaternion.identity, gameObject.transform);
+            }
         }
 
     }

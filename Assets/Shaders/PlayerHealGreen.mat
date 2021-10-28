@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: PlayerHealGreen
+  m_Shader: {fileID: -6465566751694194690, guid: 48e168fba19d4c64cb62f71061d627e1,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_34ad42c523c243f19409f7888ac7fa85:
+        m_Texture: {fileID: 2800000, guid: 50532fdafd8d911449521204559220ef, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - ElapsedTime: 0
+    - Vector1_9442838379d3422e8d82c5e3b7cdcf76: 0.5
+    m_Colors:
+    - Color_8be0286081b545f69c202125da9da740: {r: 0, g: 1, b: 0.08059716, a: 1}
+    - Vector2_6e6f89d967794ecb8d985b52dce53051: {r: 0, g: -1, b: 0, a: 0}
+  m_BuildTextureStacks: []
