@@ -38,6 +38,8 @@ public class MapCamera : MonoBehaviour
         MapOpen = true;
         MapRenderTexture.SetActive(true);
 
+        Time.timeScale = 0;
+
     }
 
     public void CloseMap()
@@ -45,6 +47,8 @@ public class MapCamera : MonoBehaviour
         //transform.position = Player.transform.position;
         MapOpen = false;
         MapRenderTexture.SetActive(false);
+
+        Time.timeScale = 1;
     }
 
     public void OnMove(InputAction.CallbackContext value)
