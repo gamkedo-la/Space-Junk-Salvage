@@ -15,6 +15,11 @@ public class MapCamera : MonoBehaviour
 
     public GameObject MapRenderTexture;
 
+    public int MapEdgeTop = 100;
+    public int MapEdgeBot = -100;
+    public int MapEdgeLeft = -100;
+    public int MapEdgeRight = 100;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +32,25 @@ public class MapCamera : MonoBehaviour
         if(MapOpen == true)
         {
             Vector3 temp = transform.position;
-            temp += V * Time.deltaTime * MapSens;
+            temp += V * Time.unscaledDeltaTime * MapSens;
+
+            if(temp.x > MapEdgeRight)
+            {
+                temp.x = MapEdgeRight;
+            }
+            if (temp.x < MapEdgeLeft)
+            {
+                temp.x = MapEdgeLeft;
+            }
+            if (temp.z > MapEdgeTop)
+            {
+                temp.z = MapEdgeTop;
+            }
+            if (temp.z < MapEdgeBot)
+            {
+                temp.z = MapEdgeBot;
+            }
+                                 
             transform.position = temp;
         }
     }
