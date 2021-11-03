@@ -62,6 +62,8 @@ public class PlayerMovement : MonoBehaviour
 
     public bool CanAttack = true;
 
+    bool MapOpen = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -98,9 +100,6 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     private void FixedUpdate()
     {
-
-        var gamepad = Gamepad.current;
-
         DashCooldown -= Time.deltaTime;
 
         falling = true;
@@ -170,6 +169,10 @@ public class PlayerMovement : MonoBehaviour
                 knockback = false;
             }
 
+            return;
+        }
+        else if(MapOpen == true)
+        {
             return;
         }
         else if (GetComponent<PlayerAttacks>().CanMove == true && falling == false)
@@ -264,6 +267,20 @@ public class PlayerMovement : MonoBehaviour
         foreach (GameObject E in AlertedEnemies)
         {
             E.GetComponent<BasicEnemyMovement>().Alert(transform.position, height);
+        }
+    }
+
+    public void OnOpenCloseMap()
+    {
+        if (MapOpen == true)
+        {
+            MapOpen = false;
+            return;
+        }
+        else
+        {
+            MapOpen = true;
+            return;
         }
     }
 }

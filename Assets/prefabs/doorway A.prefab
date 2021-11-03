@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4120377659246025125}
   - component: {fileID: 5678162792633522691}
   - component: {fileID: 3929085751918933021}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: doorway A
   m_TagString: Wall
   m_Icon: {fileID: 0}
@@ -154,7 +154,7 @@ GameObject:
   - component: {fileID: 5808486143188663525}
   - component: {fileID: 1716623604167194943}
   - component: {fileID: 8557467992060710277}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: TransitionCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -226,7 +226,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3814669642296643963}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: endpoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
