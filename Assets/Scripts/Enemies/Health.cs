@@ -42,10 +42,13 @@ public class Health : MonoBehaviour
         hit = true;
         int Damage = d;
 
-        if (BSC.PlayerIsBehind == true)
+        if (BSC != null)
         {
+            if (BSC.PlayerIsBehind == true)
+            {
 
-            Damage = (int)(d * BackStabMultiplier);
+                Damage = (int)(d * BackStabMultiplier);
+            }
         }
 
         HP -= Damage;

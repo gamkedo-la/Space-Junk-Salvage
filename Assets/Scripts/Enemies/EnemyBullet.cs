@@ -47,7 +47,7 @@ public class EnemyBullet : MonoBehaviour
             collision.gameObject.GetComponent<PlayerHP>().TakeDamage(myDamage, myKnockback, transform.position);
             Destroy(gameObject);
         }
-        if (collision.gameObject.tag == "Wall")
+        if (collision.gameObject.tag != "Enemy")
         {
             Destroy(gameObject);
         }

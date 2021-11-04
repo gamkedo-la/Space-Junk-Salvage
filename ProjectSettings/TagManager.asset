@@ -15,7 +15,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - room props
   - 
   - Pushable Obstacles
   - Player Weapons
@@ -31,8 +31,8 @@ TagManager:
   - 
   - MapVisibleOnly
   - 
-  - 
-  - 
+  - FlyingEnemy
+  - EnemyProjectiles
   - 
   - 
   - 

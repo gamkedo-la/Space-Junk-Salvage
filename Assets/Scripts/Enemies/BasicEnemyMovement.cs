@@ -81,6 +81,11 @@ public class BasicEnemyMovement : MonoBehaviour
                 hitstun = true;
                 GetHitStunTimer = GHSreset;
             }
+            else
+            {
+                hitstun = true;
+                GetHitStunTimer = GHSreset * .5f;
+            }
 
             myHealth.hit = false;
 
