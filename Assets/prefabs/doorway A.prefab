@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 3929085751918933021}
   m_Layer: 14
   m_Name: doorway A
-  m_TagString: Wall
+  m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 4120377659246025127}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -5.5, y: 0, z: 17}
-  m_LocalScale: {x: 5, y: 1, z: 4}
+  m_LocalScale: {x: 6, y: 1, z: 6}
   m_Children:
   - {fileID: 7984395006565488876}
   - {fileID: 3814669642296643963}
