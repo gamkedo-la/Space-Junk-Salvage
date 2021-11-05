@@ -10,15 +10,17 @@ public class RoomManager : MonoBehaviour
 
     public GameObject Corner;
 
+    public GameObject WallSegment;
+
     [Header("length in 6 unit tiles")]
     public int LengthX = 2;
     public int LengthZ = 2;
 
 
-    public int LastSizeX = 2;
-    public int LastSizeZ = 2;
+    private int LastSizeX = 2;
+    private int LastSizeZ = 2;
 
-    public GameObject WallSegment;
+
 
     // Start is called before the first frame update
     void Start()
