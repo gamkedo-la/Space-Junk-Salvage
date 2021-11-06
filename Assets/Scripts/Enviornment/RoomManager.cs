@@ -175,7 +175,9 @@ public class RoomManager : MonoBehaviour
         Vector3 C = new Vector3(-(LengthX * 3) - 0.5f, 2.5f, (LengthZ * 3) + 0.5f);
         Corner.transform.localPosition = C;
 
-        Floor.transform.localScale = new Vector3(6 * LengthX, 1, 6 * LengthZ);
+        Floor.transform.localPosition = new Vector3(-(LengthX * 3), 0, (LengthZ * 3));
+
+        Floor.GetComponent<FloorManager>().UpdateFloorSize(LengthX, LengthZ);
 
         LastSizeX = LengthX;
         LastSizeZ = LengthZ;
