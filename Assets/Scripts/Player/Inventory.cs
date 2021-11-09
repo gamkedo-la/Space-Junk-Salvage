@@ -9,7 +9,7 @@ public class Inventory : MonoBehaviour
 
     private int[] Items = new int[2];
     // index 0: keys
-    // index 2: health potions
+    // index 1: health potions
 
     public int PotionHealAmount = 25;
 
@@ -21,11 +21,24 @@ public class Inventory : MonoBehaviour
 
     public GameObject HealEffect;
 
+    public DialogWindow dialog;
+
+    public string[] pickupDialogs;
+
+    private string[] dialogString = new string[1];
+
+    private bool[] firstPickup = new bool[2];
+
     // Start is called before the first frame update
     void Start()
     {
         HCReset = HealCooldown;
         HealCooldown = 0;
+
+        for (int i = 0; i < firstPickup.Length; i++)
+        {
+            firstPickup[i] = true;
+        }
     }
 
     // Update is called once per frame
@@ -39,6 +52,13 @@ public class Inventory : MonoBehaviour
     {
         Items[index] += amount;
         UIUpdate();
+
+        if(firstPickup[index] == true)
+        {
+            firstPickup[index] = false;
+            dialogString[0] = pickupDialogs[index];
+            dialog.DisplayDialog(dialogString);
+        }
     }
 
     public bool Drop(int index, int amount)
