@@ -8057,6 +8057,7 @@ Transform:
   - {fileID: 1226893560}
   - {fileID: 1137515103}
   - {fileID: 1011068434}
+  - {fileID: 6185545181025588627}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -15179,6 +15180,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TestEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 2489525712933289215, guid: 278c23a945f3d594d844570e26cfe35e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5753164736490172028, guid: 278c23a945f3d594d844570e26cfe35e,
         type: 3}
       propertyPath: Active
@@ -15475,6 +15481,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84d3c3991eb059146b1e09178e57ffc9, type: 3}
+--- !u!4 &6185545181025588627 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3025403255403515676, guid: 150c4967494c46a4aacead7d2e1ac176,
+    type: 3}
+  m_PrefabInstance: {fileID: 8947276603814828687}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8397337116260920205
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15559,3 +15571,72 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 00495607cedb8ba4290793bab6618de1, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d35b4292e51eb4b4d8038ed0e01db159, type: 3}
+--- !u!1001 &8947276603814828687
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1052983472}
+    m_Modifications:
+    - target: {fileID: 3025403255403515648, guid: 150c4967494c46a4aacead7d2e1ac176,
+        type: 3}
+      propertyPath: m_Name
+      value: Forklift Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 3025403255403515676, guid: 150c4967494c46a4aacead7d2e1ac176,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 3025403255403515676, guid: 150c4967494c46a4aacead7d2e1ac176,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3025403255403515676, guid: 150c4967494c46a4aacead7d2e1ac176,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.5833334
+      objectReference: {fileID: 0}
+    - target: {fileID: 3025403255403515676, guid: 150c4967494c46a4aacead7d2e1ac176,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3025403255403515676, guid: 150c4967494c46a4aacead7d2e1ac176,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3025403255403515676, guid: 150c4967494c46a4aacead7d2e1ac176,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3025403255403515676, guid: 150c4967494c46a4aacead7d2e1ac176,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3025403255403515676, guid: 150c4967494c46a4aacead7d2e1ac176,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3025403255403515676, guid: 150c4967494c46a4aacead7d2e1ac176,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3025403255403515676, guid: 150c4967494c46a4aacead7d2e1ac176,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3025403255403515676, guid: 150c4967494c46a4aacead7d2e1ac176,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 150c4967494c46a4aacead7d2e1ac176, type: 3}

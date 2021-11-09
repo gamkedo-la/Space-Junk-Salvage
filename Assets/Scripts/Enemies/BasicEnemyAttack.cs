@@ -9,6 +9,8 @@ public class BasicEnemyAttack : MonoBehaviour
 
     public Transform hitboxLocation;
 
+    public Animator animator;
+
     public float WindUp;
     public float Active;
     public float Ending;
@@ -25,6 +27,8 @@ public class BasicEnemyAttack : MonoBehaviour
     public int Damage;
 
     public float KnockbackStrength;
+
+    private static readonly int AttackingProp = Animator.StringToHash("Attacking");
 
     // Start is called before the first frame update
     void Start()
@@ -53,12 +57,22 @@ public class BasicEnemyAttack : MonoBehaviour
                 H.GetComponent<BasicEnemyHitbox>().Timer = WindUp + Active;
                 H.GetComponent<BasicEnemyHitbox>().KnockbackPower = KnockbackStrength;
                 H.GetComponent<BasicEnemyHitbox>().Owner = transform;
+
+                if (animator != null)
+                {
+                    animator.SetBool(AttackingProp, true);
+                }
             }
 
             if(timer <= 0)
             {
                 attacking = false;
                 GetComponent<BasicEnemyMovement>().Attacking = false;
+                
+                if (animator != null)
+                {
+                    animator.SetBool(AttackingProp, false);
+                }
             }
 
         }
