@@ -51,6 +51,8 @@ public class BasicEnemyMovement : MonoBehaviour
 
     public float height;
 
+    public Animator animator;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -71,6 +73,7 @@ public class BasicEnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        UpdateAnimator();
 
         if(myHealth.hit == true)
         {
@@ -277,6 +280,16 @@ public class BasicEnemyMovement : MonoBehaviour
                     }
                 }
             }
+        }
+    }
+
+    private void UpdateAnimator()
+    {
+        if (animator != null)
+        {
+            animator.SetBool("Alerted", Alerted);
+            animator.SetBool("Attacking", Attacking);
+            animator.SetBool("SeePlayer", SeePlayer);
         }
     }
 
