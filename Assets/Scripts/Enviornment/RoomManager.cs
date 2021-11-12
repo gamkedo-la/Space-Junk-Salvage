@@ -13,12 +13,12 @@ public class RoomManager : MonoBehaviour
     public GameObject WallSegment;
 
     [Header("length in 6 unit tiles")]
-    public int LengthX = 2;
-    public int LengthZ = 2;
+    public int LengthX = 1;
+    public int LengthZ = 1;
 
 
-    private int LastSizeX = 2;
-    private int LastSizeZ = 2;
+    private int LastSizeX = 0;
+    private int LastSizeZ = 0;
 
 
 

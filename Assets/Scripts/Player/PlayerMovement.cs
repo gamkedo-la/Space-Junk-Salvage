@@ -31,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody myRigidbody;
 
     public bool SwitchingRooms = false;
+    public bool jumped = false;
 
     public Transform OtherRoom;
 
@@ -123,9 +124,12 @@ public class PlayerMovement : MonoBehaviour
             myRigidbody.velocity = Vector3.zero;
             transform.position = Vector3.MoveTowards(transform.position, OtherRoom.position, speed * Time.deltaTime);
 
-            if (Vector3.Distance(transform.position, OtherRoom.position) < speed * Time.deltaTime)
+            if (jumped == true)
             {
-                SwitchingRooms = false;
+                if (Vector3.Distance(transform.position, OtherRoom.position) < speed * Time.deltaTime)
+                {
+                    SwitchingRooms = false;
+                }
             }
             return;
         }
