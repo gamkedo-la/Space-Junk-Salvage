@@ -129,6 +129,7 @@ public class PlayerMovement : MonoBehaviour
                 if (Vector3.Distance(transform.position, OtherRoom.position) < speed * Time.deltaTime)
                 {
                     SwitchingRooms = false;
+                    jumped = false;
                 }
             }
             return;

@@ -12,6 +12,8 @@ public class DoorManager : MonoBehaviour
     void Start()
     {
         LinkDoors();
+
+        myEndPoint.name = gameObject.name + " endpoint";
     }
 
     // Update is called once per frame
