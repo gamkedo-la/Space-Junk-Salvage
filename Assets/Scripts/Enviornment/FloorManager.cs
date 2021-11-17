@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,6 +10,7 @@ public class FloorManager : MonoBehaviour
     public int cZ;
 
     public GameObject FloorTilePrefab;
+    public GameObject[] floorTilePrefabs;
 
     [System.Serializable]
     public struct Tile
@@ -25,7 +25,10 @@ public class FloorManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (floorTilePrefabs == null || floorTilePrefabs.Length == 0)
+        {
+            floorTilePrefabs = new[] {FloorTilePrefab};
+        }
     }
 
     // Update is called once per frame
@@ -82,13 +85,16 @@ public class FloorManager : MonoBehaviour
 
                     Debug.Log("new floor tile at " + i.ToString() + " x " + j.ToString() + " z");
 
-                    t.T = Instantiate(FloorTilePrefab, transform);
+                    GameObject prefab = floorTilePrefabs[Random.Range(0, floorTilePrefabs.Length)];
+
+                    t.T = Instantiate(prefab, transform);
                     t.X = i;
                     t.Z = j;
 
                     t.T.name = t.X.ToString() +" x " + t.Z.ToString() + " z";
 
                     t.T.transform.localPosition = new Vector3((6 * t.X) - 3, 0, -((6 * t.Z) - 3));
+                    t.T.transform.localRotation = Quaternion.Euler(0, 90 * Random.Range(0, 4), 0);
 
                     tiles.Add(t);
                 }
@@ -102,13 +108,16 @@ public class FloorManager : MonoBehaviour
 
                     Debug.Log("new floor tile at " + i.ToString() + " x " + j.ToString() + " z");
 
-                    t.T = Instantiate(FloorTilePrefab, transform);
+                    GameObject prefab = floorTilePrefabs[Random.Range(0, floorTilePrefabs.Length)];
+
+                    t.T = Instantiate(prefab, transform);
                     t.X = i;
                     t.Z = j;
 
                     t.T.name = t.X.ToString() + " x " + t.Z.ToString() + " z";
 
                     t.T.transform.localPosition = new Vector3((6 * t.X) - 3, 0, -((6 * t.Z) - 3));
+                    t.T.transform.localRotation = Quaternion.Euler(0, 90 * Random.Range(0, 4), 0);
 
                     tiles.Add(t);
                 }
