@@ -200,7 +200,7 @@ MonoBehaviour:
   - {fileID: 8041420276744894731}
   Floor: {fileID: 2381996454659404286}
   Corner: {fileID: 2545842851060378042}
-  WallSegment: {fileID: 5469903013244825964, guid: e2a9a53379c8c174c9fb42af7f752d04,
+  WallSegment: {fileID: 7825992327632427494, guid: 8fa7469c281b1614a82e3c44968cfbf9,
     type: 3}
   LengthX: 2
   LengthZ: 2
@@ -288,7 +288,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2545842851060378042}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.5, y: 2.5, z: 6.5}
+  m_LocalPosition: {x: -6.5, y: 3, z: 6.5}
   m_LocalScale: {x: 1, y: 6, z: 1}
   m_Children: []
   m_Father: {fileID: 2381996454628838709}

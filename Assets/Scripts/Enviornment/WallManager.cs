@@ -22,7 +22,7 @@ public class WallManager : MonoBehaviour
 
     public void PlaceSegments()
     {
-        Vector3 V = new Vector3(0, 2.5f, 3);
+        Vector3 V = new Vector3(0, 0, 3);
         
         for(int i = 0; i< Segments.Length; i++)
         {
@@ -35,7 +35,7 @@ public class WallManager : MonoBehaviour
 
 
             Segments[i].transform.localPosition = V;
-            Segments[i].transform.localEulerAngles = new Vector3(0, 0, 0);
+            Segments[i].transform.localEulerAngles = new Vector3(0, 90, 0);
 
 
             if(Segments[i].tag == "Door")
