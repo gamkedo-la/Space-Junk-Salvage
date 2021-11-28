@@ -17,3 +17,7 @@ Archaic Computer:
 
 A computer from the times of the ancient. A time so far, far away and unknowable to you, and your history is poor — or so the computer says as you boot it up.
 A strange message, and an even stranger noise emits from it. You'd be best to keep your distance away from it, something doesn't feel right...
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
