@@ -65,6 +65,8 @@ public class PlayerMovement : MonoBehaviour
 
     bool MapOpen = false;
 
+    public DashCooldownUI cool;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -184,11 +186,18 @@ public class PlayerMovement : MonoBehaviour
         {
             if (StartDash == true)
             {
+
+
                 CanAttack = false;
                 StartDash = false;
                 if (dashing == false && DashCooldown <= 0)
                 {
                     dashing = true;
+                    if (cool != null)
+                    {
+                        cool.Dash(DCReset);
+                    }
+
 
                     DashDestination = transform.position + transform.forward * DashLength;
                     DashStart = transform.position;
