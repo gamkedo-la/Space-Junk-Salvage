@@ -8,8 +8,10 @@ public class DashCooldownUI : MonoBehaviour
 
     public Image image;
 
-    public float c;
-    public float cc;
+    float total;
+    float counter;
+    float alpha;
+
 
     // Start is called before the first frame update
     void Start()
@@ -20,25 +22,30 @@ public class DashCooldownUI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(c >= 0)
+        counter += Time.deltaTime;
+
+        if(counter >= total)
         {
-            c -= Time.deltaTime;
 
-            float temp = c / cc;
+            alpha = 1;
 
-            temp *= .9f;
-
-            Color color = image.color;
-
-            color.a = 1 - temp;
-
-            image.color = color;
         }
+        else
+        {
+            alpha = .1f + (counter / (total * 2));
+
+        }
+
+        Color c = image.color;
+        c.a = alpha;
+        image.color = c;
+
+
     }
 
     public void Dash(float cooldown)
     {
-        c = cooldown;
-        cc = cooldown;
+        total = cooldown;
+        counter = 0;
     }
 }
