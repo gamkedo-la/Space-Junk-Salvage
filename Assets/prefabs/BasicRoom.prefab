@@ -46,7 +46,7 @@ MonoBehaviour:
   Segments:
   - {fileID: 0}
   - {fileID: 0}
-  WallSegmentPrefab: {fileID: 5469903013244825964, guid: e2a9a53379c8c174c9fb42af7f752d04,
+  WallSegmentPrefab: {fileID: 7825992327632427494, guid: 8fa7469c281b1614a82e3c44968cfbf9,
     type: 3}
 --- !u!1 &1768274999532732863
 GameObject:
@@ -94,7 +94,7 @@ MonoBehaviour:
   Segments:
   - {fileID: 0}
   - {fileID: 0}
-  WallSegmentPrefab: {fileID: 5469903013244825964, guid: e2a9a53379c8c174c9fb42af7f752d04,
+  WallSegmentPrefab: {fileID: 7825992327632427494, guid: 8fa7469c281b1614a82e3c44968cfbf9,
     type: 3}
 --- !u!1 &1824562880335698902
 GameObject:
@@ -142,7 +142,7 @@ MonoBehaviour:
   Segments:
   - {fileID: 0}
   - {fileID: 0}
-  WallSegmentPrefab: {fileID: 1665225203569876675, guid: 0e16d4f0ca7e2b64a9070314e62dc0c7,
+  WallSegmentPrefab: {fileID: 7825992327632427494, guid: 8fa7469c281b1614a82e3c44968cfbf9,
     type: 3}
 --- !u!1 &2381996454628838708
 GameObject:
@@ -321,7 +321,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1d4d75da1021c414081223675fc04e39, type: 2}
+  - {fileID: 2100000, guid: 91f218b867e8f474f8e57e6a32cbe0e6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -418,5 +418,5 @@ MonoBehaviour:
   Segments:
   - {fileID: 0}
   - {fileID: 0}
-  WallSegmentPrefab: {fileID: 1665225203569876675, guid: 0e16d4f0ca7e2b64a9070314e62dc0c7,
+  WallSegmentPrefab: {fileID: 7825992327632427494, guid: 8fa7469c281b1614a82e3c44968cfbf9,
     type: 3}
