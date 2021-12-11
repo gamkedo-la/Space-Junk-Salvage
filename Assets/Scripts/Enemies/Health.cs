@@ -70,6 +70,23 @@ public class Health : MonoBehaviour
             Death();
         }
 
+        if(gameObject.GetComponent<BossMovement>() != null)
+        {
+            if(HP/MaxHP <= .75 && (HP+Damage)/MaxHP > .75)
+            {
+                BroadcastMessage("Retreat");
+            }
+            else if (HP / MaxHP <= .5 && (HP + Damage) / MaxHP > .5)
+            {
+                BroadcastMessage("Retreat");
+            }
+            else if (HP / MaxHP <= .25 && (HP + Damage) / MaxHP > .25)
+            {
+                BroadcastMessage("Retreat");
+            }
+                                                  
+        }
+
     }
 
     public void Death()

@@ -5227,6 +5227,8 @@ MonoBehaviour:
   agent: {fileID: 609177439395649724}
   ApproachSpeed: 4
   RetreatSpeed: 3
+  Retreating: 0
+  shooting: 0
   PlayerLastLocation: {x: 0, y: 0, z: 0}
   Attacking: 0
   AttackRange: 5
@@ -5234,6 +5236,8 @@ MonoBehaviour:
   myHealth: {fileID: 609177439395649721}
   height: 0
   animator: {fileID: 0}
+  retreatCounter: 0
+  shotCounter: 0
 --- !u!114 &609177439395649705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5250,16 +5254,20 @@ MonoBehaviour:
   WindUp: 0.25
   Active: 0.5
   Ending: 0.5
+  shooting: 0
+  aim: 0
+  recoil: 0
+  timer: 0
   Damage: 25
   KnockbackStrength: 4
   HitBoxSpeed: 300
   Arc: 85
-  aimTime: 0
-  recoilTime: 0
-  shotDamage: 0
-  shotKnockback: 0
-  bulletSpeed: 0
-  bulletLife: 0
+  aimTime: 0.3
+  recoilTime: 0.2
+  shotDamage: 10
+  shotKnockback: 2
+  bulletSpeed: 15
+  bulletLife: 30
   Bullet: {fileID: 382650148636927134, guid: ddc45e36df3ed7f42a1d4db1a5b55dc9, type: 3}
   GunA: {fileID: 1171723055}
   GunB: {fileID: 516682225}
@@ -5333,7 +5341,7 @@ NavMeshAgent:
   m_AgentTypeID: 0
   m_Radius: 2.5
   m_Speed: 3.5
-  m_Acceleration: 8
+  m_Acceleration: 1e+11
   avoidancePriority: 50
   m_AngularSpeed: 480
   m_StoppingDistance: 0
@@ -5843,7 +5851,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5066832292875678092}
   m_LocalRotation: {x: 0, y: -0.38268343, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: 0, y: 1.42, z: 0}
+  m_LocalPosition: {x: 0, y: 6.48, z: 0}
   m_LocalScale: {x: 1, y: 0.3, z: 1}
   m_Children:
   - {fileID: 3441938552518945736}

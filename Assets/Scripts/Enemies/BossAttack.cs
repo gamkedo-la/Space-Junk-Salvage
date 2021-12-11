@@ -21,15 +21,15 @@ public class BossAttack : MonoBehaviour
 
     bool attacking = false;
 
-    bool shooting = false;
+    public bool shooting = false;
 
-    bool aim = false;
-    bool recoil = false;
+    public bool aim = false;
+    public bool recoil = false;
 
     
 
 
-    float timer = 0;
+    public float timer = 0;
 
     public int Damage;
 
@@ -61,6 +61,7 @@ public class BossAttack : MonoBehaviour
         shoottime = aimTime + recoilTime;
 
         BroadcastMessage("SetAttackDuration", fullTime);
+        BroadcastMessage("SetShotDuration", shoottime);
     }
 
     // Update is called once per frame
@@ -130,8 +131,9 @@ public class BossAttack : MonoBehaviour
 
         if(shooting == true)
         {
+            timer -= Time.deltaTime;
 
-            if(aim = true && timer <= recoilTime)
+            if(aim == true)
             {
                 aim = false;
 
@@ -148,7 +150,10 @@ public class BossAttack : MonoBehaviour
 
 
             }
-
+            if(timer <= 0)
+            {
+                shooting = false;
+            }
 
 
         }
@@ -171,7 +176,7 @@ public class BossAttack : MonoBehaviour
         timer = shoottime;
         aim = true;
         recoil = false;
-
+        shooting = true;
 
     }
 }

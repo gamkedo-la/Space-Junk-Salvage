@@ -12,7 +12,8 @@ public class BossMovement : MonoBehaviour
     public float ApproachSpeed;
     public float RetreatSpeed;
 
-    bool Retreating = false;
+    public bool Retreating = false;
+    public bool shooting = false;
 
     public Vector3 PlayerLastLocation = new Vector3(0, 0, 0);
 
@@ -35,6 +36,13 @@ public class BossMovement : MonoBehaviour
     public Animator animator;
 
     Vector3 Center;
+
+    public int retreatCounter = 0;
+
+    public int shotCounter = 0;
+
+    
+
 
     // Start is called before the first frame update
     void Start()
@@ -65,11 +73,43 @@ public class BossMovement : MonoBehaviour
         {
             if(Vector3.Distance(Center, transform.position) < .5)
             {
-                //special attack
+                shooting = true;
+                shootDuration = shootDurationReset;
+                transform.LookAt(PlayerLastLocation);
+                GetComponent<BossAttack>().Shoot();
+                shotCounter = 1;
+                Retreating = false;
             }
             
 
             return;
+        }
+
+        if(shooting == true)
+        {
+            agent.updateRotation = false;
+            agent.SetDestination(transform.position);
+            transform.LookAt(PlayerLastLocation);
+            shootDuration -= Time.deltaTime;
+
+            if(shotCounter >= 3)
+            {
+                shooting = false;
+                agent.updateRotation = true;
+            }
+            else
+            {
+                if(shootDuration <= 0)
+                {
+                    shootDuration = shootDurationReset;
+                    GetComponent<BossAttack>().Shoot();
+                    shotCounter++;
+                }
+            }
+
+
+            return;
+
         }
 
         if (Attacking == true)
@@ -120,7 +160,8 @@ public class BossMovement : MonoBehaviour
     {
         Retreating = true;
         agent.SetDestination(Center);
-
+        retreatCounter++;
+        shotCounter = 0;
 
     }
 
@@ -132,7 +173,7 @@ public class BossMovement : MonoBehaviour
 
     public void SetShotDuration(float D)
     {
-        shootDuration = D;
+        shootDuration = D + .2f;
         shootDurationReset = shootDuration;
 
     }
