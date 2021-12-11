@@ -15,6 +15,7 @@ public class BossAttack : MonoBehaviour
     float fullTime;
     bool W = false;
     bool A = false;
+    bool AA = false;
     bool E = false;
 
     bool attacking = false;
@@ -32,9 +33,9 @@ public class BossAttack : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        fullTime = WindUp + Active + Ending;
+        fullTime = WindUp + (Active * 2) + Ending;
 
-        BroadcastMessage("SetAttackDuration", (WindUp + Active + Ending));
+        BroadcastMessage("SetAttackDuration", fullTime);
     }
 
     // Update is called once per frame
@@ -66,6 +67,15 @@ public class BossAttack : MonoBehaviour
                 H.transform.localEulerAngles = new Vector3(0, -Arc, 0);
 
 
+               
+
+            }
+            if(A == true && AA == false && timer <= Active + Ending)
+            {
+                AA = true;
+
+                Quaternion Q = transform.rotation;
+
                 Q.eulerAngles += new Vector3(0, Arc, 0);
 
                 GameObject HH = Instantiate(HitBox, transform.position + (Vector3.up * 1.5f), Q, transform);
@@ -79,7 +89,11 @@ public class BossAttack : MonoBehaviour
 
                 HH.transform.localEulerAngles = new Vector3(0, Arc, 0);
 
+
             }
+
+
+
 
             if (timer <= 0)
             {
@@ -98,6 +112,7 @@ public class BossAttack : MonoBehaviour
         timer = fullTime;
         W = true;
         A = false;
+        AA = false;
         E = false;
         attacking = true;
     }

@@ -5156,14 +5156,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ff8d19ea8e4dea4296d94c07ea7cc55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HitBox: {fileID: 4849247592096177926, guid: cf4985bd859746946971988ac34ee63e, type: 3}
-  WindUp: 0.5
-  Active: 0.25
+  HitBox: {fileID: 7832599944373254377, guid: 00a60c137e78e3a439c128e5bd0c2994, type: 3}
+  WindUp: 0.25
+  Active: 0.5
   Ending: 0.5
   Damage: 25
   KnockbackStrength: 4
-  HitBoxSpeed: 250
-  Arc: 75
+  HitBoxSpeed: 300
+  Arc: 85
 --- !u!54 &609177439395649720
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5401,7 +5401,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2480140875777097490
 Transform:
   m_ObjectHideFlags: 0
