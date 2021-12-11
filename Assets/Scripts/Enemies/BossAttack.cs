@@ -11,6 +11,7 @@ public class BossAttack : MonoBehaviour
     public float WindUp;
     public float Active;
     public float Ending;
+    
 
     float fullTime;
     bool W = false;
@@ -19,6 +20,14 @@ public class BossAttack : MonoBehaviour
     bool E = false;
 
     bool attacking = false;
+
+    bool shooting = false;
+
+    bool aim = false;
+    bool recoil = false;
+
+    
+
 
     float timer = 0;
 
@@ -30,10 +39,26 @@ public class BossAttack : MonoBehaviour
 
     public float Arc = 75;
 
+    [Header("Shooting Attack")]
+    public float aimTime;
+    public float recoilTime;
+    public int shotDamage;
+    public float shotKnockback;
+    public float bulletSpeed;
+    public float bulletLife;
+    public GameObject Bullet;
+
+    public Transform GunA;
+    public Transform GunB;
+    public Transform GunC;
+
+    float shoottime;
+
     // Start is called before the first frame update
     void Start()
     {
         fullTime = WindUp + (Active * 2) + Ending;
+        shoottime = aimTime + recoilTime;
 
         BroadcastMessage("SetAttackDuration", fullTime);
     }
@@ -103,6 +128,30 @@ public class BossAttack : MonoBehaviour
 
         }
 
+        if(shooting == true)
+        {
+
+            if(aim = true && timer <= recoilTime)
+            {
+                aim = false;
+
+                GameObject B = Instantiate(Bullet, GunA.position, GunA.rotation);
+                B.GetComponent<EnemyBullet>().SetParameters(shotDamage, bulletSpeed, shotKnockback, bulletLife);
+
+                B = Instantiate(Bullet, GunB.position, GunB.rotation);
+                B.GetComponent<EnemyBullet>().SetParameters(shotDamage, bulletSpeed, shotKnockback, bulletLife);
+
+                B = Instantiate(Bullet, GunC.position, GunC.rotation);
+                B.GetComponent<EnemyBullet>().SetParameters(shotDamage, bulletSpeed, shotKnockback, bulletLife);
+
+
+
+
+            }
+
+
+
+        }
 
 
     }
@@ -115,5 +164,14 @@ public class BossAttack : MonoBehaviour
         AA = false;
         E = false;
         attacking = true;
+    }
+
+    public void Shoot()
+    {
+        timer = shoottime;
+        aim = true;
+        recoil = false;
+
+
     }
 }

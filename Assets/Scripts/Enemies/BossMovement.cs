@@ -23,6 +23,9 @@ public class BossMovement : MonoBehaviour
     private float AttackDuration;
     private float ADreset;
 
+    private float shootDuration;
+    private float shootDurationReset;
+
     public GameObject Player;
 
     public Health myHealth;
@@ -47,6 +50,8 @@ public class BossMovement : MonoBehaviour
 
         height = GetComponent<NavMeshAgent>().height / 2;
 
+
+        //change this to handle being somewhere else
         Center = new Vector3(0, transform.position.y, 0);
 
     }
@@ -123,5 +128,12 @@ public class BossMovement : MonoBehaviour
     {
         AttackDuration = D;
         ADreset = AttackDuration;
+    }
+
+    public void SetShotDuration(float D)
+    {
+        shootDuration = D;
+        shootDurationReset = shootDuration;
+
     }
 }
