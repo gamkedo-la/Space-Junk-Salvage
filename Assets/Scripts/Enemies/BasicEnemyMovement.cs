@@ -251,14 +251,14 @@ public class BasicEnemyMovement : MonoBehaviour
             }
             else
             {
-                agent.updateRotation = false;
+                agent.updateRotation = true;
                 AlertText.text = " ";
 
                 agent.speed = PatrolSpeed;
 
                 agent.SetDestination(PatrolPoints[PBookmark]);
 
-                transform.LookAt(PatrolPoints[PBookmark], Vector3.up);
+                //transform.LookAt(PatrolPoints[PBookmark], Vector3.up);
 
                 if (Vector3.Distance(transform.position, PatrolPoints[PBookmark]) < PatrolSpeed * Time.deltaTime && pausing == false)
                 {
