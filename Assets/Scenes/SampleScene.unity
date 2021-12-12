@@ -2904,7 +2904,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &324784227
 GameObject:
@@ -8370,7 +8370,7 @@ Transform:
   - {fileID: 103967028}
   - {fileID: 2489525714163105605}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1018551637
 GameObject:
@@ -8403,7 +8403,7 @@ Transform:
   m_Children:
   - {fileID: 962097671}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1018551639
 MonoBehaviour:
@@ -8501,6 +8501,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 019b64c2-241b-46a8-97c5-7e4bbedc2dc5
     m_ActionName: Player/OpenMap[/Keyboard/tab]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e14cb1b6-a98f-491e-ab5e-b00765e6b770
+    m_ActionName: Player/Interact[/Keyboard/k]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Map
@@ -9367,7 +9371,7 @@ PrefabInstance:
     - target: {fileID: 3268931253028579583, guid: 8b9d9664bcc8b054885092bbb2ac79d0,
         type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 3268931253028579583, guid: 8b9d9664bcc8b054885092bbb2ac79d0,
         type: 3}
@@ -11709,7 +11713,7 @@ PrefabInstance:
     - target: {fileID: 4371171973769705006, guid: d0d17f9d2868d4b9389075e57c332109,
         type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4371171973769705006, guid: d0d17f9d2868d4b9389075e57c332109,
         type: 3}
@@ -16972,7 +16976,7 @@ PrefabInstance:
     - target: {fileID: 4803149145672153271, guid: 73a0c9f8c5ea4424a98648ac94d3f331,
         type: 3}
       propertyPath: m_RootOrder
-      value: 17
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 4803149145672153271, guid: 73a0c9f8c5ea4424a98648ac94d3f331,
         type: 3}
@@ -17107,6 +17111,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1014374143}
     m_Modifications:
+    - target: {fileID: 3998818371660357858, guid: 84d3c3991eb059146b1e09178e57ffc9,
+        type: 3}
+      propertyPath: currentSpeed
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4157329744283381429, guid: 84d3c3991eb059146b1e09178e57ffc9,
         type: 3}
       propertyPath: m_IsActive
@@ -17121,6 +17130,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0.71
+      objectReference: {fileID: 0}
+    - target: {fileID: 8457197530855368505, guid: 84d3c3991eb059146b1e09178e57ffc9,
+        type: 3}
+      propertyPath: currentSpeed
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8616784560306521986, guid: 84d3c3991eb059146b1e09178e57ffc9,
         type: 3}
