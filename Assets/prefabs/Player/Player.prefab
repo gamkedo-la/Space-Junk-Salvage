@@ -347,7 +347,8 @@ MonoBehaviour:
   - 'Gold key: A key, used to open doors to other rooms (or extra-dimensional spaces;
     currently out of service). It''s gold, because shiny things are important. It
     trembles with your touch.'
-  - picked up health potion placeholder dialog
+  - Green things are good, except when they're poison. This one should be fine, though.
+    Drink to restore health.
 --- !u!208 &6946643208067930570
 NavMeshObstacle:
   m_ObjectHideFlags: 0
