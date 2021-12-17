@@ -5236,6 +5236,7 @@ MonoBehaviour:
   myHealth: {fileID: 609177439395649721}
   height: 0
   animator: {fileID: 0}
+  Center: {x: 0, y: 0, z: 0}
   retreatCounter: 0
   shotCounter: 0
 --- !u!114 &609177439395649705

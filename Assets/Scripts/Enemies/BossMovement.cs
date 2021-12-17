@@ -35,13 +35,12 @@ public class BossMovement : MonoBehaviour
 
     public Animator animator;
 
-    Vector3 Center;
+    public Vector3 Center = new Vector3(0,0,0);
 
     public int retreatCounter = 0;
 
     public int shotCounter = 0;
 
-    
 
 
     // Start is called before the first frame update
@@ -59,8 +58,7 @@ public class BossMovement : MonoBehaviour
         height = GetComponent<NavMeshAgent>().height / 2;
 
 
-        //change this to handle being somewhere else
-        Center = new Vector3(0, transform.position.y, 0);
+        Center.y = transform.position.y;
 
     }
 
