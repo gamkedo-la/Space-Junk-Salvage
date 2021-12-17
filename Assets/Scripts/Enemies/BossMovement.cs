@@ -133,7 +133,7 @@ public class BossMovement : MonoBehaviour
             Attacking = true;
             AttackDuration = ADreset;
             BroadcastMessage("Attack");
-
+            transform.LookAt(Player.transform);
 
             return;
         }
