@@ -21,6 +21,39 @@ A strange message, and an even stranger noise emits from it. You'd be best to ke
 Health Potion:
 Green things are good, except when they're poison. This one should be fine, though. Drink to restore health.
 
+
+Intro:
+(Story Notes:  An abstract tone, and centering the story around the MC, imagining this place to be lonely and desolate and getting into the MC's psyche.)
+
+
+Player:
+What is it that you do when you're met with an overwhelming feeling of nothingness?
+(the player is talking to themselves, or an entity depending on the player's interpretation)
+
+Entity:..
+
+Player:
+You're asking me the same question?
+Hey come on now, that's not fair. I asked you first.
+
+Entity:..
+
+Player:
+Alright, alright, fine.
+Well, I salvage things.
+
+Entity:..
+
+Player:
+Don't look at me like that. It's the only thing I know to do best.
+
+Entity:..
+
+Player:
+No, I don't think that what I'm doing is particularly helping anyone, and no I haven't read Shakespeare yet.
+What is up with these questions? I've come so far only to be met by these shades of grey, and these questions.
+I think I'm losing it. Better go pick up my salvager and do what I've come here to finish.
+
 <<<<<<< Updated upstream
 =======
 
