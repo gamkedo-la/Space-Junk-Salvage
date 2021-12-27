@@ -10,46 +10,54 @@ public class EnemySoundEffects : MonoBehaviour
     public AudioClip seePlayerSound;
     public AudioClip noLongerSeePlayerSound;
     public AudioClip attackSound;
-
-    public Animator stateProvider;
+    public AudioClip noLongerAttackSound;
 
     private bool _wasAlerted;
     private bool _sawPlayer;
     private bool _wasAttacking;
-
-    private void Update()
+    
+    public void PlaySounds(EnemyState state)
     {
-        var isAlerted = stateProvider.GetBool("Alerted");
-        var seesPlayer = stateProvider.GetBool("SeePlayer");
-        var isAttacking = stateProvider.GetBool("Attacking");
-
-        if (isAlerted && !_wasAlerted)
+        if (state.Alerted != _wasAlerted)
         {
-            audioSource.PlayOneShot(alertedSound);
+            OnAlertedChanged(state.Alerted);
         }
 
-        if (!isAlerted && _wasAlerted)
+        if (state.SeePlayer != _sawPlayer)
         {
-            audioSource.PlayOneShot(noLongerAlertedSound);
+            OnSeePlayerChanged(state.SeePlayer);
         }
 
-        if (seesPlayer && !_sawPlayer)
+        if (state.Attacking != _wasAttacking)
         {
-            audioSource.PlayOneShot(seePlayerSound);
+            OnAttackingChanged(state.Attacking);
         }
 
-        if (!seesPlayer && _sawPlayer)
-        {
-            audioSource.PlayOneShot(noLongerSeePlayerSound);
-        }
+        _wasAlerted = state.Alerted;
+        _sawPlayer = state.SeePlayer;
+        _wasAttacking = state.Attacking;
+    }
 
-        if (isAttacking && !_wasAttacking)
-        {
-            audioSource.PlayOneShot(attackSound);
-        }
+    public void OnAlertedChanged(bool isAlerted)
+    {
+        PlayOneShot(isAlerted ? alertedSound : noLongerAlertedSound);
+    }
 
-        _wasAlerted = isAlerted;
-        _sawPlayer = seesPlayer;
-        _wasAttacking = isAttacking;
+    public void OnSeePlayerChanged(bool seePlayer)
+    {
+        PlayOneShot(seePlayer ? seePlayerSound : noLongerSeePlayerSound);
+    }
+
+    public void OnAttackingChanged(bool attacking)
+    {
+        PlayOneShot(attacking ? attackSound : noLongerAttackSound);
+    }
+
+    private void PlayOneShot(AudioClip audioClip)
+    {
+        if (audioClip != null)
+        {
+            audioSource.PlayOneShot(audioClip);
+        }
     }
 }

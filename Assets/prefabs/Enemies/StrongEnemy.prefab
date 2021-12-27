@@ -421,6 +421,8 @@ GameObject:
   - component: {fileID: 8118113725800280131}
   - component: {fileID: 4726378372354907450}
   - component: {fileID: 8118113725800280154}
+  - component: {fileID: 2888615882255514293}
+  - component: {fileID: 7580211486484594204}
   m_Layer: 12
   m_Name: StrongEnemy
   m_TagString: Enemy
@@ -514,9 +516,7 @@ MonoBehaviour:
   PeripheralRadius: 4
   PeripheralAngle: 170
   Player: {fileID: 0}
-  CanSeePlayer: 0
   DirectionToPlayer: {x: 0, y: 0, z: 0}
-  movement: {fileID: 8118113725800280130}
 --- !u!114 &8118113725800280130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -530,29 +530,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 8118113725800280131}
-  SeePlayer: 0
   PatrolPoints:
   - {x: -8, y: 1.583333, z: 0}
   - {x: -8, y: 1.583333, z: 5}
   PatrolSpeed: 1.5
   ChaseSpeed: 2.8
   PatrolPause: 1.3
-  pausing: 0
   ChasePause: 1
-  chasing: 0
-  PlayerLastLocation: {x: 0, y: 0, z: 0}
-  Attacking: 0
   AttackRange: 2
-  Player: {fileID: 0}
   myHealth: {fileID: 8118113725800280134}
   GetHitStunTimer: 0
   BSC: {fileID: 0}
   hitstun: 0
   AlertText: {fileID: 3897633795728988453}
-  Alerted: 0
-  AlertLoc: {x: 0, y: 0, z: 0}
-  height: 0
-  animator: {fileID: 0}
 --- !u!195 &8118113725800280131
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -612,6 +602,78 @@ MonoBehaviour:
   KnockbackStrength: 4
   HitBoxSpeed: 250
   Arc: 75
+--- !u!114 &2888615882255514293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8118113725800280152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba02ed695201483a94b8e2ecd684a154, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Alerted: 0
+  SeePlayer: 0
+  Attacking: 0
+  Chasing: 0
+  Pausing: 0
+  Retreating: 0
+  PlayerLastLocation: {x: 0, y: 0, z: 0}
+  AlertLoc: {x: 0, y: 0, z: 0}
+  Player: {fileID: 0}
+--- !u!114 &7580211486484594204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8118113725800280152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6cc08c0a71c494999b5d8a4f7a1206c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  behaviours:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8118113725800280129}
+        m_TargetAssemblyTypeName: FieldOfView, Assembly-CSharp
+        m_MethodName: LookForPlayer
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8118113725800280130}
+        m_TargetAssemblyTypeName: BasicEnemyMovement, Assembly-CSharp
+        m_MethodName: Move
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8118113725800280154}
+        m_TargetAssemblyTypeName: StrongEnemyAttack, Assembly-CSharp
+        m_MethodName: CheckAttack
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8500681360634404515
 GameObject:
   m_ObjectHideFlags: 0
@@ -622,7 +684,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5208876790720684721}
   - component: {fileID: 6330859601099652403}
-  - component: {fileID: 6130777276162507753}
   - component: {fileID: 3897633795728988453}
   - component: {fileID: 1159096717543966360}
   m_Layer: 12
@@ -692,14 +753,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!222 &6130777276162507753
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8500681360634404515}
-  m_CullTransparentMesh: 0
 --- !u!114 &3897633795728988453
 MonoBehaviour:
   m_ObjectHideFlags: 0

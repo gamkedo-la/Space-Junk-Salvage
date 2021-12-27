@@ -33,12 +33,9 @@ public class StrongEnemyAttack : MonoBehaviour
     void Start()
     {
         fullTime = WindUp + Active + Ending;
-
-        BroadcastMessage("SetAttackDuration", (WindUp + Active + Ending));
     }
 
-    // Update is called once per frame
-    void Update()
+    public void CheckAttack(EnemyState state)
     {
         if (attacking == true)
         {
@@ -84,16 +81,16 @@ public class StrongEnemyAttack : MonoBehaviour
             if (timer <= 0)
             {
                 attacking = false;
-                GetComponent<BasicEnemyMovement>().Attacking = false;
+                state.Attacking = false;
             }
-
         }
-
-
-
+        else if (state.Attacking)
+        {
+            Attack();
+        }
     }
 
-    public void Attack()
+    private void Attack()
     {
         timer = fullTime;
         W = true;

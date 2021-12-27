@@ -4,10 +4,10 @@ using UnityEngine;
 using UnityEngine.AI;
 using TMPro;
 
+[RequireComponent(typeof(EnemyState))]
 public class BasicEnemyMovement : MonoBehaviour
 {
     public NavMeshAgent agent;
-    public bool SeePlayer = false;
 
     public Vector3[] PatrolPoints;
     private int PBookmark = 0;
@@ -17,23 +17,14 @@ public class BasicEnemyMovement : MonoBehaviour
 
     public float PatrolPause;
     private float PPreset;
-    public bool pausing = false;
-
 
     public float ChasePause;
     private float CPreset;
-    public bool chasing = false;
-
-    public Vector3 PlayerLastLocation = new Vector3(0,0,0);
-
-    public bool Attacking;
 
     public float AttackRange;
 
     private float AttackDuration;
     private float ADreset;
-
-    public GameObject Player;
 
     public Health myHealth;
 
@@ -46,36 +37,22 @@ public class BasicEnemyMovement : MonoBehaviour
 
     public TextMeshPro AlertText;
 
-    public bool Alerted;
-    public Vector3 AlertLoc;
-
-    public float height;
-
-    public Animator animator;
-    
     // Start is called before the first frame update
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         PPreset = PatrolPause;
         CPreset = ChasePause;
-        //AttackDuration = GetComponent<BasicEnemyAttack>().WindUp + GetComponent<BasicEnemyAttack>().Active + GetComponent<BasicEnemyAttack>().Ending;
-        //ADreset = AttackDuration;
         GHSreset = GetHitStunTimer;
 
         agent.updateRotation = false;
 
-        height = GetComponent<NavMeshAgent>().height / 2;
-
         AlertText.text = " ";
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Move(EnemyState state)
     {
-        UpdateAnimator();
-
-        if(myHealth.hit == true)
+        if (myHealth.hit == true)
         {
             agent.updateRotation = false;
 
@@ -93,108 +70,97 @@ public class BasicEnemyMovement : MonoBehaviour
             myHealth.hit = false;
 
             AlertText.text = "* * *";
-
         }
 
-        if(hitstun == true)
+        if (hitstun == true)
         {
-            Alerted = false;
+            state.Alerted = false;
             agent.updateRotation = false;
             GetHitStunTimer -= Time.deltaTime;
 
             agent.SetDestination(transform.position);
 
 
-            if(GetHitStunTimer <= 0)
+            if (GetHitStunTimer <= 0)
             {
                 AlertText.text = "a";
 
                 hitstun = false;
-                transform.LookAt(Player.transform.position, Vector3.up);
+                transform.LookAt(state.Player.transform.position, Vector3.up);
                 PatrolPause = PPreset;
-                pausing = true;
-
+                state.Pausing = true;
             }
-            return;
 
+            return;
         }
 
-        if(Attacking == true)
+        if (state.Attacking == true)
         {
-            Alerted = false;
+            state.Alerted = false;
             agent.updateRotation = false;
-            AttackDuration -= Time.deltaTime;
-            if(AttackDuration <= 0)
-            {
-                Attacking = false;
-                pausing = false;
-                //agent.updateRotation = true;
-            }
             return;
-
         }
 
-        if(SeePlayer == true)
+        if (state.SeePlayer == true)
         {
-            Alerted = false;
-            PlayerLastLocation.y = transform.position.y;
-            if (Vector3.Distance(transform.position, PlayerLastLocation) < AttackRange)
+            state.Alerted = false;
+            state.PlayerLastLocation.y = transform.position.y;
+            if (Vector3.Distance(transform.position, state.PlayerLastLocation) < AttackRange)
             {
-                Attacking = true;
-                pausing = true;
-                chasing = false;
+                state.Attacking = true;
+                state.Pausing = true;
+                state.Chasing = false;
                 agent.SetDestination(transform.position);
                 agent.updateRotation = false;
 
-                transform.LookAt(Player.transform, Vector3.up);
+                transform.LookAt(state.Player.transform, Vector3.up);
 
-                AttackDuration = ADreset;
-                BroadcastMessage("Attack");
                 return;
             }
             else
             {
-                chasing = true;
+                state.Attacking = false;
+                state.Chasing = true;
             }
         }
 
-        if(chasing == true)
+        if (state.Chasing == true)
         {
-            Alerted = false;
+            state.Alerted = false;
             agent.updateRotation = false;
 
             AlertText.text = "!";
 
-            PlayerLastLocation.y = transform.position.y;
+            state.PlayerLastLocation.y = transform.position.y;
 
-            if (SeePlayer == true)
+            if (state.SeePlayer == true)
             {
-                transform.LookAt(PlayerLastLocation, Vector3.up);
+                transform.LookAt(state.PlayerLastLocation, Vector3.up);
             }
+
             agent.speed = ChaseSpeed;
 
-            Vector3 temp = PlayerLastLocation - transform.position;
+            Vector3 temp = state.PlayerLastLocation - transform.position;
 
             temp.Normalize();
 
             temp *= AttackRange;
 
-            temp += PlayerLastLocation;
+            temp += state.PlayerLastLocation;
 
-            
 
             agent.SetDestination(temp);
 
-            if(SeePlayer == false)
+            if (state.SeePlayer == false)
             {
                 //AlertText.text = " ";
 
-                if (Vector3.Distance(transform.position, PlayerLastLocation) < ChaseSpeed * Time.deltaTime && pausing == false)
+                if (Vector3.Distance(transform.position, state.PlayerLastLocation) < ChaseSpeed * Time.deltaTime &&
+                    state.Pausing == false)
                 {
-                    pausing = true;
-
+                    state.Pausing = true;
                 }
-                else if(pausing == true)
+                else if (state.Pausing == true)
                 {
                     ChasePause -= Time.deltaTime;
 
@@ -206,30 +172,26 @@ public class BasicEnemyMovement : MonoBehaviour
 
                         agent.updateRotation = true;
 
-                        pausing = false;
-                        chasing = false;
-
+                        state.Pausing = false;
+                        state.Chasing = false;
                     }
-
                 }
             }
-
         }
         else
         {
-            if (Alerted == true)
+            if (state.Alerted == true)
             {
                 AlertText.text = "!";
                 agent.speed = ChaseSpeed;
-                agent.SetDestination(AlertLoc);
+                agent.SetDestination(state.AlertLoc);
                 agent.updateRotation = true;
 
-                if (Vector3.Distance(transform.position, AlertLoc) < ChaseSpeed * Time.deltaTime && pausing == false)
+                if (Vector3.Distance(transform.position, state.AlertLoc) < ChaseSpeed * Time.deltaTime && state.Pausing == false)
                 {
-
-                    pausing = true;
+                    state.Pausing = true;
                 }
-                else if (pausing == true)
+                else if (state.Pausing == true)
                 {
                     ChasePause -= Time.deltaTime;
 
@@ -241,13 +203,10 @@ public class BasicEnemyMovement : MonoBehaviour
 
                         agent.updateRotation = true;
 
-                        pausing = false;
-                        Alerted = false;
-
+                        state.Pausing = false;
+                        state.Alerted = false;
                     }
-
                 }
-
             }
             else
             {
@@ -260,11 +219,12 @@ public class BasicEnemyMovement : MonoBehaviour
 
                 //transform.LookAt(PatrolPoints[PBookmark], Vector3.up);
 
-                if (Vector3.Distance(transform.position, PatrolPoints[PBookmark]) < PatrolSpeed * Time.deltaTime && pausing == false)
+                if (Vector3.Distance(transform.position, PatrolPoints[PBookmark]) < PatrolSpeed * Time.deltaTime &&
+                    state.Pausing == false)
                 {
-                    pausing = true;
+                    state.Pausing = true;
                 }
-                else if (pausing == true)
+                else if (state.Pausing == true)
                 {
                     PatrolPause -= Time.deltaTime;
                     if (PatrolPause <= 0)
@@ -275,38 +235,11 @@ public class BasicEnemyMovement : MonoBehaviour
                         {
                             PBookmark = 0;
                         }
-                        pausing = false;
 
+                        state.Pausing = false;
                     }
                 }
             }
         }
     }
-
-    private void UpdateAnimator()
-    {
-        if (animator != null)
-        {
-            animator.SetBool("Alerted", Alerted);
-            animator.SetBool("Attacking", Attacking);
-            animator.SetBool("SeePlayer", SeePlayer);
-        }
-    }
-
-    public void Alert(Vector3 Location, float h)
-    {
-        Alerted = true;
-        AlertLoc = Location;
-
-        AlertLoc.y -= h;
-        AlertLoc.y += height;
-
-    }
-
-    public void SetAttackDuration(float D)
-    {
-        AttackDuration = D;
-        ADreset = AttackDuration;
-    }
-
 }

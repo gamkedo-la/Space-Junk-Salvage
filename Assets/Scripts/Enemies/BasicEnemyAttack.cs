@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class BasicEnemyAttack : MonoBehaviour
 {
-
     public GameObject HitBox;
 
     public Transform hitboxLocation;
@@ -30,44 +29,42 @@ public class BasicEnemyAttack : MonoBehaviour
     void Start()
     {
         fullTime = WindUp + Active + Ending;
-
-        BroadcastMessage("SetAttackDuration", (WindUp + Active + Ending));
     }
 
-    // Update is called once per frame
-    void Update()
+    public void CheckAttack(EnemyState state)
     {
-        if(attacking == true)
+        if (attacking)
         {
             timer -= Time.deltaTime;
 
-
-            if(A == false)
+            if (A == false)
             {
                 A = true;
-                GameObject H = Instantiate(HitBox, hitboxLocation.position + (Vector3.up * 1.5f), Quaternion.identity, transform);
-                H.GetComponent<BasicEnemyHitbox>().ActiveTime = Active;
-                H.GetComponent<BasicEnemyHitbox>().windup = WindUp;
-                H.GetComponent<BasicEnemyHitbox>().Damage = Damage;
-                H.GetComponent<BasicEnemyHitbox>().Anchor = hitboxLocation;
-                H.GetComponent<BasicEnemyHitbox>().Timer = WindUp + Active;
-                H.GetComponent<BasicEnemyHitbox>().KnockbackPower = KnockbackStrength;
-                H.GetComponent<BasicEnemyHitbox>().Owner = transform;
+                GameObject H = Instantiate(HitBox, hitboxLocation.position + (Vector3.up * 1.5f), Quaternion.identity,
+                    transform);
+                var basicEnemyHitbox = H.GetComponent<BasicEnemyHitbox>();
+                basicEnemyHitbox.ActiveTime = Active;
+                basicEnemyHitbox.windup = WindUp;
+                basicEnemyHitbox.Damage = Damage;
+                basicEnemyHitbox.Anchor = hitboxLocation;
+                basicEnemyHitbox.Timer = WindUp + Active;
+                basicEnemyHitbox.KnockbackPower = KnockbackStrength;
+                basicEnemyHitbox.Owner = transform;
             }
 
-            if(timer <= 0)
+            if (timer <= 0)
             {
                 attacking = false;
-                GetComponent<BasicEnemyMovement>().Attacking = false;
+                state.Attacking = false;
             }
-
         }
-
-
-
+        else if (state.Attacking)
+        {
+            Attack();
+        }
     }
 
-    public void Attack()
+    private void Attack()
     {
         timer = fullTime;
         W = true;

@@ -31,7 +31,7 @@ public class AlertEvent : MonoBehaviour
 
         foreach(GameObject E in AlertedEnemies)
         {
-            E.GetComponent<BasicEnemyMovement>().Alert(transform.position, height);
+            E.GetComponent<EnemyBrain>().Alert(transform.position, height);
         }
 
         Destroy(gameObject);

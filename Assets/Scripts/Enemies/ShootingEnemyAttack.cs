@@ -26,15 +26,7 @@ public class ShootingEnemyAttack : MonoBehaviour
 
     public float bulletSpeed;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-        BroadcastMessage("SetAttackDuration", AfterShotPause);
-    }
-
-    // Update is called once per frame
-    void Update()
+    public void CheckAttack(EnemyState state)
     {
         if (attacking == true)
         {
@@ -52,16 +44,17 @@ public class ShootingEnemyAttack : MonoBehaviour
             if (timer <= 0)
             {
                 attacking = false;
-                GetComponent<BasicEnemyMovement>().Attacking = false;
+                state.Attacking = false;
             }
 
         }
-
-
-
+        else if (state.Attacking == true)
+        {
+            Attack();
+        }
     }
 
-    public void Attack()
+    private void Attack()
     {
         timer = AfterShotPause;
         W = true;

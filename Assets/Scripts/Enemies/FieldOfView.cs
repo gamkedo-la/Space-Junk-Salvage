@@ -15,17 +15,11 @@ public class FieldOfView : MonoBehaviour
 
     public GameObject Player;
 
-    public bool CanSeePlayer = false;
-
     public Vector3 DirectionToPlayer;
-
-    public BasicEnemyMovement movement;
 
     private void Start()
     {
         Player = GameObject.FindGameObjectWithTag("Player");
-        GetComponent<BasicEnemyMovement>().Player = Player;
-        movement = GetComponent<BasicEnemyMovement>();
     }
 
     public Vector3 DirectionFromAngle(float AngleInDesgrees, bool AngleInsGlobal)
@@ -39,12 +33,12 @@ public class FieldOfView : MonoBehaviour
 
     }
 
-    private void Update()
+    public void LookForPlayer(EnemyState state)
     {
-        CanSeePlayer = false;
-        movement.SeePlayer = false;
-
-        if (Vector3.Distance(transform.position, Player.transform.position) < PeripheralRadius)
+        state.SeePlayer = false;
+        var distanceToPlayer = Vector3.Distance(transform.position, Player.transform.position);
+        
+        if (distanceToPlayer < PeripheralRadius)
         {
             DirectionToPlayer = (Player.transform.position - transform.position).normalized;
 
@@ -53,20 +47,18 @@ public class FieldOfView : MonoBehaviour
                 RaycastHit raycastHit;
                 bool didHit = Physics.Raycast(transform.position, DirectionToPlayer, out raycastHit, PeripheralRadius);
 
-                if (didHit == true && raycastHit.collider.gameObject.tag == "Player")
+                if (didHit == true && raycastHit.collider.gameObject.CompareTag("Player"))
                 {
                     if (Mathf.Abs(raycastHit.collider.transform.position.y - transform.position.y) <= 1.3)
                     {
-
-                        CanSeePlayer = true;
-                        movement.SeePlayer = true;
-                        movement.PlayerLastLocation = Player.transform.position;
+                        state.SeePlayer = true;
+                        state.PlayerLastLocation = Player.transform.position;
+                        state.Player = Player;
                     }
                 }
             }
-
         }
-        else if (Vector3.Distance(transform.position, Player.transform.position) < ViewRadius)
+        else if (distanceToPlayer < ViewRadius)
         {
             DirectionToPlayer = (Player.transform.position - transform.position).normalized;
 
@@ -75,15 +67,13 @@ public class FieldOfView : MonoBehaviour
                 RaycastHit raycastHit;
                 bool didHit = Physics.Raycast(transform.position, DirectionToPlayer, out raycastHit, ViewRadius);
 
-                if(didHit == true && raycastHit.collider.gameObject.tag == "Player")
+                if (didHit == true && raycastHit.collider.gameObject.CompareTag("Player"))
                 {
-                    CanSeePlayer = true;
-                    movement.SeePlayer = true;
-                    movement.PlayerLastLocation = Player.transform.position;
+                    state.SeePlayer = true;
+                    state.PlayerLastLocation = Player.transform.position;
+                    state.Player = Player;
                 }
             }
         }
-
     }
-
 }

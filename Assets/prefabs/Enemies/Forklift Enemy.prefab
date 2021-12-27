@@ -49,6 +49,9 @@ GameObject:
   - component: {fileID: 1784068949577753186}
   - component: {fileID: 3253939897027791152}
   - component: {fileID: 5283264511831119580}
+  - component: {fileID: 2094967001646389127}
+  - component: {fileID: 2638519669969005929}
+  - component: {fileID: 4788857574760276967}
   m_Layer: 12
   m_Name: Forklift Enemy
   m_TagString: Enemy
@@ -142,9 +145,7 @@ MonoBehaviour:
   PeripheralRadius: 4
   PeripheralAngle: 170
   Player: {fileID: 0}
-  CanSeePlayer: 0
   DirectionToPlayer: {x: 0, y: 0, z: 0}
-  movement: {fileID: 3025403255403515674}
 --- !u!114 &3025403255403515674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,29 +159,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 3025403255403515675}
-  SeePlayer: 0
   PatrolPoints:
   - {x: -8, y: 1.583333, z: 0}
   - {x: -8, y: 1.583333, z: 5}
   PatrolSpeed: 2
   ChaseSpeed: 3.5
   PatrolPause: 1
-  pausing: 0
   ChasePause: 1.5
-  chasing: 0
-  PlayerLastLocation: {x: 0, y: 0, z: 0}
-  Attacking: 0
   AttackRange: 1
-  Player: {fileID: 0}
   myHealth: {fileID: 3025403255403515678}
   GetHitStunTimer: 1
   BSC: {fileID: 1784068949577753186}
   hitstun: 0
   AlertText: {fileID: 8017001202633188989}
-  Alerted: 0
   AlertLoc: {x: 0, y: 0, z: 0}
   height: 1
   animator: {fileID: 8947276605382225931}
+  state: {fileID: 0}
 --- !u!195 &3025403255403515675
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -258,7 +253,7 @@ MonoBehaviour:
   noLongerSeePlayerSound: {fileID: 8300000, guid: 3ce0bb81658914d838b505591af881a1,
     type: 3}
   attackSound: {fileID: 8300000, guid: a575ba37fa96c452ab13583b231de535, type: 3}
-  stateProvider: {fileID: 8947276605382225931}
+  noLongerAttackSound: {fileID: 0}
 --- !u!82 &5283264511831119580
 AudioSource:
   m_ObjectHideFlags: 0
@@ -355,6 +350,113 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2094967001646389127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3025403255403515648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b69d9ee29175440db4dee74460bc86f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 8947276605382225931}
+--- !u!114 &2638519669969005929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3025403255403515648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba02ed695201483a94b8e2ecd684a154, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Alerted: 0
+  SeePlayer: 0
+  Attacking: 0
+  Chasing: 0
+  Pausing: 0
+  PlayerLastLocation: {x: 0, y: 0, z: 0}
+  Player: {fileID: 0}
+--- !u!114 &4788857574760276967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3025403255403515648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6cc08c0a71c494999b5d8a4f7a1206c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  behaviours:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3025403255403515673}
+        m_TargetAssemblyTypeName: FieldOfView, Assembly-CSharp
+        m_MethodName: LookForPlayer
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3025403255403515674}
+        m_TargetAssemblyTypeName: BasicEnemyMovement, Assembly-CSharp
+        m_MethodName: Move
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4947114656754376067}
+        m_TargetAssemblyTypeName: BasicEnemyAttack, Assembly-CSharp
+        m_MethodName: CheckAttack
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3253939897027791152}
+        m_TargetAssemblyTypeName: EnemySoundEffects, Assembly-CSharp
+        m_MethodName: PlaySounds
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2094967001646389127}
+        m_TargetAssemblyTypeName: EnemyAnimatorStateUpdater, Assembly-CSharp
+        m_MethodName: UpdateAnimator
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3219315070501298683
 GameObject:
   m_ObjectHideFlags: 0
