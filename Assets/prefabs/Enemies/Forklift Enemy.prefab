@@ -172,10 +172,6 @@ MonoBehaviour:
   BSC: {fileID: 1784068949577753186}
   hitstun: 0
   AlertText: {fileID: 8017001202633188989}
-  AlertLoc: {x: 0, y: 0, z: 0}
-  height: 1
-  animator: {fileID: 8947276605382225931}
-  state: {fileID: 0}
 --- !u!195 &3025403255403515675
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -252,7 +248,7 @@ MonoBehaviour:
   seePlayerSound: {fileID: 8300000, guid: 4d6aa7d4714d7498688c4ce6bbdce92d, type: 3}
   noLongerSeePlayerSound: {fileID: 8300000, guid: 3ce0bb81658914d838b505591af881a1,
     type: 3}
-  attackSound: {fileID: 8300000, guid: a575ba37fa96c452ab13583b231de535, type: 3}
+  attackSound: {fileID: 8300000, guid: 655da6c4ac853d9448b1540ef781f1ae, type: 3}
   noLongerAttackSound: {fileID: 0}
 --- !u!82 &5283264511831119580
 AudioSource:
@@ -266,7 +262,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.75
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -380,7 +376,9 @@ MonoBehaviour:
   Attacking: 0
   Chasing: 0
   Pausing: 0
+  Retreating: 0
   PlayerLastLocation: {x: 0, y: 0, z: 0}
+  AlertLoc: {x: 0, y: 0, z: 0}
   Player: {fileID: 0}
 --- !u!114 &4788857574760276967
 MonoBehaviour:

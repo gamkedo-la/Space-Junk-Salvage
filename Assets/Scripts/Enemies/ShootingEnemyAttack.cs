@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -26,6 +27,22 @@ public class ShootingEnemyAttack : MonoBehaviour
 
     public float bulletSpeed;
 
+    public MeshRenderer laserCoilMeshRenderer;
+
+    private Color _emissionColor;
+    private readonly Color _noEmissionColor = Color.black;
+    private static readonly int EmissionColor = Shader.PropertyToID("_EmissionColor");
+
+    private void Start()
+    {
+        if (laserCoilMeshRenderer != null)
+        {
+            var material = laserCoilMeshRenderer.material;
+            _emissionColor = material.GetColor(EmissionColor);
+            SetEmission(material, 0);
+        }
+    }
+
     public void CheckAttack(EnemyState state)
     {
         if (attacking == true)
@@ -38,7 +55,11 @@ public class ShootingEnemyAttack : MonoBehaviour
                 A = true;
                 GameObject B = Instantiate(Bullet, Gun.position, Gun.rotation);
                 B.GetComponent<EnemyBullet>().SetParameters(Damage, bulletSpeed, KnockbackStrength, bulletLife);
-                
+            }
+
+            if (laserCoilMeshRenderer != null)
+            {
+                SetEmission(laserCoilMeshRenderer.material, Mathf.Clamp01(timer / AfterShotPause));
             }
 
             if (timer <= 0)
@@ -46,7 +67,6 @@ public class ShootingEnemyAttack : MonoBehaviour
                 attacking = false;
                 state.Attacking = false;
             }
-
         }
         else if (state.Attacking == true)
         {
@@ -61,5 +81,10 @@ public class ShootingEnemyAttack : MonoBehaviour
         A = false;
         E = false;
         attacking = true;
+    }
+
+    private void SetEmission(Material material, float fraction)
+    {
+        material.SetColor(EmissionColor, Vector4.Lerp(_noEmissionColor, _emissionColor, fraction));
     }
 }
