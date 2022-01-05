@@ -8,6 +8,8 @@ public class WallManager : MonoBehaviour
 
     public GameObject WallSegmentPrefab;
 
+    public int Side;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,11 +31,15 @@ public class WallManager : MonoBehaviour
             if(Segments[i] == null)
             {
                 Segments[i] = Instantiate(WallSegmentPrefab, transform);
-                Segments[i].name = (i+1).ToString();
+
+                if(Side == 1 || Side == 2)
+                {
+                    Segments[i].GetComponent<MeshRenderer>().enabled = false;
+                }
             }
 
 
-
+            Segments[i].name = (i + 1).ToString();
             Segments[i].transform.localPosition = V;
             Segments[i].transform.localEulerAngles = new Vector3(0, 90, 0);
 

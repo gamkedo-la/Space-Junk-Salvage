@@ -16,8 +16,9 @@ public class RoomManager : MonoBehaviour
     public int LengthX = 1;
     public int LengthZ = 1;
 
-
+    [SerializeField]
     private int LastSizeX = 0;
+    [SerializeField]
     private int LastSizeZ = 0;
 
 
@@ -172,7 +173,7 @@ public class RoomManager : MonoBehaviour
             w.PlaceSegments();
         }
 
-        Vector3 C = new Vector3(-(LengthX * 3) - 0.5f, 2.5f, (LengthZ * 3) + 0.5f);
+        Vector3 C = new Vector3(-(LengthX * 3) - 0.5f, 3f, (LengthZ * 3) + 0.5f);
         Corner.transform.localPosition = C;
 
         Floor.transform.localPosition = new Vector3(-(LengthX * 3), 0, (LengthZ * 3));
