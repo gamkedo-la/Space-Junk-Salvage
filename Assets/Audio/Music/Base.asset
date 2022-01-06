@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09f91c9a21419084c87086171417ab08, type: 3}
+  m_Name: Base
+  m_EditorClassIdentifier: 
+  musicStems:
+  - musicStem: {fileID: 8300000, guid: 27c3fcea31634c64e8049fd320e7111a, type: 3}
+    loopingAsset: 0
+    bpm: 120
+    endTime: 8
+    outTimes: []
+    fadeTime: 4
+  - musicStem: {fileID: 8300000, guid: 27c3fcea31634c64e8049fd320e7111a, type: 3}
+    loopingAsset: 0
+    bpm: 120
+    endTime: 8
+    outTimes: []
+    fadeTime: 4
+  - musicStem: {fileID: 8300000, guid: 27c3fcea31634c64e8049fd320e7111a, type: 3}
+    loopingAsset: 0
+    bpm: 120
+    endTime: 8
+    outTimes:
+    - 4
+    fadeTime: 4
+  - musicStem: {fileID: 8300000, guid: db44286fbac03a64ca47e5d8409b9239, type: 3}
+    loopingAsset: 0
+    bpm: 120
+    endTime: 8
+    outTimes: []
+    fadeTime: 4

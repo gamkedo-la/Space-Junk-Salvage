@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09f91c9a21419084c87086171417ab08, type: 3}
+  m_Name: Ring2
+  m_EditorClassIdentifier: 
+  musicStems:
+  - musicStem: {fileID: 8300000, guid: c959402150ddff24aa539c2af203de8e, type: 3}
+    loopingAsset: 0
+    bpm: 120
+    endTime: 24
+    outTimes:
+    - 4
+    - 8
+    - 16
+    - 20
+    fadeTime: 2
+  - musicStem: {fileID: 8300000, guid: c959402150ddff24aa539c2af203de8e, type: 3}
+    loopingAsset: 0
+    bpm: 120
+    endTime: 24
+    outTimes:
+    - 4
+    - 8
+    - 12
+    - 16
+    - 20
+    fadeTime: 4
+  - musicStem: {fileID: 8300000, guid: c959402150ddff24aa539c2af203de8e, type: 3}
+    loopingAsset: 0
+    bpm: 120
+    endTime: 24
+    outTimes:
+    - 4
+    - 8
+    - 16
+    - 20
+    fadeTime: 4
+  - musicStem: {fileID: 8300000, guid: 7ecd3560a18d64e489a8262485b5c54a, type: 3}
+    loopingAsset: 0
+    bpm: 120
+    endTime: 48
+    outTimes:
+    - 4
+    - 8
+    - 16
+    - 20
+    - 28
+    - 32
+    - 40
+    - 44
+    fadeTime: 4
+  - musicStem: {fileID: 8300000, guid: 4921f914d86f19d4880c888de9636469, type: 3}
+    loopingAsset: 0
+    bpm: 120
+    endTime: 32
+    outTimes:
+    - 8
+    - 12
+    - 24
+    - 28
+    fadeTime: 4

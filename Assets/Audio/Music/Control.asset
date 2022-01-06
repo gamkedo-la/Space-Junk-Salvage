@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09f91c9a21419084c87086171417ab08, type: 3}
+  m_Name: Control
+  m_EditorClassIdentifier: 
+  musicStems:
+  - musicStem: {fileID: 8300000, guid: c3680f9360cff824fa0255a205c0ef8e, type: 3}
+    loopingAsset: 0
+    bpm: 120
+    endTime: 12
+    outTimes:
+    - 1.5
+    - 2
+    - 3.5
+    - 5
+    - 6
+    - 7.5
+    - 8
+    - 9.5
+    - 11
+    fadeTime: 2
+  - musicStem: {fileID: 8300000, guid: 5063086556d9e944db3027b6d5863970, type: 3}
+    loopingAsset: 0
+    bpm: 120
+    endTime: 12
+    outTimes:
+    - 1.5
+    - 2
+    - 3.5
+    - 5
+    - 6
+    - 7.5
+    - 8
+    - 9.5
+    - 11
+    fadeTime: 2
+  - musicStem: {fileID: 8300000, guid: b1d9775feade00040b5dd93990794433, type: 3}
+    loopingAsset: 0
+    bpm: 120
+    endTime: 12
+    outTimes:
+    - 1.5
+    - 3
+    - 5
+    - 6
+    - 7.5
+    - 9
+    - 11
+    fadeTime: 2
+  - musicStem: {fileID: 8300000, guid: b3c08ab2c87769740ae4bb12fa726700, type: 3}
+    loopingAsset: 0
+    bpm: 120
+    endTime: 24
+    outTimes:
+    - 2.5
+    - 6
+    - 8.5
+    - 12
+    - 14.5
+    - 18
+    - 20.5
+    fadeTime: 2
