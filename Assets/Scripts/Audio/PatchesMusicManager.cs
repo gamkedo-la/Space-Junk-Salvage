@@ -74,7 +74,7 @@ public class PatchesMusicManager : MonoBehaviour {
 			}
 		}
 		if (currentTime >= nextOutTime - lookAhead) {
-			if (cueNewPool) {
+			if (cueNewPool && ! IsTrackInActivePool(activeTrack.musicStem)) {
 				FadeCurrentTrack(nextOutTime - currentTime);
 				PlayNewTrack(nextOutTime - currentTime);
 				SetNextOutTime();
@@ -174,6 +174,14 @@ public class PatchesMusicManager : MonoBehaviour {
 
 	private PatchesMusicTrack ReturnNewTrack() {
 		return activePool.musicStems[Random.Range(0,activePool.musicStems.Length)];
+	}
+
+	private bool IsTrackInActivePool(AudioClip clip) {
+		foreach(PatchesMusicTrack track in activePool.musicStems) {
+			if (track.musicStem == clip) return true;
+		}
+
+		return false;
 	}
 
 	private void SetNextEndTime() {

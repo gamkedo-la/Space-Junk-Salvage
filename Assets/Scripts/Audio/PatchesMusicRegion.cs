@@ -8,7 +8,7 @@ public class PatchesMusicRegion : MonoBehaviour {
 	private bool stopMusicOnTriggerExit = false;
 	private float fadeTime = 2f;
 
-	private bool hardOutOnTriggerEnter = false;
+	public bool hardOutOnTriggerEnter = false;
 	private bool hardOutOnTriggerExit = false;
 
 	public PatchesMusicPool pool;

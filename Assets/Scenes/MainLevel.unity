@@ -17148,6 +17148,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 3516c1f0ff504ee45a3c280b0044f90c,
         type: 2}
+    - target: {fileID: 1252740058495631919, guid: 0c0f4d436f99edd42a78fd6493f9548f,
+        type: 3}
+      propertyPath: hardOutOnTriggerEnter
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2381996454628838708, guid: 0c0f4d436f99edd42a78fd6493f9548f,
         type: 3}
       propertyPath: m_Name
@@ -30319,6 +30324,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 3516c1f0ff504ee45a3c280b0044f90c,
         type: 2}
+    - target: {fileID: 1252740058495631919, guid: 0c0f4d436f99edd42a78fd6493f9548f,
+        type: 3}
+      propertyPath: hardOutOnTriggerEnter
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2381996454628838708, guid: 0c0f4d436f99edd42a78fd6493f9548f,
         type: 3}
       propertyPath: m_Name
