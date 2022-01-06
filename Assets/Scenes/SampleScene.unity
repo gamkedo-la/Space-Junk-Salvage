@@ -17627,6 +17627,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6531335060015089788, guid: 72f7141410ed9c547a4347dd2b8e0e2e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.0829997
+      objectReference: {fileID: 0}
+    - target: {fileID: 6531335060015089788, guid: 72f7141410ed9c547a4347dd2b8e0e2e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.49400002
+      objectReference: {fileID: 0}
+    - target: {fileID: 7114738846123692244, guid: 72f7141410ed9c547a4347dd2b8e0e2e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.083
+      objectReference: {fileID: 0}
+    - target: {fileID: 7114738846123692244, guid: 72f7141410ed9c547a4347dd2b8e0e2e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.494
+      objectReference: {fileID: 0}
     - target: {fileID: 8118113725800280130, guid: 72f7141410ed9c547a4347dd2b8e0e2e,
         type: 3}
       propertyPath: PatrolPoints.Array.data[0].x
