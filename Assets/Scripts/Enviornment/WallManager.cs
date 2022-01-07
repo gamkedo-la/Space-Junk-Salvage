@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 public class WallManager : MonoBehaviour
 {
@@ -24,6 +25,7 @@ public class WallManager : MonoBehaviour
 
     public void PlaceSegments()
     {
+        EditorUtility.SetDirty(this);
         Vector3 V = new Vector3(0, 0, 3);
         
         for(int i = 0; i< Segments.Length; i++)

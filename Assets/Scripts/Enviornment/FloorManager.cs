@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 public class FloorManager : MonoBehaviour
 {
@@ -39,7 +40,7 @@ public class FloorManager : MonoBehaviour
 
     public void UpdateFloorSize(int nX, int nZ)
     {
-
+        EditorUtility.SetDirty(this);
 
         if (cX > nX)
         {

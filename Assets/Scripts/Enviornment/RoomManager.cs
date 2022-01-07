@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 public class RoomManager : MonoBehaviour
 {
@@ -38,6 +39,7 @@ public class RoomManager : MonoBehaviour
 
     public void UpdateSize()
     {
+        EditorUtility.SetDirty(this);
 
         Walls[0].transform.localPosition = new Vector3(-(3 * LengthX), 0, (3 * LengthZ) + 0.5f);
 

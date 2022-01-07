@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using UnityEditor.SceneManagement;
+using UnityEngine.SceneManagement;
 
 [CustomEditor(typeof(RoomManager))]
 public class RoomManagerEditor : Editor
@@ -16,6 +18,7 @@ public class RoomManagerEditor : Editor
         {
             myRoomManager.UpdateSize();
             EditorUtility.SetDirty(myRoomManager);
+            EditorSceneManager.MarkSceneDirty(SceneManager.GetActiveScene());
         }
     }
 }
