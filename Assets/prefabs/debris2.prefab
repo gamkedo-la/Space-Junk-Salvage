@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2619908049109598286}
   - component: {fileID: 270003997539939460}
   - component: {fileID: 1476805285337607331}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: debris2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
