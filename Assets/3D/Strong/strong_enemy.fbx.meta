@@ -19,6 +19,16 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Furnace
     second: {fileID: 2100000, guid: 658c857ea4f491a4e917de53e01aba43, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Treads
+    second: {fileID: 2100000, guid: a3e482dc4fedad7498cb95a3b389cd92, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: default_material
+    second: {fileID: 2100000, guid: b9c5282740fe9be4fb796e9d44a32638, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
