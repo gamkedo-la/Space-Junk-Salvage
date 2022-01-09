@@ -17,9 +17,9 @@ public class RoomManager : MonoBehaviour
     public int LengthX = 1;
     public int LengthZ = 1;
 
-    [SerializeField]
+    //[SerializeField]
     private int LastSizeX = 0;
-    [SerializeField]
+    //[SerializeField]
     private int LastSizeZ = 0;
 
 

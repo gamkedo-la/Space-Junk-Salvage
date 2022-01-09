@@ -471,6 +471,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21e89cc4c977fcd42a8e59bdc2acef15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hardOutOnTriggerEnter: 0
   pool: {fileID: 11400000, guid: 1fd74a8d79c767e48a964e84751e3a7c, type: 2}
   layers:
     serializedVersion: 2
