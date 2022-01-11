@@ -9,6 +9,8 @@ public class DoorEndpoint : MonoBehaviour
 
     public Transform myDoorThreshold;
 
+    public GameObject Room;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +37,10 @@ public class DoorEndpoint : MonoBehaviour
             else
             {
                 other.gameObject.GetComponent<PlayerMovement>().OtherRoom = myDoorThreshold;
+                if(Room.GetComponent<EnemySpawner>() != null)
+                {
+                    Room.GetComponent<EnemySpawner>().SpawnEnemies();
+                }
             }
 
         }

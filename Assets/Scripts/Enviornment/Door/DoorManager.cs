@@ -8,12 +8,16 @@ public class DoorManager : MonoBehaviour
 
     public DoorManager other;
 
+    public GameObject MyRoom;
+
     // Start is called before the first frame update
     void Start()
     {
         LinkDoors();
 
         myEndPoint.name = gameObject.name + " endpoint";
+
+        myEndPoint.GetComponent<DoorEndpoint>().Room = MyRoom;
     }
 
     // Update is called once per frame

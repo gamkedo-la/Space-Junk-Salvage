@@ -49,6 +49,11 @@ public class RoomManager : MonoBehaviour
 
         Walls[3].transform.localPosition = new Vector3(-((3 * LengthX) + 0.5f), 0, -(3 * LengthZ));
 
+        foreach(WallManager W in Walls)
+        {
+            W.Room = gameObject;
+        }
+
 
         for (int i = 0; i < Walls.Length; i++)
         {

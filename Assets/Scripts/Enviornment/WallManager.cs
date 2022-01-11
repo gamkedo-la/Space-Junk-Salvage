@@ -11,6 +11,8 @@ public class WallManager : MonoBehaviour
 
     public int Side;
 
+    public GameObject Room;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -54,6 +56,8 @@ public class WallManager : MonoBehaviour
 
                 Segments[i].transform.localPosition = T;
                 Segments[i].transform.localEulerAngles = new Vector3(0, 90, 0);
+
+                Segments[i].GetComponent<DoorManager>().MyRoom = Room;
             }
 
 
