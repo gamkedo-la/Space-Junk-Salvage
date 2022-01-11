@@ -70,7 +70,12 @@ PrefabInstance:
     - target: {fileID: 5435279955703003329, guid: 5151988622e392440ab039c5170bf4ca,
         type: 3}
       propertyPath: m_Name
-      value: Raised floor (5)
+      value: Raised floor (5) Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 5435279955703003329, guid: 5151988622e392440ab039c5170bf4ca,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5151988622e392440ab039c5170bf4ca, type: 3}
