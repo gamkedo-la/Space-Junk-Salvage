@@ -18,9 +18,7 @@ MonoBehaviour:
     bpm: 60
     endTime: 24
     outTimes:
-    - 4
     - 8
-    - 16
     - 20
     fadeTime: 2
   - musicStem: {fileID: 8300000, guid: c959402150ddff24aa539c2af203de8e, type: 3}
@@ -49,13 +47,9 @@ MonoBehaviour:
     bpm: 60
     endTime: 48
     outTimes:
-    - 4
     - 8
-    - 16
     - 20
-    - 28
     - 32
-    - 40
     - 44
     fadeTime: 4
   - musicStem: {fileID: 8300000, guid: 4921f914d86f19d4880c888de9636469, type: 3}
@@ -63,8 +57,6 @@ MonoBehaviour:
     bpm: 120
     endTime: 32
     outTimes:
-    - 8
     - 12
-    - 24
     - 28
     fadeTime: 4
