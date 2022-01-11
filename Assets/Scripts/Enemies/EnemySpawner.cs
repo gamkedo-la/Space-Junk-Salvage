@@ -4,13 +4,25 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public List<GameObject> LivingEnemies;
-    public List<SpawnPoint> spawnPoints;
+    public List<GameObject> ThisRoomEnemies;
+
+    private List<GameObject> LivingEnemies;
+    private List<SpawnPoint> spawnPoints;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        foreach(GameObject e in ThisRoomEnemies)
+        {
+            SpawnPoint sp = new SpawnPoint
+            {
+                Enemy = e,
+                P = e.transform.position
+            };
+
+            spawnPoints.Add(sp);
+        }
     }
 
     // Update is called once per frame
@@ -19,18 +31,24 @@ public class EnemySpawner : MonoBehaviour
 
     }
 
+
+
     public void SpawnEnemies()
     {
         foreach(GameObject e in LivingEnemies)
         {
+
             Destroy(e);
+            
         }
+        LivingEnemies.Clear();
+
 
         foreach(SpawnPoint sp in spawnPoints)
         {
 
-            Instantiate(sp.Enemy, sp.P.position, Quaternion.identity);
-
+            GameObject A = Instantiate(sp.Enemy, sp.P, Quaternion.identity);
+            LivingEnemies.Add(A);
         }
 
 
@@ -40,7 +58,7 @@ public class EnemySpawner : MonoBehaviour
     public struct SpawnPoint
     {
         public GameObject Enemy;
-        public Transform P;
+        public Vector3 P;
     }
 
 }
