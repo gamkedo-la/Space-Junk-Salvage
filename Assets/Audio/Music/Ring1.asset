@@ -27,7 +27,6 @@ MonoBehaviour:
     endTime: 16
     outTimes:
     - 4
-    - 8
     - 12
     fadeTime: 4
   - musicStem: {fileID: 8300000, guid: ccfddbcfcc5f12e45aa3798aa2c1cf12, type: 3}

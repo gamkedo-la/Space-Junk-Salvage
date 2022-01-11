@@ -34,6 +34,7 @@ public class PatchesMusicManager : MonoBehaviour {
 		} else {
 			Destroy(gameObject);
 		}
+		DontDestroyOnLoad(gameObject);
 	}
 
 	void Start () {
