@@ -22,6 +22,10 @@ public class EnemySpawner : MonoBehaviour
             };
 
             spawnPoints.Add(sp);
+
+            e.SetActive(false);
+
+            SpawnEnemies();
         }
     }
 
