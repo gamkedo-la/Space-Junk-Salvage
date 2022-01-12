@@ -67,15 +67,7 @@ public class PlayerMovement : MonoBehaviour
     bool MapOpen = false;
 
     public DashCooldownUI cool;
-
-    [Header("Animation parameters")]
-    [Tooltip("Player model animator")]
-    public Animator animator;
-    [Tooltip("Time to ramp up animation from idle to moving")]
-    public float movingDampTime = 0.05f;
-    [Tooltip("Time to ramp down animation from moving to idle")]
-    public float stoppingDampTime = 0.25f;
-    private static readonly int SpeedProperty = Animator.StringToHash("Speed");
+    public float MovementPercentage => V.magnitude / speed;
 
     // Start is called before the first frame update
     void Start()
@@ -106,28 +98,6 @@ public class PlayerMovement : MonoBehaviour
 
             t = 0;
         }
-    }
-
-    private void Update()
-    {
-        UpdateAnimatorProperties();
-    }
-
-    private void UpdateAnimatorProperties()
-    {
-        if (Moving)
-        {
-            animator.SetFloat(SpeedProperty, V.magnitude / speed, movingDampTime, Time.deltaTime);
-        }
-        else
-        {
-            animator.SetFloat(SpeedProperty, 0, stoppingDampTime, Time.deltaTime);
-        }
-    }
-
-    public void AnimateAttack()
-    {
-        animator.SetTrigger("Attacking");
     }
 
     private void FixedUpdate()

@@ -160,6 +160,7 @@ GameObject:
   - component: {fileID: 6946643208067930570}
   - component: {fileID: 6946643208067930571}
   - component: {fileID: 6946643208067930568}
+  - component: {fileID: 7874504865142919035}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -304,9 +305,6 @@ MonoBehaviour:
     type: 3}
   CanAttack: 1
   cool: {fileID: 0}
-  animator: {fileID: 8320664546678147018}
-  movingDampTime: 0.05
-  stoppingDampTime: 0.15
 --- !u!114 &6946643208067930564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -526,6 +524,25 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &7874504865142919035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6946643208067930589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b471a366adb4ccdaafe6669d42cf1de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyAlertRange: 5
+  movement: {fileID: 6946643208067930567}
+  attacks: {fileID: 6946643208067930564}
+  animator: {fileID: 8320664546678147018}
+  movingDampTime: 0.05
+  stoppingDampTime: 0.15
+  alertedDampTime: 0.5
 --- !u!1 &6946643208116947356
 GameObject:
   m_ObjectHideFlags: 0

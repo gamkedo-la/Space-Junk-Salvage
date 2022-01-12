@@ -156,8 +156,6 @@ public class PlayerAttacks : MonoBehaviour
                 Attacking = 1;
 
                 Timer = SwingTime;
-
-                GetComponent<PlayerMovement>().AnimateAttack();
             }
 
             if (Attacking == 1 && actionable == true && ActionQueued == 0)
