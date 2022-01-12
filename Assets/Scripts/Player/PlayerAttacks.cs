@@ -30,7 +30,7 @@ public class PlayerAttacks : MonoBehaviour
 
     bool StartAttack;
 
-    public GameObject SWORD;
+    public Sword SWORD;
 
     // Start is called before the first frame update
     void Start()
@@ -55,26 +55,29 @@ public class PlayerAttacks : MonoBehaviour
         {
             Timer -= Time.deltaTime;
         }
-        if(Timer <= ChainWindow && Attacking < 3)
+
+        if (Timer <= ChainWindow && Attacking < 3)
         {
             actionable = true;
         }
+
         if (Timer <= 0f && ActionQueued == 1)
         {
             Quaternion Q = transform.rotation;
 
             Q.eulerAngles += new Vector3(0, -Arc, 0);
-
+            /*
             SWORD = Instantiate(s, transform.position, Q, gameObject.transform);
             SWORD.GetComponent<Sword>().speed = -SwingSpeed;
             SWORD.GetComponent<Sword>().timer = SwingTime;
-            SWORD.GetComponent<Sword>().Combo = 2;
-            SWORD.GetComponent<Sword>().dam = damage;
             SWORD.GetComponent<Sword>().myPlayerAttacks = this;
+            */
 
+            SWORD.Combo = 2;
+            SWORD.dam = damage;
             if (DashCombo == true)
             {
-                SWORD.GetComponent<Sword>().DashAttack = true;
+                SWORD.DashAttack = true;
             }
 
             actionable = false;
@@ -87,18 +90,19 @@ public class PlayerAttacks : MonoBehaviour
 
         if (Timer <= 0f && ActionQueued == 2)
         {
-
             Quaternion Q = transform.rotation;
 
             Q.eulerAngles += new Vector3(0, Arc, 0);
 
+            /*
             SWORD = Instantiate(s, transform.position, Q, gameObject.transform);
             SWORD.GetComponent<Sword>().timer = EndSwingTime;
             SWORD.GetComponent<Sword>().speed = SwingSpeed;
-            SWORD.GetComponent<Sword>().Combo = 3;
-            SWORD.GetComponent<Sword>().dam = damage;
             SWORD.GetComponent<Sword>().myPlayerAttacks = this;
+            */
 
+            SWORD.Combo = 3;
+            SWORD.dam = damage;
             if (DashCombo == true)
             {
                 SWORD.GetComponent<Sword>().DashAttack = true;
@@ -110,9 +114,6 @@ public class PlayerAttacks : MonoBehaviour
             ActionQueued = 0;
 
             Timer = EndSwingTime;
-
-
-
         }
         else if (Timer <= 0f)
         {
@@ -124,10 +125,10 @@ public class PlayerAttacks : MonoBehaviour
 
         if (StartAttack == true)
         {
-
             StartAttack = false;
             if (Attacking == 0 && actionable == true && GetComponent<PlayerMovement>().CanAttack == true)
             {
+                /*
                 Quaternion Q = transform.rotation;
 
                 Q.eulerAngles += new Vector3(0, Arc, 0);
@@ -135,13 +136,14 @@ public class PlayerAttacks : MonoBehaviour
                 SWORD = Instantiate(s, transform.position, Q, gameObject.transform);
                 SWORD.GetComponent<Sword>().timer = SwingTime;
                 SWORD.GetComponent<Sword>().speed = SwingSpeed;
-                SWORD.GetComponent<Sword>().Combo = 1;
-                SWORD.GetComponent<Sword>().dam = damage;
                 SWORD.GetComponent<Sword>().myPlayerAttacks = this;
+                */
 
+                SWORD.Combo = 1;
+                SWORD.dam = damage;
                 if (DashAttackTimer > 0)
                 {
-                    SWORD.GetComponent<Sword>().DashAttack = true;
+                    SWORD.DashAttack = true;
                     DashCombo = true;
                 }
                 else
@@ -155,26 +157,19 @@ public class PlayerAttacks : MonoBehaviour
 
                 Timer = SwingTime;
 
-
-                
-
+                GetComponent<PlayerMovement>().AnimateAttack();
             }
+
             if (Attacking == 1 && actionable == true && ActionQueued == 0)
             {
-
                 ActionQueued = 1;
-             
-
             }
+
             if (Attacking == 2 && actionable == true)
             {
                 ActionQueued = 2;
-
             }
         }
-       
-
-
     }
 
     public void OnAttack()
@@ -184,7 +179,6 @@ public class PlayerAttacks : MonoBehaviour
 
     public void TakeDamage()
     {
-        Destroy(SWORD);
-        SWORD = null;
+        // TODO: Stop attacking when taking damage?
     }
 }

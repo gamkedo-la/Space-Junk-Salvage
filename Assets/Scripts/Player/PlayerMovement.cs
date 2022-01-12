@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -67,6 +68,15 @@ public class PlayerMovement : MonoBehaviour
 
     public DashCooldownUI cool;
 
+    [Header("Animation parameters")]
+    [Tooltip("Player model animator")]
+    public Animator animator;
+    [Tooltip("Time to ramp up animation from idle to moving")]
+    public float movingDampTime = 0.05f;
+    [Tooltip("Time to ramp down animation from moving to idle")]
+    public float stoppingDampTime = 0.25f;
+    private static readonly int SpeedProperty = Animator.StringToHash("Speed");
+
     // Start is called before the first frame update
     void Start()
     {
@@ -98,9 +108,28 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        UpdateAnimatorProperties();
+    }
 
+    private void UpdateAnimatorProperties()
+    {
+        if (Moving)
+        {
+            animator.SetFloat(SpeedProperty, V.magnitude / speed, movingDampTime, Time.deltaTime);
+        }
+        else
+        {
+            animator.SetFloat(SpeedProperty, 0, stoppingDampTime, Time.deltaTime);
+        }
+    }
 
-    // Update is called once per frame
+    public void AnimateAttack()
+    {
+        animator.SetTrigger("Attacking");
+    }
+
     private void FixedUpdate()
     {
         DashCooldown -= Time.deltaTime;

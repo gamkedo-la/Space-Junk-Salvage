@@ -89,10 +89,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
+  m_Radius: 0.754788
   m_Height: 2
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: -0.000000010020267, y: -0.3, z: -0.25478804}
 --- !u!54 &3025403255403515679
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -161,7 +161,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 3025403255403515675}
   PatrolPoints:
-  - {x: -8, y: 1.583333, z: 0}
+  - {x: -8, y: 1.583333, z: -0.0794529}
   - {x: -8, y: 1.583333, z: 5}
   PatrolSpeed: 2
   ChaseSpeed: 3.5

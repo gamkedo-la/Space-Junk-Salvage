@@ -1,12 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Sword : MonoBehaviour
 {
-    public float speed;
-
-    public float timer;
     float InternalChronometer;
 
     public int Combo;
@@ -17,46 +12,13 @@ public class Sword : MonoBehaviour
 
     public PlayerAttacks myPlayerAttacks;
 
-    // Start is called before the first frame update
-    void Start()
+    private void OnTriggerEnter(Collider other)
     {
-        Destroy(gameObject, timer);
-        InternalChronometer = timer;
-
-        dam += (int)(dam * (Combo-1) * .1f);
-
-        if(DashAttack == true)
+        // Check that dam > 0 to see that this is part of an attack and haven't already spent our damage
+        if (dam > 0 && other.gameObject.CompareTag("Enemy"))
         {
-            dam += (int)(dam * .3f);
+            other.gameObject.GetComponent<Health>().TakeDamage(dam);
+            dam = 0;
         }
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-        if (InternalChronometer > .2f)
-        {
-            transform.Rotate(Vector3.up, -speed * Time.deltaTime);
-        }
-        InternalChronometer -= Time.deltaTime;
-
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        Debug.Log("hit " + collision.gameObject.name);
-        if(collision.gameObject.tag == "Enemy")
-        {
-            collision.gameObject.GetComponent<Health>().TakeDamage(dam);
-
-        }
-
-    }
-
-    private void OnDestroy()
-    {
-        myPlayerAttacks.SWORD = null;
     }
 }

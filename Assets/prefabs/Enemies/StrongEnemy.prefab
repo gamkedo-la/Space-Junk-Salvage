@@ -10313,7 +10313,7 @@ MonoBehaviour:
   AttackRange: 2
   myHealth: {fileID: 8118113725800280134}
   GetHitStunTimer: 0
-  BSC: {fileID: 0}
+  BSC: {fileID: 4726378372354907450}
   hitstun: 0
   AlertText: {fileID: 3897633795728988453}
 --- !u!195 &8118113725800280131
