@@ -5,7 +5,11 @@ using UnityEngine.UI;
 
 public class ShowUIElement : MonoBehaviour
 {
-    public CanvasGroup CG;
+    public GameObject Buttons;
+    public GameObject NewWindow;
+
+    public Button myButton;
+    public Button NewWindowStart;
 
     // Start is called before the first frame update
     void Start()
@@ -21,18 +25,17 @@ public class ShowUIElement : MonoBehaviour
 
     public void Show()
     {
-        CG.alpha = 1;
-        CG.interactable = true;
-        CG.blocksRaycasts = true;
-
+        NewWindow.SetActive(true);
+        Buttons.SetActive(false);
+        NewWindowStart.Select();
 
     }
 
     public void Hide()
     {
-        CG.alpha = 0;
-        CG.interactable = false;
-        CG.blocksRaycasts = false;
+        NewWindow.SetActive(false);
+        Buttons.SetActive(true);
+        myButton.Select();
     }
 
 }
