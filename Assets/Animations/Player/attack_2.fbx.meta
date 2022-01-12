@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: 68f4ce1a5328dad48ab7f57e271b7d7a
+guid: 888b1f5ddf0c404488ddbe8a6783e2ac
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable:
   - first:
-      74: -5916649853471409691
-    second: attack_1
+      74: -839228454640597260
+    second: attack_2
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -21,8 +21,8 @@ ModelImporter:
     rigImportErrors: 
     rigImportWarnings: "Copied Avatar Rig Configuration mis-match. Bone length in
       copied configuration does not match position in animation file:\n\t'f_pointer1_l'
-      : position error = 1.357887 mm\n\t'f_big1_l' : position error = 1.595523 mm\n\t'f_big2_l'
-      : position error = 1.110492 mm\n\t'f_big3_l' : position error = 1.285107 mm\n"
+      : position error = 1.357807 mm\n\t'f_big1_l' : position error = 1.595347 mm\n\t'f_big2_l'
+      : position error = 1.110600 mm\n\t'f_big3_l' : position error = 1.285241 mm\n"
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
@@ -38,8 +38,8 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: attack_1
-      takeName: attack_1
+      name: attack_2
+      takeName: attack_2
       internalID: 0
       firstFrame: 0
       lastFrame: 50
@@ -50,7 +50,7 @@ ModelImporter:
       loop: 0
       hasAdditiveReferencePose: 0
       loopTime: 0
-      loopBlend: 1
+      loopBlend: 0
       loopBlendOrientation: 1
       loopBlendPositionY: 1
       loopBlendPositionXZ: 1
@@ -62,28 +62,7 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.24782608
-        functionName: ComboWindowOpen
-        data: 
-        objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
-        intParameter: 1
-        messageOptions: 0
-      - time: 0.36871624
-        functionName: ComboWindowClose
-        data: 
-        objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.45884413
-        functionName: CheckCombo
-        data: 
-        objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
-        intParameter: 1
-        messageOptions: 0
-      - time: 0.9173913
+      - time: 0.99347824
         functionName: EndAttack
         data: 
         objectReferenceParameter: {instanceID: 0}

@@ -4,7 +4,7 @@ public class PlayerAnimator : MonoBehaviour
 {
     [Tooltip("If an enemy is closer than this, player character will be in alerted idle mode")]
     public float enemyAlertRange = 10f;
-    
+
     [Header("References")] public PlayerMovement movement;
     public PlayerAttacks attacks;
 
@@ -27,6 +27,7 @@ public class PlayerAnimator : MonoBehaviour
     private static readonly int SpeedProperty = Animator.StringToHash("Speed");
     private static readonly int AttackingProperty = Animator.StringToHash("Attacking");
     private static readonly int AlertedProperty = Animator.StringToHash("Alerted");
+    private static readonly int AttackNumberProperty = Animator.StringToHash("AttackNumber");
 
     private void LateUpdate()
     {
@@ -63,6 +64,7 @@ public class PlayerAnimator : MonoBehaviour
 
         if (attacks.Attacking != _attacking)
         {
+            animator.SetInteger(AttackNumberProperty, attacks.Attacking);
             if (attacks.Attacking > 0)
             {
                 animator.SetTrigger(AttackingProperty);
@@ -70,7 +72,7 @@ public class PlayerAnimator : MonoBehaviour
 
             _attacking = attacks.Attacking;
         }
-        
+
         animator.SetFloat(AlertedProperty, _alerted ? 1f : 0f, alertedDampTime, Time.deltaTime);
     }
 }

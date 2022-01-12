@@ -51,16 +51,6 @@ public class PlayerAttacks : MonoBehaviour
 
         DashAttackTimer -= Time.deltaTime;
 
-        if (Attacking != 0)
-        {
-            Timer -= Time.deltaTime;
-        }
-
-        if (Timer <= ChainWindow && Attacking < 3)
-        {
-            actionable = true;
-        }
-
         if (Timer <= 0f && ActionQueued == 1)
         {
             Quaternion Q = transform.rotation;
@@ -86,6 +76,7 @@ public class PlayerAttacks : MonoBehaviour
             ActionQueued = 0;
 
             Timer = SwingTime;
+            Debug.Log("Triggering attack 2");
         }
 
         if (Timer <= 0f && ActionQueued == 2)
@@ -114,6 +105,7 @@ public class PlayerAttacks : MonoBehaviour
             ActionQueued = 0;
 
             Timer = EndSwingTime;
+            Debug.Log("Triggering attack 3");
         }
         else if (Timer <= 0f)
         {
@@ -156,6 +148,7 @@ public class PlayerAttacks : MonoBehaviour
                 Attacking = 1;
 
                 Timer = SwingTime;
+                Debug.Log("Triggering attack 1");
             }
 
             if (Attacking == 1 && actionable == true && ActionQueued == 0)
@@ -178,5 +171,23 @@ public class PlayerAttacks : MonoBehaviour
     public void TakeDamage()
     {
         // TODO: Stop attacking when taking damage?
+    }
+
+    public void ComboWindowChanged(bool isOpen)
+    {
+        actionable = isOpen;
+    }
+
+    public void CheckCombo()
+    {
+        if (ActionQueued > 0)
+        {
+            Timer = 0f;
+        }
+    }
+
+    public void EndAttack()
+    {
+        Timer = 0f;
     }
 }
