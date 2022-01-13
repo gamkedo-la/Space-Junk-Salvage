@@ -70,6 +70,7 @@ public class PatchesMusicManager : MonoBehaviour {
 			} else {
 				float destroyTime = activeSource.clip.length - activeSource.time + Time.deltaTime;
 				Destroy(activeSource.gameObject, destroyTime);
+				activeSource.name += " - out";
 				PlayNewTrack(nextEndTime - currentTime);
 				SetNextEndTime();
 			}
@@ -171,6 +172,7 @@ public class PatchesMusicManager : MonoBehaviour {
 
 	private void FadeCurrentTrack(double waitTime) {
 		StartCoroutine(WaitAndFadeOutAndStop(activeSource, (float)waitTime, activeTrack.fadeTime));
+		activeSource.name += " - out";
 	}
 
 	private PatchesMusicTrack ReturnNewTrack() {
