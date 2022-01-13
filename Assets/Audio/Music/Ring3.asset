@@ -18,34 +18,36 @@ MonoBehaviour:
     bpm: 120
     endTime: 16
     outTimes: []
-    fadeTime: 0.25
+    fadeTime: 0.15
   - musicStem: {fileID: 8300000, guid: c6a5fc0a26d24ce4cb0e11189a5739d5, type: 3}
     loopingAsset: 0
     bpm: 120
     endTime: 16
     outTimes: []
-    fadeTime: 0.25
+    fadeTime: 0.15
   - musicStem: {fileID: 8300000, guid: 60ef21dc7d1703948b324f273649b2f7, type: 3}
     loopingAsset: 0
     bpm: 120
     endTime: 16
     outTimes: []
-    fadeTime: 0.25
+    fadeTime: 0.15
   - musicStem: {fileID: 8300000, guid: d1fcc0992d71f23498fae9f88c41fe15, type: 3}
     loopingAsset: 0
     bpm: 120
     endTime: 16
     outTimes: []
-    fadeTime: 0.25
+    fadeTime: 0.15
   - musicStem: {fileID: 8300000, guid: 244bd707fe4fc884dade0eff9ea98d67, type: 3}
     loopingAsset: 0
     bpm: 120
     endTime: 16
-    outTimes: []
-    fadeTime: 0.25
+    outTimes:
+    - 6
+    fadeTime: 2
   - musicStem: {fileID: 8300000, guid: df33f0ab49e4c154a8eee46de0361fcd, type: 3}
     loopingAsset: 0
     bpm: 120
     endTime: 16
-    outTimes: []
-    fadeTime: 0.25
+    outTimes:
+    - 6
+    fadeTime: 2

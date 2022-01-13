@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09f91c9a21419084c87086171417ab08, type: 3}
+  m_Name: Boss
+  m_EditorClassIdentifier: 
+  musicStems:
+  - musicStem: {fileID: 8300000, guid: c984df904d59cae479920c18fb8fd3c3, type: 3}
+    loopingAsset: 0
+    bpm: 132
+    endTime: 14.545
+    outTimes: []
+    fadeTime: 0.15
+  - musicStem: {fileID: 8300000, guid: 39bd6048e4577e24b8dfc0300062cec6, type: 3}
+    loopingAsset: 0
+    bpm: 132
+    endTime: 14.545
+    outTimes: []
+    fadeTime: 0.15
+  - musicStem: {fileID: 8300000, guid: 984d016ca6475f34b8d4b608d0b091f5, type: 3}
+    loopingAsset: 0
+    bpm: 132
+    endTime: 14.545
+    outTimes: []
+    fadeTime: 0.15
+  - musicStem: {fileID: 8300000, guid: ca1e87ec28dc46443b763b60a1921441, type: 3}
+    loopingAsset: 0
+    bpm: 132
+    endTime: 14.545
+    outTimes: []
+    fadeTime: 0.15
+  - musicStem: {fileID: 8300000, guid: 727037536456e7140ba81c68600ecd63, type: 3}
+    loopingAsset: 0
+    bpm: 132
+    endTime: 21.818
+    outTimes: []
+    fadeTime: 0.15
+  - musicStem: {fileID: 8300000, guid: 70ad56058f6d8be43b16c3656f9517c4, type: 3}
+    loopingAsset: 0
+    bpm: 132
+    endTime: 14.545
+    outTimes: []
+    fadeTime: 0.15
+  - musicStem: {fileID: 8300000, guid: bca665efa5cee484c8d745286db87fc8, type: 3}
+    loopingAsset: 0
+    bpm: 132
+    endTime: 14.545
+    outTimes: []
+    fadeTime: 0.15
+  - musicStem: {fileID: 8300000, guid: 805b5716bcd130b4ab496c449ed8f2d7, type: 3}
+    loopingAsset: 0
+    bpm: 132
+    endTime: 14.545
+    outTimes: []
+    fadeTime: 0.15
+  - musicStem: {fileID: 8300000, guid: d6785d3877e6684438027bb447f69ef0, type: 3}
+    loopingAsset: 0
+    bpm: 132
+    endTime: 14.545
+    outTimes: []
+    fadeTime: 0.15
+  - musicStem: {fileID: 8300000, guid: c8cdbdc3e16197240b3066a9238a972d, type: 3}
+    loopingAsset: 0
+    bpm: 132
+    endTime: 18.181
+    outTimes: []
+    fadeTime: 0.15
+  - musicStem: {fileID: 8300000, guid: 9cb1f7dea187c2d41b2b233f3e04472a, type: 3}
+    loopingAsset: 0
+    bpm: 132
+    endTime: 21.818
+    outTimes: []
+    fadeTime: 0.15
+  - musicStem: {fileID: 8300000, guid: 8c3c29d09200cf540b14812ed13d7489, type: 3}
+    loopingAsset: 0
+    bpm: 132
+    endTime: 14.545
+    outTimes: []
+    fadeTime: 0.15
