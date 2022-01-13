@@ -82,7 +82,7 @@ public class Inventory : MonoBehaviour
         {
             if (Drop(1, 1) == true)
             {
-                GetComponent<PlayerHP>().TakeDamage(-PotionHealAmount, 0, Vector3.zero);
+                GetComponent<PlayerHP>().TakeDamage(-PotionHealAmount, 0, Vector3.zero, Vector3.zero);
                 HealCooldown = HCReset;
                 Instantiate(HealEffect, transform.position, Quaternion.identity, gameObject.transform);
             }

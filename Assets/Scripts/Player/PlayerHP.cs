@@ -45,12 +45,16 @@ public class PlayerHP : MonoBehaviour
         }
     }
 
-    public void TakeDamage(int Damage, float knockbackPower, Vector3 Source)
+    public void TakeDamage(int Damage, float knockbackPower, Vector3 Source, Vector3 contactPoint)
     {
         if (movement.knockback == false)
         {
             movement.ApplyKnockback(Source, knockbackPower);
             attacks.TakeDamage();
+            if (Damage > 0)
+            {
+                GetComponentInChildren<Shield>().RegisterHit(contactPoint);
+            }
 
             CurrentHP -= Damage;
 

@@ -41,7 +41,7 @@ public class StrongEnemyHitbox : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            collision.gameObject.GetComponent<PlayerHP>().TakeDamage(Damage, KnockbackPower, Owner.transform.position);
+            collision.gameObject.GetComponent<PlayerHP>().TakeDamage(Damage, KnockbackPower, Owner.transform.position, collision.GetContact(0).point);
 
         }
     }
