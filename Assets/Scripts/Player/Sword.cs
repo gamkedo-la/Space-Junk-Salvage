@@ -2,15 +2,11 @@
 
 public class Sword : MonoBehaviour
 {
-    float InternalChronometer;
-
     public int Combo;
 
     public int dam;
 
     public bool DashAttack;
-
-    public PlayerAttacks myPlayerAttacks;
 
     private int Damage =>
         dam +

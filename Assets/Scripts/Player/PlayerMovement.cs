@@ -206,6 +206,8 @@ public class PlayerMovement : MonoBehaviour
                     Q.eulerAngles = new Vector3(Q.eulerAngles.x, Q.eulerAngles.y + 180, Q.eulerAngles.z);
 
                     Instantiate(DashParticles, transform.position, Q, transform);
+                    
+                    GetComponentInChildren<Backpack>().FireEngines(1f/DashSpeed);
                 }
             }
             else if (dashing == true)
