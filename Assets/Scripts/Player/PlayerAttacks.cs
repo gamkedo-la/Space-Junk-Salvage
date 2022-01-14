@@ -96,7 +96,7 @@ public class PlayerAttacks : MonoBehaviour
             SWORD.dam = damage;
             if (DashCombo == true)
             {
-                SWORD.GetComponent<Sword>().DashAttack = true;
+                SWORD.DashAttack = true;
             }
 
             actionable = false;
