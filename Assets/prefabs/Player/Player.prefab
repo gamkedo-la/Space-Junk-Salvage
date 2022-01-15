@@ -406,7 +406,7 @@ MonoBehaviour:
   OtherRoom: {fileID: 0}
   knockback: 0
   dashing: 0
-  DashSpeed: 10
+  DashSpeed: 5
   DashLength: 4
   DashDestination: {x: 0, y: 0, z: 0}
   DashCooldown: 3
@@ -890,6 +890,11 @@ PrefabInstance:
     - target: {fileID: 1019262409564096154, guid: a19e3116e4c9f754885875495a685539,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5027817470651493931, guid: a19e3116e4c9f754885875495a685539,
+        type: 3}
+      propertyPath: cooldownTime
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

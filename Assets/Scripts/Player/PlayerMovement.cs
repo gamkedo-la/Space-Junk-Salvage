@@ -207,7 +207,7 @@ public class PlayerMovement : MonoBehaviour
 
                     Instantiate(DashParticles, transform.position, Q, transform);
                     
-                    GetComponentInChildren<Backpack>().FireEngines(1f/DashSpeed);
+                    GetComponentInChildren<Backpack>().FireEngines(1f/DashSpeed, DCReset);
                 }
             }
             else if (dashing == true)

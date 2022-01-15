@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb6449f392d346bfa7c5d1148eea39bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldownTime: 0.2
   engineOffset: 0.1
   topEngine: {fileID: 1934160986220066654}
+  engineCooldownColor: {r: 0, g: 0, b: 0, a: 0}
+  fadeFactor: 5
 --- !u!1 &6152116486614101577
 GameObject:
   m_ObjectHideFlags: 0
@@ -4881,6 +4882,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 7025fe40e9cae3748bceb825b25aaef8,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: a4e80322abb9e4a4db019574a6cddd48, type: 2}
     - target: {fileID: 919132149155446097, guid: 7025fe40e9cae3748bceb825b25aaef8,
         type: 3}
       propertyPath: m_Name

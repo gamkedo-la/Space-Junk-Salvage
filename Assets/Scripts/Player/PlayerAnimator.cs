@@ -28,6 +28,7 @@ public class PlayerAnimator : MonoBehaviour
     private static readonly int AttackingProperty = Animator.StringToHash("Attacking");
     private static readonly int AlertedProperty = Animator.StringToHash("Alerted");
     private static readonly int AttackNumberProperty = Animator.StringToHash("AttackNumber");
+    private static readonly int DashingProperty = Animator.StringToHash("Dashing");
 
     private void LateUpdate()
     {
@@ -61,6 +62,8 @@ public class PlayerAnimator : MonoBehaviour
         {
             animator.SetFloat(SpeedProperty, 0, stoppingDampTime, Time.deltaTime);
         }
+
+        animator.SetBool(DashingProperty, movement.dashing);
 
         if (attacks.Attacking != _attacking)
         {
