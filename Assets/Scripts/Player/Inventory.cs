@@ -6,7 +6,6 @@ using TMPro;
 
 public class Inventory : MonoBehaviour
 {
-
     private int[] Items = new int[2];
     // index 0: keys
     // index 1: health potions
@@ -19,6 +18,8 @@ public class Inventory : MonoBehaviour
     public float HealCooldown = 3.0f;
     float HCReset;
 
+    public Transform cellHand;
+    public Transform cellReceptacle;
     public GameObject HealEffect;
 
     public DialogWindow dialog;
@@ -28,6 +29,8 @@ public class Inventory : MonoBehaviour
     private string[] dialogString = new string[1];
 
     private bool[] firstPickup = new bool[2];
+
+    private GameObject spawnedCell;
 
     // Start is called before the first frame update
     void Start()
@@ -45,7 +48,6 @@ public class Inventory : MonoBehaviour
     void Update()
     {
         HealCooldown -= Time.deltaTime;
-
     }
 
     public void Pickup(int index, int amount)
@@ -53,7 +55,7 @@ public class Inventory : MonoBehaviour
         Items[index] += amount;
         UIUpdate();
 
-        if(firstPickup[index] == true)
+        if (firstPickup[index] == true)
         {
             firstPickup[index] = false;
             dialogString[0] = pickupDialogs[index];
@@ -82,12 +84,10 @@ public class Inventory : MonoBehaviour
         {
             if (Drop(1, 1) == true)
             {
-                GetComponent<PlayerHP>().TakeDamage(-PotionHealAmount, 0, Vector3.zero, Vector3.zero);
                 HealCooldown = HCReset;
-                Instantiate(HealEffect, transform.position, Quaternion.identity, gameObject.transform);
+                GetComponentInChildren<Animator>().SetTrigger("Recharge");
             }
         }
-
     }
 
     public void UIUpdate()
@@ -96,4 +96,15 @@ public class Inventory : MonoBehaviour
         Potions.text = Items[1].ToString();
     }
 
+    public void OnTakeCell()
+    {
+        spawnedCell = Instantiate(HealEffect, cellHand);
+    }
+
+    public void OnDropCell()
+    {
+        GetComponent<PlayerHP>().TakeDamage(-PotionHealAmount, 0, Vector3.zero, Vector3.zero);
+        spawnedCell.transform.parent = cellReceptacle;
+        Destroy(spawnedCell, HealCooldown);
+    }
 }

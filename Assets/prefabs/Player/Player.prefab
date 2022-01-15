@@ -78,6 +78,36 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onTakeCell:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6946643208067930565}
+        m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
+        m_MethodName: OnTakeCell
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onDropCell:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6946643208067930565}
+        m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
+        m_MethodName: OnDropCell
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6946643206502911812
 GameObject:
   m_ObjectHideFlags: 0
@@ -421,7 +451,9 @@ MonoBehaviour:
   Keys: {fileID: 0}
   Potions: {fileID: 0}
   HealCooldown: 3
-  HealEffect: {fileID: 8353034540858920284, guid: c222b4f7d29deaa4bbc343fa7e61c0a7,
+  cellHand: {fileID: 8404541822417783269}
+  cellReceptacle: {fileID: 913711110051304614}
+  HealEffect: {fileID: 617999010352645002, guid: 5ab156f9d511fee4e91db6f496b632bf,
     type: 3}
   dialog: {fileID: 0}
   pickupDialogs:
@@ -862,6 +894,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a19e3116e4c9f754885875495a685539, type: 3}
+--- !u!4 &913711110051304614 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1019262409564096154, guid: a19e3116e4c9f754885875495a685539,
+    type: 3}
+  m_PrefabInstance: {fileID: 183243143353045564}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2455136879812590171
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -961,21 +999,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d1117f4c58c287f4790c29dafe07bcc2, type: 3}
---- !u!1 &3374053920765478666 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: d1117f4c58c287f4790c29dafe07bcc2,
-    type: 3}
-  m_PrefabInstance: {fileID: 2455136879812590171}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &2709157646137417136 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d1117f4c58c287f4790c29dafe07bcc2,
-    type: 3}
-  m_PrefabInstance: {fileID: 2455136879812590171}
-  m_PrefabAsset: {fileID: 0}
 --- !u!95 &8320664546678147018 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: d1117f4c58c287f4790c29dafe07bcc2,
+    type: 3}
+  m_PrefabInstance: {fileID: 2455136879812590171}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3374053920765478666 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: d1117f4c58c287f4790c29dafe07bcc2,
     type: 3}
   m_PrefabInstance: {fileID: 2455136879812590171}
   m_PrefabAsset: {fileID: 0}
@@ -988,6 +1020,18 @@ Transform:
 --- !u!4 &1292590907649623977 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -5484731859027116558, guid: d1117f4c58c287f4790c29dafe07bcc2,
+    type: 3}
+  m_PrefabInstance: {fileID: 2455136879812590171}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8404541822417783269 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -2976725723297811522, guid: d1117f4c58c287f4790c29dafe07bcc2,
+    type: 3}
+  m_PrefabInstance: {fileID: 2455136879812590171}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2709157646137417136 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d1117f4c58c287f4790c29dafe07bcc2,
     type: 3}
   m_PrefabInstance: {fileID: 2455136879812590171}
   m_PrefabAsset: {fileID: 0}

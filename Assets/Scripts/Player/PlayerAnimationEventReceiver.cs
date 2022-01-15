@@ -6,6 +6,8 @@ public class PlayerAnimationEventReceiver : MonoBehaviour
     public UnityEvent<bool> onComboWindowChanged;
     public UnityEvent onCheckCombo;
     public UnityEvent onEndAttack;
+    public UnityEvent onTakeCell;
+    public UnityEvent onDropCell;
     
     public void ComboWindowOpen()
     {
@@ -25,5 +27,15 @@ public class PlayerAnimationEventReceiver : MonoBehaviour
     public void EndAttack()
     {
         onEndAttack.Invoke();
+    }
+
+    public void TakeCell()
+    {
+        onTakeCell.Invoke();
+    }
+
+    public void DropCell()
+    {
+        onDropCell.Invoke();
     }
 }
