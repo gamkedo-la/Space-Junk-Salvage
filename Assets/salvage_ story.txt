@@ -21,6 +21,12 @@ A strange message, and an even stranger noise emits from it. You'd be best to ke
 Health Potion:
 Green things are good, except when they're poison. This one should be fine, though. Drink to restore health.
 
+Energy cell:
+An energy cell to keep you recharged and fresh! Aren't you feeling great! 
+...
+No?
+
+Well, it works, and keeps you going for the moment. 
 
 Intro:
 (Story Notes:  An abstract tone, and centering the story around the MC, imagining this place to be lonely and desolate and getting into the MC's psyche.)
