@@ -16,6 +16,63 @@ MonoBehaviour:
   topEngine: {fileID: 1934160986220066654}
   engineCooldownColor: {r: 0, g: 0, b: 0, a: 0}
   fadeFactor: 5
+--- !u!114 &8678849536781539547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 391520071568743456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c668d925d6e42d98b3face38d050fa6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.06710669
+      value: 0.14677927
+      inSlope: -0.8034542
+      outSlope: -0.8034542
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.5747766
+      outWeight: 0.40654308
+    - serializedVersion: 3
+      time: 0.8511712
+      value: 0.16824678
+      inSlope: 0.6519528
+      outSlope: 0.6519528
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.07128105
+      outWeight: 0.34765
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: -0.015701905
+      outSlope: -0.015701905
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 1
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  lowColor: {r: 0, g: 0, b: 0, a: 0}
+  highColor: {r: 0, g: 0, b: 0, a: 0}
+  useEmissionColorFromMaterial: 1
 --- !u!1 &6152116486614101577
 GameObject:
   m_ObjectHideFlags: 0

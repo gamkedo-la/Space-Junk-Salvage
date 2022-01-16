@@ -30,7 +30,7 @@ public class Inventory : MonoBehaviour
 
     private bool[] firstPickup = new bool[2];
 
-    private GameObject spawnedCell;
+    private EnergyCellRecharge spawnedCell;
 
     // Start is called before the first frame update
     void Start()
@@ -98,13 +98,13 @@ public class Inventory : MonoBehaviour
 
     public void OnTakeCell()
     {
-        spawnedCell = Instantiate(HealEffect, cellHand);
+        spawnedCell = Instantiate(HealEffect, cellHand).GetComponent<EnergyCellRecharge>();
     }
 
     public void OnDropCell()
     {
         GetComponent<PlayerHP>().TakeDamage(-PotionHealAmount, 0, Vector3.zero, Vector3.zero);
         spawnedCell.transform.parent = cellReceptacle;
-        Destroy(spawnedCell, HealCooldown);
+        spawnedCell.Deplete(HealCooldown);
     }
 }
