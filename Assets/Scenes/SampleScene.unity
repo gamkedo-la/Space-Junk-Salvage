@@ -18683,6 +18683,12 @@ PrefabInstance:
       propertyPath: Potions
       value: 
       objectReference: {fileID: 270025068}
+    - target: {fileID: 6946643208067930565, guid: cfc6ffe3640e5944f8043cb29a4ceb8a,
+        type: 3}
+      propertyPath: pickupDialogs.Array.data[1]
+      value: 'An energy cell to keep you recharged and fresh! Aren''t you feeling
+        great!  ... No?  Well, it works, and keeps you going for the moment. '
+      objectReference: {fileID: 0}
     - target: {fileID: 6946643208067930566, guid: cfc6ffe3640e5944f8043cb29a4ceb8a,
         type: 3}
       propertyPath: m_RootOrder

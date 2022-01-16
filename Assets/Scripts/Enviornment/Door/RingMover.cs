@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class RingMover : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class RingMover : MonoBehaviour
     public GameObject myUI;
 
     public List<DoorSwitcher> MovingDoors = new List<DoorSwitcher>();
+
+    public TextMeshProUGUI num;
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +31,9 @@ public class RingMover : MonoBehaviour
 
     public void MoveRing(int NewAlignment)
     {
+        CurrentAlignment = NewAlignment;
 
+        num.text = (CurrentAlignment + 1).ToString();
         foreach(DoorSwitcher d in MovingDoors)
         {
             d.SwitchDoor(NewAlignment);
