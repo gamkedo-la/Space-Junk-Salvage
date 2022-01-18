@@ -361,7 +361,7 @@ GameObject:
   - component: {fileID: 25403202}
   - component: {fileID: 25403201}
   - component: {fileID: 25403205}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: wall sw
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4889,7 +4889,7 @@ GameObject:
   - component: {fileID: 609981916}
   - component: {fileID: 609981915}
   - component: {fileID: 609981919}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: wall ne
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5119,7 +5119,7 @@ GameObject:
   - component: {fileID: 656579244}
   - component: {fileID: 656579243}
   - component: {fileID: 656579247}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: wall nw
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9687,7 +9687,7 @@ GameObject:
   - component: {fileID: 1061591822}
   - component: {fileID: 1061591821}
   - component: {fileID: 1061591825}
-  m_Layer: 6
+  m_Layer: 13
   m_Name: raised floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13951,7 +13951,7 @@ GameObject:
   - component: {fileID: 1656117652}
   - component: {fileID: 1656117651}
   - component: {fileID: 1656117655}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: wall se
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18102,6 +18102,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: basicramp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3861630113696785830, guid: 9085e31cbd4f27446af415dfe51253b5,
+        type: 3}
+      propertyPath: m_Layer
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 4529658656230833948, guid: 9085e31cbd4f27446af415dfe51253b5,
         type: 3}

@@ -407,7 +407,7 @@ MonoBehaviour:
   knockback: 0
   dashing: 0
   DashSpeed: 5
-  DashLength: 4
+  DashLength: 20
   DashDestination: {x: 0, y: 0, z: 0}
   DashCooldown: 3
   DashParticles: {fileID: 4659125924911826366, guid: f3a80c23047dbe343b90670634e8d05f,

@@ -197,9 +197,22 @@ public class PlayerMovement : MonoBehaviour
                         cool.Dash(DCReset);
                     }
 
+                    /*
+                    RaycastHit hit;
+                    if (Physics.Raycast(transform.position, transform.forward, out hit, DashLength))
+                    {
+                        DashDestination = hit.point;
+                    }
+                    else
+                    {
+                        DashDestination = transform.position + transform.forward * DashLength;
+                    }
+                    */
 
-                    DashDestination = transform.position + transform.forward * DashLength;
                     DashStart = transform.position;
+
+                    myRigidbody.velocity = (transform.forward * DashLength);
+
                     t = 0;
 
                     Quaternion Q = transform.rotation;
@@ -213,7 +226,8 @@ public class PlayerMovement : MonoBehaviour
             else if (dashing == true)
             {
                 CanAttack = false;
-                transform.position = Vector3.Lerp(DashStart, DashDestination, t);
+                //transform.position = Vector3.Lerp(DashStart, DashDestination, t);
+                myRigidbody.velocity = (transform.forward * DashLength);
                 t += Time.deltaTime * DashSpeed;
 
                 if (t >= 1)
