@@ -32,6 +32,8 @@ public class Inventory : MonoBehaviour
 
     private EnergyCellRecharge spawnedCell;
 
+    public bool Actionable = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -80,12 +82,15 @@ public class Inventory : MonoBehaviour
 
     public void UsePotion()
     {
-        if (HealCooldown <= 0)
+        if (Actionable == true)
         {
-            if (Drop(1, 1) == true)
+            if (HealCooldown <= 0)
             {
-                HealCooldown = HCReset;
-                GetComponentInChildren<Animator>().SetTrigger("Recharge");
+                if (Drop(1, 1) == true)
+                {
+                    HealCooldown = HCReset;
+                    GetComponentInChildren<Animator>().SetTrigger("Recharge");
+                }
             }
         }
     }

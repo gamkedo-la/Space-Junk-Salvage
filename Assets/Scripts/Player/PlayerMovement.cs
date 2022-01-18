@@ -64,7 +64,9 @@ public class PlayerMovement : MonoBehaviour
 
     public bool CanAttack = true;
 
-    bool MapOpen = false;
+    public bool Actionable = true;
+
+    public bool MapOpen = false;
 
     public DashCooldownUI cool;
     public float MovementPercentage => V.magnitude / speed;
@@ -286,7 +288,10 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnDash()
     {
-        StartDash = true;
+        if (Actionable == true)
+        {
+            StartDash = true;
+        }
     }
 
     public void Alert(float Radius)
@@ -315,15 +320,26 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnOpenCloseMap()
     {
-        if (MapOpen == true)
+        if (Actionable == true)
         {
-            MapOpen = false;
-            return;
-        }
-        else
-        {
-            MapOpen = true;
-            return;
+            if (MapOpen == true)
+            {
+                MapOpen = false;
+                CanAttack = false;
+                Actionable = true;
+                GetComponent<PlayerAttacks>().actionable = true;
+                GetComponent<Inventory>().Actionable = true;
+                return;
+            }
+            else
+            {
+                MapOpen = true;
+                CanAttack = false;
+                Actionable = false;
+                GetComponent<PlayerAttacks>().actionable = false;
+                GetComponent<Inventory>().Actionable = false;
+                return;
+            }
         }
     }
 }

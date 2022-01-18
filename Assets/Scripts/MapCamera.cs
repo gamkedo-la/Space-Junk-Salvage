@@ -57,12 +57,15 @@ public class MapCamera : MonoBehaviour
 
     public void OpenMap()
     {
-        transform.position = Player.transform.position;
-        MapOpen = true;
-        MapRenderTexture.SetActive(true);
+        if (Player.GetComponent<PlayerMovement>().Actionable == true)
+        {
+            transform.position = Player.transform.position;
+            MapOpen = true;
+            MapRenderTexture.SetActive(true);
 
-        Time.timeScale = 0;
+            Time.timeScale = 0;
 
+        }
     }
 
     public void CloseMap()

@@ -10,6 +10,8 @@ public class PlayerAttacks : MonoBehaviour
     public int Attacking = 0;
     public bool actionable = true;
 
+    public bool paused = false;
+
     public int ActionQueued = 0;
 
     public float Timer;
@@ -165,7 +167,10 @@ public class PlayerAttacks : MonoBehaviour
 
     public void OnAttack()
     {
-        StartAttack = true;
+        if (paused == true)
+        {
+            StartAttack = true;
+        }
     }
 
     public void TakeDamage()

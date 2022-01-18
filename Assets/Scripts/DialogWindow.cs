@@ -12,10 +12,13 @@ public class DialogWindow : MonoBehaviour
 
     public int bookmark = -1;
 
+    GameObject Player;
+
     // Start is called before the first frame update
     void Start()
     {
         GetComponent<CanvasGroup>().alpha = 0;
+        Player = GameObject.Find("Player");
     }
 
     // Update is called once per frame
@@ -32,23 +35,38 @@ public class DialogWindow : MonoBehaviour
 
         currentDialog = lines;
 
+        Debug.Log("start dialog");
+
+        Player.GetComponent<PlayerMovement>().Actionable = false;
+        Player.GetComponent<PlayerAttacks>().paused = false;
+        Player.GetComponent<Inventory>().Actionable = false;
         Time.timeScale = 0;
+
+
 
         NextLine();               
     }
 
     public void NextLine()
     {
-        bookmark++;
+        if (GetComponent<CanvasGroup>().alpha != 0)
+        {
+            bookmark++;
 
-        if (bookmark >= currentDialog.Length)
-        {
-            GetComponent<CanvasGroup>().alpha = 0;
-            Time.timeScale = 1;
-        }
-        else
-        {
-            text.text = currentDialog[bookmark];
+            if (bookmark >= currentDialog.Length)
+            {
+                GetComponent<CanvasGroup>().alpha = 0;
+                Time.timeScale = 1;
+
+                Debug.Log("end dialog");
+                Player.GetComponent<PlayerMovement>().Actionable = true;
+                Player.GetComponent<PlayerAttacks>().paused = true;
+                Player.GetComponent<Inventory>().Actionable = true;
+            }
+            else
+            {
+                text.text = currentDialog[bookmark];
+            }
         }
     }
 
