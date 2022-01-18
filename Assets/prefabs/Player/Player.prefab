@@ -413,6 +413,8 @@ MonoBehaviour:
   DashParticles: {fileID: 4659125924911826366, guid: f3a80c23047dbe343b90670634e8d05f,
     type: 3}
   CanAttack: 1
+  Actionable: 1
+  MapOpen: 0
   cool: {fileID: 0}
 --- !u!114 &6946643208067930564
 MonoBehaviour:
@@ -429,6 +431,7 @@ MonoBehaviour:
   s: {fileID: 1078912727572787182, guid: f2df21db2e2cf4f47bf7cc30e6490b1f, type: 3}
   Attacking: 0
   actionable: 1
+  paused: 0
   ActionQueued: 0
   Timer: 0
   CanMove: 1
@@ -460,8 +463,9 @@ MonoBehaviour:
   - 'Gold key: A key, used to open doors to other rooms (or extra-dimensional spaces;
     currently out of service). It''s gold, because shiny things are important. It
     trembles with your touch.'
-  - Green things are good, except when they're poison. This one should be fine, though.
-    Drink to restore health.
+  - 'An energy cell to keep you recharged and fresh! Aren''t you feeling great! 
+    ... No?  Well, it works, and keeps you going for the moment. '
+  Actionable: 1
 --- !u!208 &6946643208067930570
 NavMeshObstacle:
   m_ObjectHideFlags: 0

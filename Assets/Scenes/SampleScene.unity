@@ -18693,12 +18693,6 @@ PrefabInstance:
       propertyPath: Potions
       value: 
       objectReference: {fileID: 270025068}
-    - target: {fileID: 6946643208067930565, guid: cfc6ffe3640e5944f8043cb29a4ceb8a,
-        type: 3}
-      propertyPath: pickupDialogs.Array.data[1]
-      value: 'An energy cell to keep you recharged and fresh! Aren''t you feeling
-        great!  ... No?  Well, it works, and keeps you going for the moment. '
-      objectReference: {fileID: 0}
     - target: {fileID: 6946643208067930566, guid: cfc6ffe3640e5944f8043cb29a4ceb8a,
         type: 3}
       propertyPath: m_RootOrder
@@ -18776,9 +18770,19 @@ PrefabInstance:
       objectReference: {fileID: 2141443886}
     - target: {fileID: 6946643208067930568, guid: cfc6ffe3640e5944f8043cb29a4ceb8a,
         type: 3}
+      propertyPath: m_ActionEvents.Array.data[7].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6946643208067930568, guid: cfc6ffe3640e5944f8043cb29a4ceb8a,
+        type: 3}
       propertyPath: m_ActionEvents.Array.data[7].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1505573678}
+    - target: {fileID: 6946643208067930568, guid: cfc6ffe3640e5944f8043cb29a4ceb8a,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[7].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnNextLineCall
+      objectReference: {fileID: 0}
     - target: {fileID: 6946643208067930571, guid: cfc6ffe3640e5944f8043cb29a4ceb8a,
         type: 3}
       propertyPath: HPBar

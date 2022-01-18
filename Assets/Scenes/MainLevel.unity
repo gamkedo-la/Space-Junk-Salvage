@@ -1615,6 +1615,95 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 38641742}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &40816857
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2995365109703879427, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: m_Name
+      value: boss door dialog
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879548, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: dialogEvent.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879548, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: dialogEvent.Array.data[0]
+      value: DO NoT Enter without CANDY?
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879548, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: dialogEvent.Array.data[1]
+      value: (What in the world?)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879548, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: dialogEvent.Array.data[2]
+      value: Am I imagining things?  This is stupid, I'm entering regardless.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879550, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879550, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879550, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879550, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879550, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879550, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879550, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879550, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879550, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879550, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879550, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6b131baf0fea4eb419d4e31e48d217eb, type: 3}
 --- !u!1 &42280709
 GameObject:
   m_ObjectHideFlags: 0
@@ -24013,6 +24102,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 656819779}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &658129365 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 689483221070555683, guid: 1aa6d40be688368438ed6baa5799d0a0,
+    type: 3}
+  m_PrefabInstance: {fileID: 1785542626}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e5851bcfe8ef6c459a406824b7678f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &660538249
 GameObject:
   m_ObjectHideFlags: 0
@@ -32899,6 +33000,178 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 904649103}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &908651689
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2995365109703879427, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: m_Name
+      value: boss dialog
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879548, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: dialogEvent.Array.size
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879548, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: dialogEvent.Array.data[0]
+      value: Hello there.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879548, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: dialogEvent.Array.data[1]
+      value: ' Hello.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879548, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: dialogEvent.Array.data[2]
+      value: You seem to have expected me.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879548, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: dialogEvent.Array.data[3]
+      value: Yes. I remember you.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879548, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: dialogEvent.Array.data[4]
+      value: (Wait what? This isn't me saying this. I-I the words aren't mine...
+        I am not speaking these words.)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879548, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: dialogEvent.Array.data[5]
+      value: Have you brought the 'Candy'?
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879548, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: dialogEvent.Array.data[6]
+      value: Yes. (It feels so real... it feels distinctly me. I AM saying these
+        words)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879548, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: dialogEvent.Array.data[7]
+      value: There's a cost to it, unfortunately.  I can see that you have witnessed
+        quite much... my dear old friend.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879548, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: dialogEvent.Array.data[8]
+      value: Why is it that we parted ways in the first place?
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879548, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: dialogEvent.Array.data[9]
+      value: (I have this connection with 'it'. I know 'it', it's someone close...)
+        I hold a great deal of remorse.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879548, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: dialogEvent.Array.data[10]
+      value: WHerE is THe CanDy? You have none.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879548, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: dialogEvent.Array.data[11]
+      value: I need to exterminate this ungodly, broken sight. May you find your
+        redemption in another plane.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879548, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: dialogEvent.Array.data[12]
+      value: Before I slay you, tell me, where you the one speaking to me in the
+        beginning?
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879548, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: dialogEvent.Array.data[13]
+      value: I do not want to fight you.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879548, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: dialogEvent.Array.data[14]
+      value: "I do. Save your breath. You'll need it, for now\u2014 My thirst must
+        be quenched."
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879548, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: dialogEvent.Array.data[15]
+      value: (Please... why is this happening. I do not want to fight either.)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879548, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: dialogEvent.Array.data[16]
+      value: So be it, my dear old friend. I'm sorry I did this. I hope do find my
+        candy.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879548, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: dialogEvent.Array.data[17]
+      value: Hmph. (Did what?)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879550, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879550, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 17.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879550, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879550, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 11.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879550, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879550, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879550, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879550, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879550, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879550, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879550, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6b131baf0fea4eb419d4e31e48d217eb, type: 3}
 --- !u!1 &910014432
 GameObject:
   m_ObjectHideFlags: 0
@@ -53199,6 +53472,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6946643208067930568, guid: cfc6ffe3640e5944f8043cb29a4ceb8a,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[7].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6946643208067930568, guid: cfc6ffe3640e5944f8043cb29a4ceb8a,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[7].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 658129365}
+    - target: {fileID: 6946643208067930568, guid: cfc6ffe3640e5944f8043cb29a4ceb8a,
+        type: 3}
+      propertyPath: m_ActionEvents.Array.data[7].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnNextLineCall
       objectReference: {fileID: 0}
     - target: {fileID: 6946643208067930589, guid: cfc6ffe3640e5944f8043cb29a4ceb8a,
         type: 3}
@@ -83421,6 +83709,80 @@ Transform:
   m_Father: {fileID: 1007489923}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &2995365108772677308
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2995365109703879427, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: m_Name
+      value: opening dialog
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879548, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: window
+      value: 
+      objectReference: {fileID: 658129365}
+    - target: {fileID: 2995365109703879550, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879550, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879550, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879550, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879550, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879550, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879550, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879550, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879550, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879550, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879550, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6b131baf0fea4eb419d4e31e48d217eb, type: 3}
 --- !u!1001 &3268931252332670965
 PrefabInstance:
   m_ObjectHideFlags: 0

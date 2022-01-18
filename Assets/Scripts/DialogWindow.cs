@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.InputSystem;
 
 public class DialogWindow : MonoBehaviour
 {
@@ -67,6 +68,14 @@ public class DialogWindow : MonoBehaviour
             {
                 text.text = currentDialog[bookmark];
             }
+        }
+    }
+
+    public void OnNextLineCall(InputAction.CallbackContext value)
+    {
+        if (value.started)
+        {
+            NextLine();
         }
     }
 

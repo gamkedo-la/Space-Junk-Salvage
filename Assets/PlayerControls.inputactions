@@ -43,7 +43,7 @@
                     "id": "019b64c2-241b-46a8-97c5-7e4bbedc2dc5",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Press(behavior=1)"
+                    "interactions": ""
                 },
                 {
                     "name": "Interact",
@@ -51,7 +51,7 @@
                     "id": "e14cb1b6-a98f-491e-ab5e-b00765e6b770",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Press(behavior=1)"
+                    "interactions": ""
                 }
             ],
             "bindings": [
