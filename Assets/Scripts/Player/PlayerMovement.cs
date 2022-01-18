@@ -81,7 +81,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (strength > 0)
         {
-
+            /*
             knockback = true;
 
             AttackOrigin.y = transform.position.y;
@@ -95,6 +95,18 @@ public class PlayerMovement : MonoBehaviour
             KnockbackDestination = transform.position + K;
 
             tempPosition = transform.position;
+            */
+
+            knockback = true;
+
+            AttackOrigin.y = transform.position.y;
+
+            Vector3 K = transform.position - AttackOrigin;
+
+            K.Normalize();
+            K *= strength;
+
+            KnockbackDestination = K * KBSpeed;
 
             t = 0;
         }
@@ -166,7 +178,9 @@ public class PlayerMovement : MonoBehaviour
         else if (knockback == true)
         {
             CanAttack = false;
-            transform.position = Vector3.Lerp(tempPosition, KnockbackDestination, t);
+            //transform.position = Vector3.Lerp(tempPosition, KnockbackDestination, t);
+
+            myRigidbody.velocity = KnockbackDestination;
 
             t += (Time.deltaTime * KBSpeed);
 
