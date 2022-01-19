@@ -39,7 +39,7 @@ public class DialogWindow : MonoBehaviour
         Debug.Log("start dialog");
 
         Player.GetComponent<PlayerMovement>().Actionable = false;
-        Player.GetComponent<PlayerAttacks>().paused = false;
+        Player.GetComponent<PlayerAttacks>().paused = true;
         Player.GetComponent<Inventory>().Actionable = false;
         Time.timeScale = 0;
 
@@ -61,7 +61,7 @@ public class DialogWindow : MonoBehaviour
 
                 Debug.Log("end dialog");
                 Player.GetComponent<PlayerMovement>().Actionable = true;
-                Player.GetComponent<PlayerAttacks>().paused = true;
+                Player.GetComponent<PlayerAttacks>().paused = false;
                 Player.GetComponent<Inventory>().Actionable = true;
             }
             else

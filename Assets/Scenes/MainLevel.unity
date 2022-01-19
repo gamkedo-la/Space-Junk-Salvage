@@ -1886,6 +1886,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: boss door dialog
       objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879427, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 2995365109703879548, guid: 6b131baf0fea4eb419d4e31e48d217eb,
         type: 3}
       propertyPath: dialogEvent.Array.size
@@ -35692,6 +35697,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: boss dialog
       objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879427, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 2995365109703879548, guid: 6b131baf0fea4eb419d4e31e48d217eb,
         type: 3}
       propertyPath: dialogEvent.Array.size
@@ -36613,7 +36623,7 @@ GameObject:
   - component: {fileID: 919908105}
   - component: {fileID: 919908104}
   - component: {fileID: 919908103}
-  m_Layer: 0
+  m_Layer: 25
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44461,7 +44471,7 @@ GameObject:
   - component: {fileID: 1080171153}
   - component: {fileID: 1080171152}
   - component: {fileID: 1080171151}
-  m_Layer: 0
+  m_Layer: 25
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -63951,7 +63961,7 @@ MonoBehaviour:
   m_Center: {x: 0, y: 2, z: 0}
   m_LayerMask:
     serializedVersion: 2
-    m_Bits: 353079
+    m_Bits: 352567
   m_UseGeometry: 1
   m_DefaultArea: 0
   m_IgnoreNavMeshAgent: 1
@@ -90490,6 +90500,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: opening dialog
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879427, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 2995365109703879548, guid: 6b131baf0fea4eb419d4e31e48d217eb,
         type: 3}
