@@ -8,7 +8,6 @@ public class BossMovement : MonoBehaviour
 {
     public NavMeshAgent agent;
 
-
     public float ApproachSpeed;
     public float RetreatSpeed;
 
@@ -41,6 +40,7 @@ public class BossMovement : MonoBehaviour
 
     public int shotCounter = 0;
 
+    [Header("First Retreat")] public ParticleSystem steamExhaust;
 
 
     // Start is called before the first frame update
@@ -145,11 +145,10 @@ public class BossMovement : MonoBehaviour
 
     private void UpdateAnimator()
     {
-          //  animator.SetBool("Alerted", Alerted);
           animator.SetBool("Attacking", Attacking);
           animator.SetBool("Shooting", shooting);
           animator.SetBool("Retreating", Retreating);
-          //  animator.SetBool("SeePlayer", SeePlayer);
+          animator.SetInteger("Stage", retreatCounter);
     }
 
     public void Retreat()
@@ -158,7 +157,7 @@ public class BossMovement : MonoBehaviour
         agent.SetDestination(Center);
         retreatCounter++;
         shotCounter = 0;
-
+        AddStageEffect(retreatCounter);
     }
 
     public void SetAttackWindUp(float t)
@@ -178,4 +177,16 @@ public class BossMovement : MonoBehaviour
         shootDurationReset = shootDuration;
 
     }
+    
+    private void AddStageEffect(int stage)
+    {
+        switch (stage)
+        {
+            case 1:
+                // Pop open steam lid
+                steamExhaust.Play();
+                break;
+        }
+    }
+
 }
