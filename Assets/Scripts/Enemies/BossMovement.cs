@@ -69,16 +69,15 @@ public class BossMovement : MonoBehaviour
 
         if(Retreating == true)
         {
+            transform.LookAt(PlayerLastLocation);
             if(Vector3.Distance(Center, transform.position) < .5)
             {
                 shooting = true;
                 shootDuration = shootDurationReset;
-                transform.LookAt(PlayerLastLocation);
                 GetComponent<BossAttack>().Shoot();
                 shotCounter = 1;
                 Retreating = false;
             }
-            
 
             return;
         }
@@ -148,6 +147,8 @@ public class BossMovement : MonoBehaviour
     {
           //  animator.SetBool("Alerted", Alerted);
           animator.SetBool("Attacking", Attacking);
+          animator.SetBool("Shooting", shooting);
+          animator.SetBool("Retreating", Retreating);
           //  animator.SetBool("SeePlayer", SeePlayer);
     }
 

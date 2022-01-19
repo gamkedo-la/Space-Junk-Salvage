@@ -21,7 +21,7 @@ public class PlayerAttacks : MonoBehaviour
     float SwingTime = .7f;
     float ChainWindow = .3f;
     float EndSwingTime = 1.0f;
-    int damage = 15;
+    public int damage = 15;
 
     public bool CanMove = true;
 
@@ -167,7 +167,7 @@ public class PlayerAttacks : MonoBehaviour
 
     public void OnAttack()
     {
-        if (paused == true)
+        if (paused == false)
         {
             StartAttack = true;
         }
