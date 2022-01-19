@@ -146,12 +146,9 @@ public class BossMovement : MonoBehaviour
 
     private void UpdateAnimator()
     {
-        if (animator != null)
-        {
           //  animator.SetBool("Alerted", Alerted);
-          //  animator.SetBool("Attacking", Attacking);
+          animator.SetBool("Attacking", Attacking);
           //  animator.SetBool("SeePlayer", SeePlayer);
-        }
     }
 
     public void Retreat()
@@ -163,6 +160,11 @@ public class BossMovement : MonoBehaviour
 
     }
 
+    public void SetAttackWindUp(float t)
+    {
+        animator.SetFloat("WindUpSpeed", 1f/t);
+    }
+    
     public void SetAttackDuration(float D)
     {
         AttackDuration = D;
