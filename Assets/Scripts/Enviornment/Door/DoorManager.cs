@@ -13,7 +13,10 @@ public class DoorManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        LinkDoors();
+        if (other != null)
+        {
+            LinkDoors();
+        }
 
         myEndPoint.name = gameObject.name + " endpoint";
 

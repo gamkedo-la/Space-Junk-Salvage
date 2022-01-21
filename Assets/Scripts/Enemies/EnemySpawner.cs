@@ -6,26 +6,29 @@ public class EnemySpawner : MonoBehaviour
 {
     public List<GameObject> ThisRoomEnemies;
 
-    private List<GameObject> LivingEnemies;
-    private List<SpawnPoint> spawnPoints;
+    private List<GameObject> LivingEnemies = new List<GameObject>();
+    private List<SpawnPoint> spawnPoints = new List<SpawnPoint>();
 
 
     // Start is called before the first frame update
     void Start()
     {
-        foreach(GameObject e in ThisRoomEnemies)
+        if (ThisRoomEnemies.Count > 0)
         {
-            SpawnPoint sp = new SpawnPoint
+            foreach (GameObject e in ThisRoomEnemies)
             {
-                Enemy = e,
-                P = e.transform.position
-            };
+                SpawnPoint sp = new SpawnPoint
+                {
+                    Enemy = e,
+                    P = e.transform.position
+                };
 
-            spawnPoints.Add(sp);
+                spawnPoints.Add(sp);
 
-            e.SetActive(false);
+                e.SetActive(false);
 
-            SpawnEnemies();
+                SpawnEnemies();
+            }
         }
     }
 
@@ -52,6 +55,7 @@ public class EnemySpawner : MonoBehaviour
         {
 
             GameObject A = Instantiate(sp.Enemy, sp.P, Quaternion.identity);
+            A.SetActive(true);
             LivingEnemies.Add(A);
         }
 

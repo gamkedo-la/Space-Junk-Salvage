@@ -49,6 +49,7 @@ MonoBehaviour:
   WallSegmentPrefab: {fileID: 7825992327632427494, guid: 8fa7469c281b1614a82e3c44968cfbf9,
     type: 3}
   Side: 3
+  Room: {fileID: 0}
 --- !u!1 &1768274999532732863
 GameObject:
   m_ObjectHideFlags: 0
@@ -98,6 +99,7 @@ MonoBehaviour:
   WallSegmentPrefab: {fileID: 7825992327632427494, guid: 8fa7469c281b1614a82e3c44968cfbf9,
     type: 3}
   Side: 0
+  Room: {fileID: 0}
 --- !u!1 &1824562880335698902
 GameObject:
   m_ObjectHideFlags: 0
@@ -147,6 +149,7 @@ MonoBehaviour:
   WallSegmentPrefab: {fileID: 7825992327632427494, guid: 8fa7469c281b1614a82e3c44968cfbf9,
     type: 3}
   Side: 1
+  Room: {fileID: 0}
 --- !u!1 &2381996454628838708
 GameObject:
   m_ObjectHideFlags: 0
@@ -439,6 +442,7 @@ MonoBehaviour:
   WallSegmentPrefab: {fileID: 7825992327632427494, guid: 8fa7469c281b1614a82e3c44968cfbf9,
     type: 3}
   Side: 2
+  Room: {fileID: 0}
 --- !u!1 &8606046161238216028
 GameObject:
   m_ObjectHideFlags: 0

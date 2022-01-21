@@ -1329,6 +1329,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1955588731}
     m_Modifications:
+    - target: {fileID: 4053341131162598145, guid: dd7e1b1da4d1b214d8fbd7a73e723fe3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4120377659246025126, guid: dd7e1b1da4d1b214d8fbd7a73e723fe3,
         type: 3}
       propertyPath: m_RootOrder
@@ -1389,6 +1394,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: 1-3 NW
       objectReference: {fileID: 0}
+    - target: {fileID: 8051731043981579351, guid: dd7e1b1da4d1b214d8fbd7a73e723fe3,
+        type: 3}
+      propertyPath: MyRoom
+      value: 
+      objectReference: {fileID: 1899023388}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd7e1b1da4d1b214d8fbd7a73e723fe3, type: 3}
 --- !u!1 &66547326
@@ -2888,6 +2898,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 137159587}
   m_Mesh: {fileID: -7602838067139144611, guid: 41be11a00171e4a4182bc9f5c4f54987, type: 3}
+--- !u!1 &143411477 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4053341131162598145, guid: dd7e1b1da4d1b214d8fbd7a73e723fe3,
+    type: 3}
+  m_PrefabInstance: {fileID: 2050197221}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &148839045
 GameObject:
   m_ObjectHideFlags: 0
@@ -11596,6 +11612,11 @@ PrefabInstance:
       propertyPath: other
       value: 
       objectReference: {fileID: 799766082}
+    - target: {fileID: 8051731043981579351, guid: dd7e1b1da4d1b214d8fbd7a73e723fe3,
+        type: 3}
+      propertyPath: MyRoom
+      value: 
+      objectReference: {fileID: 1819532375}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd7e1b1da4d1b214d8fbd7a73e723fe3, type: 3}
 --- !u!1 &723592342
@@ -12883,6 +12904,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1007489925}
     m_Modifications:
+    - target: {fileID: 4076367589266016824, guid: dd7e1b1da4d1b214d8fbd7a73e723fe3,
+        type: 3}
+      propertyPath: Room
+      value: 
+      objectReference: {fileID: 1007489922}
     - target: {fileID: 4120377659246025126, guid: dd7e1b1da4d1b214d8fbd7a73e723fe3,
         type: 3}
       propertyPath: m_RootOrder
@@ -12948,6 +12974,11 @@ PrefabInstance:
       propertyPath: other
       value: 
       objectReference: {fileID: 1879133915}
+    - target: {fileID: 8051731043981579351, guid: dd7e1b1da4d1b214d8fbd7a73e723fe3,
+        type: 3}
+      propertyPath: MyRoom
+      value: 
+      objectReference: {fileID: 1007489922}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd7e1b1da4d1b214d8fbd7a73e723fe3, type: 3}
 --- !u!1 &763716685
@@ -13174,7 +13205,7 @@ MonoBehaviour:
   - {fileID: 1082059907}
   - {fileID: 0}
   - {fileID: 0}
-  ClosedDoor: {fileID: 0}
+  ClosedDoor: {fileID: 1655434371}
 --- !u!1001 &778648674
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13247,6 +13278,11 @@ PrefabInstance:
       propertyPath: other
       value: 
       objectReference: {fileID: 852229483}
+    - target: {fileID: 8051731043981579351, guid: dd7e1b1da4d1b214d8fbd7a73e723fe3,
+        type: 3}
+      propertyPath: MyRoom
+      value: 
+      objectReference: {fileID: 1058347537}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd7e1b1da4d1b214d8fbd7a73e723fe3, type: 3}
 --- !u!1001 &779076015
@@ -14364,6 +14400,11 @@ PrefabInstance:
       propertyPath: other
       value: 
       objectReference: {fileID: 663315589}
+    - target: {fileID: 8051731043981579351, guid: dd7e1b1da4d1b214d8fbd7a73e723fe3,
+        type: 3}
+      propertyPath: MyRoom
+      value: 
+      objectReference: {fileID: 2040416951}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd7e1b1da4d1b214d8fbd7a73e723fe3, type: 3}
 --- !u!1 &831786402
@@ -17444,7 +17485,7 @@ PrefabInstance:
     - target: {fileID: -4732880693956781895, guid: 0c0f4d436f99edd42a78fd6493f9548f,
         type: 3}
       propertyPath: ThisRoomEnemies.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4732880693956781895, guid: 0c0f4d436f99edd42a78fd6493f9548f,
         type: 3}
@@ -19547,7 +19588,7 @@ MonoBehaviour:
   - {fileID: 765118695}
   - {fileID: 1126160287}
   - {fileID: 0}
-  ClosedDoor: {fileID: 0}
+  ClosedDoor: {fileID: 143411477}
 --- !u!1 &1089840536
 GameObject:
   m_ObjectHideFlags: 0
@@ -20401,7 +20442,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 1082059907}
   - {fileID: 0}
-  ClosedDoor: {fileID: 0}
+  ClosedDoor: {fileID: 1217385701}
 --- !u!1 &1127685835
 GameObject:
   m_ObjectHideFlags: 0
@@ -22177,6 +22218,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1217096346}
   m_Mesh: {fileID: -7602838067139144611, guid: 41be11a00171e4a4182bc9f5c4f54987, type: 3}
+--- !u!1 &1217385701 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4053341131162598145, guid: dd7e1b1da4d1b214d8fbd7a73e723fe3,
+    type: 3}
+  m_PrefabInstance: {fileID: 64734702}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1222009947
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25020,6 +25067,11 @@ PrefabInstance:
       propertyPath: m_ActionEvents.Array.data[7].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnNextLineCall
       objectReference: {fileID: 0}
+    - target: {fileID: 6946643208067930571, guid: cfc6ffe3640e5944f8043cb29a4ceb8a,
+        type: 3}
+      propertyPath: HPBar
+      value: 
+      objectReference: {fileID: 1676250035}
     - target: {fileID: 6946643208067930589, guid: cfc6ffe3640e5944f8043cb29a4ceb8a,
         type: 3}
       propertyPath: m_Name
@@ -28474,7 +28526,7 @@ PrefabInstance:
     - target: {fileID: 2381996454628838708, guid: 0c0f4d436f99edd42a78fd6493f9548f,
         type: 3}
       propertyPath: m_Name
-      value: Room 2-2? Combat Room
+      value: Room 2-1
       objectReference: {fileID: 0}
     - target: {fileID: 2381996454628838709, guid: 0c0f4d436f99edd42a78fd6493f9548f,
         type: 3}
@@ -30477,6 +30529,12 @@ Transform:
   m_Father: {fileID: 2040416948}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1655434371 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4053341131162598145, guid: dd7e1b1da4d1b214d8fbd7a73e723fe3,
+    type: 3}
+  m_PrefabInstance: {fileID: 2101324845}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1661406151
 GameObject:
   m_ObjectHideFlags: 0
@@ -30673,6 +30731,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1785542626}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1676250035 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 689483221006020229, guid: 1aa6d40be688368438ed6baa5799d0a0,
+    type: 3}
+  m_PrefabInstance: {fileID: 1785542626}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 394a3d736ed53cf46b9581f071d7dd1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1677143376
 GameObject:
   m_ObjectHideFlags: 0
@@ -33291,7 +33361,7 @@ PrefabInstance:
     - target: {fileID: -4732880693956781895, guid: 0c0f4d436f99edd42a78fd6493f9548f,
         type: 3}
       propertyPath: ThisRoomEnemies.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4732880693956781895, guid: 0c0f4d436f99edd42a78fd6493f9548f,
         type: 3}
@@ -36573,7 +36643,7 @@ PrefabInstance:
     - target: {fileID: 2381996454628838708, guid: 0c0f4d436f99edd42a78fd6493f9548f,
         type: 3}
       propertyPath: m_Name
-      value: 1-3
+      value: Room 1-3
       objectReference: {fileID: 0}
     - target: {fileID: 2381996454628838709, guid: 0c0f4d436f99edd42a78fd6493f9548f,
         type: 3}
@@ -39010,7 +39080,7 @@ PrefabInstance:
     - target: {fileID: -4732880693956781895, guid: 0c0f4d436f99edd42a78fd6493f9548f,
         type: 3}
       propertyPath: ThisRoomEnemies.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4732880693956781895, guid: 0c0f4d436f99edd42a78fd6493f9548f,
         type: 3}
@@ -39583,6 +39653,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1106285611}
     m_Modifications:
+    - target: {fileID: 2540206355214670548, guid: dd7e1b1da4d1b214d8fbd7a73e723fe3,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4120377659246025126, guid: dd7e1b1da4d1b214d8fbd7a73e723fe3,
         type: 3}
       propertyPath: m_RootOrder
@@ -39648,6 +39723,11 @@ PrefabInstance:
       propertyPath: other
       value: 
       objectReference: {fileID: 765118695}
+    - target: {fileID: 8051731043981579351, guid: dd7e1b1da4d1b214d8fbd7a73e723fe3,
+        type: 3}
+      propertyPath: MyRoom
+      value: 
+      objectReference: {fileID: 1058347537}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd7e1b1da4d1b214d8fbd7a73e723fe3, type: 3}
 --- !u!1 &2051404258
@@ -40862,6 +40942,11 @@ PrefabInstance:
       propertyPath: other
       value: 
       objectReference: {fileID: 1082059907}
+    - target: {fileID: 8051731043981579351, guid: dd7e1b1da4d1b214d8fbd7a73e723fe3,
+        type: 3}
+      propertyPath: MyRoom
+      value: 
+      objectReference: {fileID: 2040416951}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd7e1b1da4d1b214d8fbd7a73e723fe3, type: 3}
 --- !u!1 &2101620141
