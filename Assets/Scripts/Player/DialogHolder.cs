@@ -27,11 +27,17 @@ public class DialogHolder : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        StartDialog();
+        if (other.tag == "Player")
+        {
+            StartDialog();
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        Destroy(gameObject);
+        if (other.tag == "Player")
+        {
+            Destroy(gameObject);
+        }
     }
 }
