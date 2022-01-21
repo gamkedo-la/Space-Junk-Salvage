@@ -42,6 +42,10 @@ public class BossMovement : MonoBehaviour
 
     [Header("First Retreat")] public ParticleSystem steamExhaust;
 
+    [Header("Second Retreat")] public ParticleSystem sparks;
+
+    [Header("Third Retreat")] public ParticleSystem fluidLeak;
+
 
     // Start is called before the first frame update
     void Start()
@@ -183,8 +187,16 @@ public class BossMovement : MonoBehaviour
         switch (stage)
         {
             case 1:
-                // Pop open steam lid
+                // Start emitting steam
                 steamExhaust.Play();
+                break;
+            case 2:
+                // Start the sparks
+                sparks.Play();
+                break;
+            case 3:
+                // Start leaking fluid
+                fluidLeak.Play();
                 break;
         }
     }
