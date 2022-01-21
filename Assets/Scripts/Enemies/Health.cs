@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Health : MonoBehaviour
 {
@@ -22,6 +23,11 @@ public class Health : MonoBehaviour
     public float BackStabMultiplier;
 
     public bool hit;
+
+    [Tooltip("Destroy GameObject on death")]
+    public bool destroyOnDeath = true;
+
+    public UnityEvent onDeath;
 
     // Start is called before the first frame update
     void Start()
@@ -91,8 +97,12 @@ public class Health : MonoBehaviour
 
     public void Death()
     {
-        //do other death management stuff
-        Destroy(gameObject);
+        onDeath.Invoke();
+        if (destroyOnDeath)
+        {
+            //do other death management stuff
+            Destroy(gameObject);
+        }
 
     }
 }

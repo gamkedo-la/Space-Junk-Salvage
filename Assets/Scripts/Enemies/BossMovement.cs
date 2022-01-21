@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-using TMPro;
 
 public class BossMovement : MonoBehaviour
 {
@@ -45,7 +42,6 @@ public class BossMovement : MonoBehaviour
     [Header("Second Retreat")] public ParticleSystem sparks;
 
     [Header("Third Retreat")] public ParticleSystem fluidLeak;
-
 
     // Start is called before the first frame update
     void Start()
@@ -162,6 +158,18 @@ public class BossMovement : MonoBehaviour
         retreatCounter++;
         shotCounter = 0;
         AddStageEffect(retreatCounter);
+    }
+
+    public void Die()
+    {
+        Attacking = false;
+        shooting = false;
+        Retreating = false;
+        sparks.Stop();
+        steamExhaust.Stop();
+        fluidLeak.Stop();
+        UpdateAnimator();
+        enabled = false;
     }
 
     public void SetAttackWindUp(float t)
