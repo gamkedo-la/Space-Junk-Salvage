@@ -45,6 +45,12 @@ public class Health : MonoBehaviour
 
     public void TakeDamage(int d)
     {
+        // Early exit in case we've already died before, so not to trigger death multiple times
+        if (HP <= 0)
+        {
+            return;
+        }
+        
         hit = true;
         int Damage = d;
 
