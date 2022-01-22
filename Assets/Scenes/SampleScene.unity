@@ -17439,6 +17439,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1aa6d40be688368438ed6baa5799d0a0, type: 3}
+--- !u!114 &689483222559330574 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 484897136285577463, guid: 1aa6d40be688368438ed6baa5799d0a0,
+    type: 3}
+  m_PrefabInstance: {fileID: 689483222559330573}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f69ad94b053f24948a36a130638efe6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &814484310049487150
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18714,6 +18726,11 @@ PrefabInstance:
       propertyPath: Potions
       value: 
       objectReference: {fileID: 270025068}
+    - target: {fileID: 6946643208067930565, guid: cfc6ffe3640e5944f8043cb29a4ceb8a,
+        type: 3}
+      propertyPath: rechargeCooldownUI
+      value: 
+      objectReference: {fileID: 689483222559330574}
     - target: {fileID: 6946643208067930566, guid: cfc6ffe3640e5944f8043cb29a4ceb8a,
         type: 3}
       propertyPath: m_RootOrder

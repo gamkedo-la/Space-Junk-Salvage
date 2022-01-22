@@ -23096,6 +23096,16 @@ PrefabInstance:
       propertyPath: Potions
       value: 
       objectReference: {fileID: 375020444}
+    - target: {fileID: 6946643208067930565, guid: cfc6ffe3640e5944f8043cb29a4ceb8a,
+        type: 3}
+      propertyPath: rechargeCooldownUI
+      value: 
+      objectReference: {fileID: 2061158722}
+    - target: {fileID: 6946643208067930565, guid: cfc6ffe3640e5944f8043cb29a4ceb8a,
+        type: 3}
+      propertyPath: startingEnergyCells
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6946643208067930566, guid: cfc6ffe3640e5944f8043cb29a4ceb8a,
         type: 3}
       propertyPath: m_RootOrder
@@ -23151,6 +23161,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6946643208067930567, guid: cfc6ffe3640e5944f8043cb29a4ceb8a,
+        type: 3}
+      propertyPath: cool
+      value: 
+      objectReference: {fileID: 1408799422}
     - target: {fileID: 6946643208067930571, guid: cfc6ffe3640e5944f8043cb29a4ceb8a,
         type: 3}
       propertyPath: HPBar
@@ -24379,6 +24394,18 @@ Transform:
   m_Father: {fileID: 1094764201}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1408799422 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2262170238638454732, guid: 1aa6d40be688368438ed6baa5799d0a0,
+    type: 3}
+  m_PrefabInstance: {fileID: 389186033}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f69ad94b053f24948a36a130638efe6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1412646902
 GameObject:
   m_ObjectHideFlags: 0
@@ -26166,6 +26193,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2054564287}
   m_Mesh: {fileID: -7602838067139144611, guid: 41be11a00171e4a4182bc9f5c4f54987, type: 3}
+--- !u!114 &2061158722 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 484897136285577463, guid: 1aa6d40be688368438ed6baa5799d0a0,
+    type: 3}
+  m_PrefabInstance: {fileID: 389186033}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f69ad94b053f24948a36a130638efe6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2068020090
 GameObject:
   m_ObjectHideFlags: 0

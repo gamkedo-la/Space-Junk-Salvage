@@ -68,7 +68,7 @@ public class PlayerMovement : MonoBehaviour
 
     public bool MapOpen = false;
 
-    public DashCooldownUI cool;
+    public CooldownUI cool;
     public float MovementPercentage => V.magnitude / speed;
 
     // Start is called before the first frame update
@@ -210,7 +210,7 @@ public class PlayerMovement : MonoBehaviour
                     dashing = true;
                     if (cool != null)
                     {
-                        cool.Dash(DCReset);
+                        cool.ActivateAndCooldown(DCReset, 1f/DashSpeed);
                     }
 
                     /*

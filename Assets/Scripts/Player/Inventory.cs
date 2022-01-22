@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 using TMPro;
 
 public class Inventory : MonoBehaviour
@@ -34,6 +31,8 @@ public class Inventory : MonoBehaviour
 
     public bool Actionable = true;
 
+    public CooldownUI rechargeCooldownUI;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -44,6 +43,8 @@ public class Inventory : MonoBehaviour
         {
             firstPickup[i] = true;
         }
+
+        UIUpdate();
     }
 
     // Update is called once per frame
@@ -90,6 +91,11 @@ public class Inventory : MonoBehaviour
                 {
                     HealCooldown = HCReset;
                     GetComponentInChildren<Animator>().SetTrigger("Recharge");
+                    // If we have more energy cells left, run the cooldown sequence
+                    if (Items[1] > 0)
+                    {
+                        rechargeCooldownUI.ActivateAndCooldown(HealCooldown, 0);
+                    }
                 }
             }
         }
@@ -99,6 +105,14 @@ public class Inventory : MonoBehaviour
     {
         Keys.text = Items[0].ToString();
         Potions.text = Items[1].ToString();
+        if (Items[1] <= 0)
+        {
+            rechargeCooldownUI.gameObject.SetActive(false);
+        }
+        else
+        {
+            rechargeCooldownUI.gameObject.SetActive(true);
+        }
     }
 
     public void OnTakeCell()
