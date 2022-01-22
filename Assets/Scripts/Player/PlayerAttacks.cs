@@ -115,6 +115,7 @@ public class PlayerAttacks : MonoBehaviour
             Attacking = 0;
             actionable = true;
             CanMove = true;
+            SWORD.dam = 0;
         }
 
         if (StartAttack == true)

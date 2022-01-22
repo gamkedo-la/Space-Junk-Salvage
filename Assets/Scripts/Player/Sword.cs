@@ -8,6 +8,8 @@ public class Sword : MonoBehaviour
 
     public bool DashAttack;
 
+    public AudioSource audioSource;
+
     private int Damage =>
         dam +
         (int) (dam * (Combo - 1) * .1f) +
@@ -20,6 +22,7 @@ public class Sword : MonoBehaviour
         // Check that dam > 0 to see that this is part of an attack and haven't already spent our damage
         if (dam > 0 && other.gameObject.CompareTag("Enemy"))
         {
+            audioSource.Play();
             other.gameObject.GetComponent<Health>().TakeDamage(Damage);
             dam = 0;
         }
