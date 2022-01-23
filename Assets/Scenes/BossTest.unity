@@ -26764,12 +26764,12 @@ MonoBehaviour:
   model: {fileID: 1162346988}
   WindUp: 0.5
   Active: 0.5
-  Ending: 0.5
+  Ending: 0.8
   shooting: 0
   aim: 0
   recoil: 0
   timer: 0
-  Damage: 25
+  Damage: 18
   KnockbackStrength: 4
   HitBoxSpeed: 300
   Arc: 85
