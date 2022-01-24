@@ -63,7 +63,7 @@ public class PlayerAnimator : MonoBehaviour
             animator.SetFloat(SpeedProperty, 0, stoppingDampTime, Time.deltaTime);
         }
 
-        animator.SetBool(DashingProperty, movement.dashing);
+        animator.SetBool(DashingProperty, movement.dashing | movement.SwitchingRooms);
 
         if (attacks.Attacking != _attacking)
         {

@@ -36,7 +36,7 @@ public class Backpack : MonoBehaviour
         }
     }
 
-    private void StopEngines()
+    public void StopEngines()
     {
         foreach (var engine in _engines)
         {
@@ -44,7 +44,7 @@ public class Backpack : MonoBehaviour
         }
     }
 
-    private void StartEngines()
+    public void StartEngines()
     {
         foreach (var engine in _engines)
         {

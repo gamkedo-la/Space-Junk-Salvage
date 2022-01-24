@@ -30,9 +30,7 @@ public class DoorTransitionCollider: MonoBehaviour
         {
             //player = other.gameObject;
 
-            other.gameObject.GetComponent<PlayerMovement>().SwitchingRooms = true;
-            other.gameObject.GetComponent<PlayerMovement>().OtherRoom = EndPoint;
-
+            other.gameObject.GetComponent<PlayerMovement>().StartSwitchingRooms(EndPoint);
 
         }
     }

@@ -69,6 +69,8 @@ public class PlayerMovement : MonoBehaviour
     public bool MapOpen = false;
 
     public CooldownUI cool;
+    private Backpack _backpack;
+
     public float MovementPercentage => V.magnitude / speed;
 
     // Start is called before the first frame update
@@ -77,6 +79,7 @@ public class PlayerMovement : MonoBehaviour
         myRigidbody = GetComponent<Rigidbody>();
         DCReset = DashCooldown;
         DashCooldown = 0;
+        _backpack = GetComponentInChildren<Backpack>();
     }
 
     public void ApplyKnockback(Vector3 AttackOrigin, float strength)
@@ -145,6 +148,7 @@ public class PlayerMovement : MonoBehaviour
                 {
                     SwitchingRooms = false;
                     jumped = false;
+                    _backpack.StopEngines();
                 }
             }
             return;
@@ -236,7 +240,7 @@ public class PlayerMovement : MonoBehaviour
 
                     Instantiate(DashParticles, transform.position, Q, transform);
                     
-                    GetComponentInChildren<Backpack>().FireEngines(1f/DashSpeed, DCReset);
+                    _backpack.FireEngines(1f/DashSpeed, DCReset);
                 }
             }
             else if (dashing == true)
@@ -341,5 +345,12 @@ public class PlayerMovement : MonoBehaviour
                 return;
             }
         }
+    }
+
+    public void StartSwitchingRooms(Transform endPoint)
+    {
+        SwitchingRooms = true;
+        OtherRoom = endPoint;
+        _backpack.StartEngines();
     }
 }
