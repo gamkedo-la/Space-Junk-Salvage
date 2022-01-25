@@ -497,7 +497,7 @@ PrefabInstance:
     - target: {fileID: 4803149145672153271, guid: 73a0c9f8c5ea4424a98648ac94d3f331,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4803149145672153271, guid: 73a0c9f8c5ea4424a98648ac94d3f331,
         type: 3}
@@ -1598,11 +1598,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1341735863}
     m_Modifications:
+    - target: {fileID: 2638519669969005929, guid: 150c4967494c46a4aacead7d2e1ac176,
+        type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 460462702}
     - target: {fileID: 3025403255403515648, guid: 150c4967494c46a4aacead7d2e1ac176,
         type: 3}
       propertyPath: m_Name
       value: Forklift Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 3025403255403515673, guid: 150c4967494c46a4aacead7d2e1ac176,
+        type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 460462702}
     - target: {fileID: 3025403255403515674, guid: 150c4967494c46a4aacead7d2e1ac176,
         type: 3}
       propertyPath: PatrolPoints.Array.size
@@ -2731,6 +2741,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1955588735}
     m_Modifications:
+    - target: {fileID: 3357354704630088819, guid: 9085e31cbd4f27446af415dfe51253b5,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 670224309865224971, guid: fb9fc527806a0ab4bbff2e893abd22a3,
+        type: 3}
     - target: {fileID: 3861630113696785830, guid: 9085e31cbd4f27446af415dfe51253b5,
         type: 3}
       propertyPath: m_Name
@@ -7629,6 +7645,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73a0c9f8c5ea4424a98648ac94d3f331, type: 3}
+--- !u!1 &460462702 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6946643208067930589, guid: cfc6ffe3640e5944f8043cb29a4ceb8a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1359485272}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &468320222
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10333,7 +10355,7 @@ PrefabInstance:
     - target: {fileID: 4803149145672153271, guid: 73a0c9f8c5ea4424a98648ac94d3f331,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4803149145672153271, guid: 73a0c9f8c5ea4424a98648ac94d3f331,
         type: 3}
@@ -10968,6 +10990,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Forklift Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 3025403255403515673, guid: 150c4967494c46a4aacead7d2e1ac176,
+        type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 460462702}
     - target: {fileID: 3025403255403515674, guid: 150c4967494c46a4aacead7d2e1ac176,
         type: 3}
       propertyPath: PatrolPoints.Array.size
@@ -11058,6 +11085,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3025403255403515678, guid: 150c4967494c46a4aacead7d2e1ac176,
+        type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 460462702}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 150c4967494c46a4aacead7d2e1ac176, type: 3}
 --- !u!1 &679721023
@@ -11175,7 +11207,7 @@ PrefabInstance:
     - target: {fileID: 4803149145672153271, guid: 73a0c9f8c5ea4424a98648ac94d3f331,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.499999
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4803149145672153271, guid: 73a0c9f8c5ea4424a98648ac94d3f331,
         type: 3}
@@ -14920,7 +14952,7 @@ PrefabInstance:
     - target: {fileID: 4803149145672153271, guid: 73a0c9f8c5ea4424a98648ac94d3f331,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4803149145672153271, guid: 73a0c9f8c5ea4424a98648ac94d3f331,
         type: 3}
@@ -15857,7 +15889,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919908102}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -107.8, y: 2.71, z: 1.1}
+  m_LocalPosition: {x: 8.2, y: 2.71, z: 1.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1080171150}
@@ -22343,6 +22375,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTile (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7855549483731804806, guid: 086c35a8668fd8746a6a05e832b7b8f6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 086c35a8668fd8746a6a05e832b7b8f6, type: 3}
 --- !u!1 &1227513920
@@ -26833,6 +26870,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FloorTile
       objectReference: {fileID: 0}
+    - target: {fileID: 7855549483731804806, guid: 086c35a8668fd8746a6a05e832b7b8f6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 086c35a8668fd8746a6a05e832b7b8f6, type: 3}
 --- !u!1 &1462627603
@@ -29988,6 +30030,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Forklift Enemy (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3025403255403515673, guid: 150c4967494c46a4aacead7d2e1ac176,
+        type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 460462702}
     - target: {fileID: 3025403255403515674, guid: 150c4967494c46a4aacead7d2e1ac176,
         type: 3}
       propertyPath: PatrolPoints.Array.size
@@ -31753,7 +31800,7 @@ PrefabInstance:
     - target: {fileID: 4803149145672153271, guid: 73a0c9f8c5ea4424a98648ac94d3f331,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4803149145672153271, guid: 73a0c9f8c5ea4424a98648ac94d3f331,
         type: 3}
@@ -32616,6 +32663,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 689483222498845125, guid: 1aa6d40be688368438ed6baa5799d0a0,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.5849056
+      objectReference: {fileID: 0}
+    - target: {fileID: 689483222498845125, guid: 1aa6d40be688368438ed6baa5799d0a0,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.29639915
+      objectReference: {fileID: 0}
+    - target: {fileID: 689483222498845125, guid: 1aa6d40be688368438ed6baa5799d0a0,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.26762193
       objectReference: {fileID: 0}
     - target: {fileID: 1153273081873970049, guid: 1aa6d40be688368438ed6baa5799d0a0,
         type: 3}
@@ -38201,6 +38263,11 @@ PrefabInstance:
       propertyPath: PatrolPoints.Array.data[1].z
       value: 205.10942
       objectReference: {fileID: 0}
+    - target: {fileID: 8616784560306521991, guid: 84d3c3991eb059146b1e09178e57ffc9,
+        type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 460462702}
     - target: {fileID: 8616784560306522014, guid: 84d3c3991eb059146b1e09178e57ffc9,
         type: 3}
       propertyPath: m_Name
@@ -39937,6 +40004,26 @@ PrefabInstance:
     - target: {fileID: 2540206355214670548, guid: dd7e1b1da4d1b214d8fbd7a73e723fe3,
         type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3678188432076399035, guid: dd7e1b1da4d1b214d8fbd7a73e723fe3,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3678188432076399035, guid: dd7e1b1da4d1b214d8fbd7a73e723fe3,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3678188432076399035, guid: dd7e1b1da4d1b214d8fbd7a73e723fe3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 4053341131162598145, guid: dd7e1b1da4d1b214d8fbd7a73e723fe3,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4120377659246025126, guid: dd7e1b1da4d1b214d8fbd7a73e723fe3,
@@ -41901,7 +41988,7 @@ PrefabInstance:
     - target: {fileID: 4803149145672153271, guid: 73a0c9f8c5ea4424a98648ac94d3f331,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4803149145672153271, guid: 73a0c9f8c5ea4424a98648ac94d3f331,
         type: 3}
