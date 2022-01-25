@@ -13,8 +13,8 @@ public class PatchesMusicRegion : MonoBehaviour {
 
 	public PatchesMusicPool pool;
 	private PatchesMusicTrack[] tracks = new PatchesMusicTrack[0];
-
-	public LayerMask layers;
+	
+	public string tagToTrigger = "Player";
 
 	private void Start()
 	{
@@ -31,17 +31,22 @@ public class PatchesMusicRegion : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider other) {
-		if (0 != (layers.value & 1 << other.gameObject.layer)) {
+		if (other.gameObject.tag.ToLower() == tagToTrigger.ToLower()) {
 			PatchesMusicManager.Instance.PushMusicPool(pool);
 			if (startMusicOnTriggerEnter) PatchesMusicManager.Instance.StartMusic();
 			if (hardOutOnTriggerEnter) PatchesMusicManager.Instance.TransitionMusicNow();
+			Debug.Log("Enter Player");
 		}
+		//Debug.Log("Enter Something");
 	}
 
 	void OnTriggerExit(Collider other) {
-		if (0 != (layers.value & 1 << other.gameObject.layer))
+		if (other.gameObject.tag.ToLower() == tagToTrigger.ToLower()) {
 			PatchesMusicManager.Instance.PopMusicPool();
-		if (stopMusicOnTriggerExit) PatchesMusicManager.Instance.FadeOutMusic(fadeTime);
-		if (hardOutOnTriggerExit) PatchesMusicManager.Instance.TransitionMusicNow();
+			if (stopMusicOnTriggerExit) PatchesMusicManager.Instance.FadeOutMusic(fadeTime);
+			if (hardOutOnTriggerExit) PatchesMusicManager.Instance.TransitionMusicNow();
+			Debug.Log("Exit Player");
+		}
+		//Debug.Log("Exit Something");
 	}
 }
