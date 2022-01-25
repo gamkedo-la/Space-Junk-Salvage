@@ -19,6 +19,8 @@ public class Health : MonoBehaviour
 
     public GameObject Player;
 
+    public GameObject TookDamageEffectPrefab;
+
     [Min(1)]
     public float BackStabMultiplier;
 
@@ -64,6 +66,11 @@ public class Health : MonoBehaviour
         }
 
         HP -= Damage;
+
+        if (TookDamageEffectPrefab)
+        {
+            GameObject.Instantiate(TookDamageEffectPrefab, transform.position, Quaternion.identity);
+        }
 
         HPBar.gameObject.SetActive(true);
 

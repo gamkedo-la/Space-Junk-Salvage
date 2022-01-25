@@ -127,8 +127,14 @@ MonoBehaviour:
   HPBar: {fileID: 4979948623999888108}
   BSC: {fileID: 1784068949577753186}
   Player: {fileID: 0}
+  TookDamageEffectPrefab: {fileID: 6953736599033767374, guid: f04e240ef53b2417e8d2f7825d518734,
+    type: 3}
   BackStabMultiplier: 1.5
   hit: 0
+  destroyOnDeath: 1
+  onDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &3025403255403515673
 MonoBehaviour:
   m_ObjectHideFlags: 0
