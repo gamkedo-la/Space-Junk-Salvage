@@ -831,6 +831,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 29808196}
   m_Mesh: {fileID: -7602838067139144611, guid: 41be11a00171e4a4182bc9f5c4f54987, type: 3}
+--- !u!1 &31658371 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3025403255403515648, guid: 150c4967494c46a4aacead7d2e1ac176,
+    type: 3}
+  m_PrefabInstance: {fileID: 2017725266}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &32108900
 GameObject:
   m_ObjectHideFlags: 0
@@ -3489,6 +3495,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2050197221}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &143676976 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3025403255403515648, guid: 150c4967494c46a4aacead7d2e1ac176,
+    type: 3}
+  m_PrefabInstance: {fileID: 205023363}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &148839045
 GameObject:
   m_ObjectHideFlags: 0
@@ -4719,11 +4731,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1928336394}
     m_Modifications:
+    - target: {fileID: 2638519669969005929, guid: 150c4967494c46a4aacead7d2e1ac176,
+        type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 460462702}
     - target: {fileID: 3025403255403515648, guid: 150c4967494c46a4aacead7d2e1ac176,
         type: 3}
       propertyPath: m_Name
       value: Forklift Enemy (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3025403255403515673, guid: 150c4967494c46a4aacead7d2e1ac176,
+        type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 460462702}
     - target: {fileID: 3025403255403515676, guid: 150c4967494c46a4aacead7d2e1ac176,
         type: 3}
       propertyPath: m_RootOrder
@@ -46708,7 +46730,12 @@ PrefabInstance:
         type: 3}
       propertyPath: ThisRoomEnemies.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 31658371}
+    - target: {fileID: -4732880693956781895, guid: 0c0f4d436f99edd42a78fd6493f9548f,
+        type: 3}
+      propertyPath: ThisRoomEnemies.Array.data[1]
+      value: 
+      objectReference: {fileID: 143676976}
     - target: {fileID: 351209211987407397, guid: 0c0f4d436f99edd42a78fd6493f9548f,
         type: 3}
       propertyPath: Room
@@ -50071,11 +50098,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1928336394}
     m_Modifications:
+    - target: {fileID: 2638519669969005929, guid: 150c4967494c46a4aacead7d2e1ac176,
+        type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 460462702}
     - target: {fileID: 3025403255403515648, guid: 150c4967494c46a4aacead7d2e1ac176,
         type: 3}
       propertyPath: m_Name
       value: Forklift Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 3025403255403515673, guid: 150c4967494c46a4aacead7d2e1ac176,
+        type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 460462702}
     - target: {fileID: 3025403255403515676, guid: 150c4967494c46a4aacead7d2e1ac176,
         type: 3}
       propertyPath: m_RootOrder
