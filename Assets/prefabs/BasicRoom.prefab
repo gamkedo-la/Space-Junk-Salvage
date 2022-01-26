@@ -489,9 +489,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hardOutOnTriggerEnter: 0
   pool: {fileID: 11400000, guid: 1fd74a8d79c767e48a964e84751e3a7c, type: 2}
-  layers:
-    serializedVersion: 2
-    m_Bits: 2048
+  tagToTrigger: Player
 --- !u!65 &5781402230102892195
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -503,5 +501,5 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 45, y: 10, z: 45}
+  m_Size: {x: 55, y: 10, z: 55}
   m_Center: {x: 0, y: 0, z: 0}

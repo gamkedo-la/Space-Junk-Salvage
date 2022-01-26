@@ -19,28 +19,20 @@ MonoBehaviour:
     endTime: 24
     outTimes:
     - 8
-    - 20
     fadeTime: 2
   - musicStem: {fileID: 8300000, guid: c959402150ddff24aa539c2af203de8e, type: 3}
     loopingAsset: 0
     bpm: 60
     endTime: 24
     outTimes:
-    - 4
     - 8
-    - 12
-    - 16
-    - 20
     fadeTime: 4
   - musicStem: {fileID: 8300000, guid: c959402150ddff24aa539c2af203de8e, type: 3}
     loopingAsset: 0
     bpm: 60
     endTime: 24
     outTimes:
-    - 4
     - 8
-    - 16
-    - 20
     fadeTime: 4
   - musicStem: {fileID: 8300000, guid: 7ecd3560a18d64e489a8262485b5c54a, type: 3}
     loopingAsset: 0
@@ -50,7 +42,6 @@ MonoBehaviour:
     - 8
     - 20
     - 32
-    - 44
     fadeTime: 4
   - musicStem: {fileID: 8300000, guid: 4921f914d86f19d4880c888de9636469, type: 3}
     loopingAsset: 0
@@ -58,5 +49,4 @@ MonoBehaviour:
     endTime: 32
     outTimes:
     - 12
-    - 28
     fadeTime: 4

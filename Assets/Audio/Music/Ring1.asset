@@ -19,7 +19,6 @@ MonoBehaviour:
     endTime: 16
     outTimes:
     - 4
-    - 12
     fadeTime: 4
   - musicStem: {fileID: 8300000, guid: 7eec687286e77f545a80f9b21b158573, type: 3}
     loopingAsset: 0
@@ -27,7 +26,6 @@ MonoBehaviour:
     endTime: 16
     outTimes:
     - 4
-    - 12
     fadeTime: 4
   - musicStem: {fileID: 8300000, guid: ccfddbcfcc5f12e45aa3798aa2c1cf12, type: 3}
     loopingAsset: 0
@@ -35,7 +33,6 @@ MonoBehaviour:
     endTime: 16
     outTimes:
     - 4
-    - 12
     fadeTime: 2
   - musicStem: {fileID: 8300000, guid: ccfddbcfcc5f12e45aa3798aa2c1cf12, type: 3}
     loopingAsset: 0
@@ -43,7 +40,6 @@ MonoBehaviour:
     endTime: 16
     outTimes:
     - 4
-    - 12
     fadeTime: 4
   - musicStem: {fileID: 8300000, guid: 9725f666c3bfff14897a42ecf7cc3cf9, type: 3}
     loopingAsset: 0
@@ -53,5 +49,4 @@ MonoBehaviour:
     - 4
     - 12
     - 20
-    - 28
     fadeTime: 4
