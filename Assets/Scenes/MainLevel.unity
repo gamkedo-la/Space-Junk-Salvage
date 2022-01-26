@@ -4515,6 +4515,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: rotationtable (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4803790325620066441, guid: fcdf2569207fc114cb19a06239941827,
+        type: 3}
+      propertyPath: mover
+      value: 
+      objectReference: {fileID: 1643773099}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fcdf2569207fc114cb19a06239941827, type: 3}
 --- !u!1 &201992346
