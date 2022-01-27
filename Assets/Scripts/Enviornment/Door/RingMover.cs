@@ -15,6 +15,8 @@ public class RingMover : MonoBehaviour
 
     public List<DoorSwitcher> MovingDoors = new List<DoorSwitcher>();
 
+    public List<RoomMover> MovingRooms = new List<RoomMover>();
+
     public TextMeshProUGUI num;
 
     // Start is called before the first frame update
@@ -39,6 +41,10 @@ public class RingMover : MonoBehaviour
             d.SwitchDoor(NewAlignment);
         }
 
+        foreach(RoomMover r in MovingRooms)
+        {
+            r.MoveRoom(NewAlignment);
+        }
 
     }
 

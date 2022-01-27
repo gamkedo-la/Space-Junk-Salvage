@@ -20,7 +20,7 @@ public class EnemySpawner : MonoBehaviour
                 SpawnPoint sp = new SpawnPoint
                 {
                     Enemy = e,
-                    P = e.transform.position
+                    P = e.transform.localPosition
                 };
 
                 spawnPoints.Add(sp);
@@ -54,10 +54,26 @@ public class EnemySpawner : MonoBehaviour
         foreach(SpawnPoint sp in spawnPoints)
         {
 
-            GameObject A = Instantiate(sp.Enemy, sp.P, Quaternion.identity);
+            GameObject A = Instantiate(sp.Enemy,(transform.position + sp.P), Quaternion.identity, transform);
             A.SetActive(true);
             LivingEnemies.Add(A);
         }
+
+
+    }
+
+
+    public void MoveRoom(Vector3 Move)
+    {
+        foreach(GameObject e in ThisRoomEnemies)
+        {
+            for(int i= 0; i < e.GetComponent<BasicEnemyMovement>().PatrolPoints.Length; i++)
+            {
+                e.GetComponent<BasicEnemyMovement>().PatrolPoints[i] += Move;
+            }
+        }
+
+        SpawnEnemies();
 
 
     }

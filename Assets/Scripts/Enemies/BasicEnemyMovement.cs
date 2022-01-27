@@ -10,6 +10,9 @@ public class BasicEnemyMovement : MonoBehaviour
     public NavMeshAgent agent;
 
     public Vector3[] PatrolPoints;
+
+    public Vector3[] RelativePP;
+
     private int PBookmark = 0;
 
     public float PatrolSpeed;
@@ -48,6 +51,10 @@ public class BasicEnemyMovement : MonoBehaviour
         agent.updateRotation = false;
 
         AlertText.text = " ";
+
+        RelativePP = PatrolPoints;
+
+
     }
 
     public void Move(EnemyState state)
