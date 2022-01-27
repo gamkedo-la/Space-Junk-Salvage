@@ -67,9 +67,13 @@ public class PlayerMovement : MonoBehaviour
     public bool Actionable = true;
 
     public bool MapOpen = false;
+    public GameObject MapCamera;
+    public GameObject Map;
 
     public CooldownUI cool;
     private Backpack _backpack;
+
+    private PlayerInput PI;
 
     public float MovementPercentage => V.magnitude / speed;
 
@@ -80,6 +84,7 @@ public class PlayerMovement : MonoBehaviour
         DCReset = DashCooldown;
         DashCooldown = 0;
         _backpack = GetComponentInChildren<Backpack>();
+        PI = GetComponent<PlayerInput>();
     }
 
     public void ApplyKnockback(Vector3 AttackOrigin, float strength)
@@ -322,31 +327,52 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public void OnOpenCloseMap()
+    public void OnOpenCloseMap(InputAction.CallbackContext context)
     {
-        if (Actionable == true)
+        if (context.started)
         {
-            if (MapOpen == true)
+            if (Actionable == true)
             {
-                MapOpen = false;
-                CanAttack = false;
-                Actionable = true;
-                GetComponent<PlayerAttacks>().actionable = true;
-                GetComponent<Inventory>().Actionable = true;
-                return;
-            }
-            else
-            {
-                MapOpen = true;
-                CanAttack = false;
-                Actionable = false;
-                GetComponent<PlayerAttacks>().actionable = false;
-                GetComponent<Inventory>().Actionable = false;
-                return;
+                if (MapOpen == true)
+                {
+                    Map.SetActive(false);
+                    MapOpen = false;
+                    CanAttack = false;
+                    //Actionable = true;
+                    GetComponent<PlayerAttacks>().actionable = true;
+                    GetComponent<Inventory>().Actionable = true;
+
+                    MapCamera.GetComponent<MapCamera>().MapOpen = false;
+
+                    Time.timeScale = 1;
+
+                    Debug.Log("closing the map");
+
+                    PI.SwitchCurrentActionMap("Player");
+                    return;
+
+                }
+                else
+                {
+
+                    Debug.Log("opening the map");
+                    Map.SetActive(true);
+                    MapOpen = true;
+                    CanAttack = false;
+                    Time.timeScale = 0;
+                    MapCamera.transform.position = transform.position;
+                    MapCamera.GetComponent<MapCamera>().MapOpen = true;
+                    PI.SwitchCurrentActionMap("Map");
+
+                    GetComponent<Inventory>().Actionable = false;
+                    //Actionable = false;
+                    GetComponent<PlayerAttacks>().actionable = false;
+                    return;
+                }
             }
         }
-    }
 
+    }
     public void StartSwitchingRooms(Transform endPoint)
     {
         SwitchingRooms = true;

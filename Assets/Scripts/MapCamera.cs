@@ -7,9 +7,9 @@ public class MapCamera : MonoBehaviour
 {
     Transform Player;
 
-    Vector3 V = new Vector3(0,0,0);
+    public Vector3 V = new Vector3(0,0,0);
 
-    bool MapOpen;
+    public bool MapOpen;
 
     public float MapSens = 1.0f;
 
@@ -19,6 +19,8 @@ public class MapCamera : MonoBehaviour
     public int MapEdgeBot = -100;
     public int MapEdgeLeft = -100;
     public int MapEdgeRight = 100;
+
+    public PlayerInput PI;
 
     // Start is called before the first frame update
     void Start()
@@ -55,27 +57,39 @@ public class MapCamera : MonoBehaviour
         }
     }
 
-    public void OpenMap()
-    {
-        if (Player.GetComponent<PlayerMovement>().Actionable == true)
-        {
-            transform.position = Player.transform.position;
-            MapOpen = true;
-            MapRenderTexture.SetActive(true);
+    //public void OpenMap(InputAction.CallbackContext context)
+    //{
+    //    if (Player.GetComponent<PlayerMovement>().Actionable == true)
+    //    {
+    //        transform.position = Player.transform.position;
+    //        MapOpen = true;
+    //        MapRenderTexture.SetActive(true);
 
-            Time.timeScale = 0;
+    //        Debug.Log("opening map");
 
-        }
-    }
 
-    public void CloseMap()
-    {
-        //transform.position = Player.transform.position;
-        MapOpen = false;
-        MapRenderTexture.SetActive(false);
+    //        Time.timeScale = 0;
 
-        Time.timeScale = 1;
-    }
+    //    }
+    //}
+
+    //public void CloseMap(InputAction.CallbackContext context)
+    //{
+    //    if (context.started)
+    //    {
+    //        //transform.position = Player.transform.position;
+    //        MapOpen = false;
+    //        MapRenderTexture.SetActive(false);
+
+    //        Time.timeScale = 1;
+
+    //        Debug.Log("closing map");
+
+    //        Player.GetComponent<PlayerMovement>().OnOpenCloseMap(context);
+
+    //        PI.SwitchCurrentActionMap("Player");
+    //    }
+    //}
 
     public void OnMove(InputAction.CallbackContext value)
     {
@@ -84,20 +98,23 @@ public class MapCamera : MonoBehaviour
 
         V = Quaternion.AngleAxis(-45, Vector3.up) * V;
 
-
+        Debug.Log("moving the map");
     }
 
-    public void OnOpenCloseMap()
-    {
-        if(MapOpen == true)
-        {
-            CloseMap();
-        }
-        else
-        {
-            OpenMap();
-        }
-    }
+    //public void OnOpenCloseMap(InputAction.CallbackContext context)
+    //{
+    //    if (context.started)
+    //    {
+    //        if (MapOpen == true)
+    //        {
+    //            CloseMap(context);
+    //        }
+    //        else
+    //        {
+    //            OpenMap(context);
+    //        }
+    //    }
+    //}
 
 
 }
