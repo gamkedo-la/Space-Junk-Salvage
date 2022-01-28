@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -519,16 +519,16 @@ RectTransform:
   m_GameObject: {fileID: 495578943}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
   m_Children: []
   m_Father: {fileID: 1901745521}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 50, y: -25}
-  m_SizeDelta: {x: 200, y: 50}
-  m_Pivot: {x: 0, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &495578945
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -549,7 +549,26 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Credits
+  m_text: "Credits\n\nWill McKay: Project lead, core gameplay, main input handling,
+    room rotation system, shooting enemy functionality, healing cooldown, map system,
+    dialog system, assorted bugfixes, door functionality, block pushing, laser sword,
+    story integration, dash indicator, boss mechanics, menu, co-level designer, enemy
+    spawning, powercell icon, map fog of war\n\nJohan \xD6stling: Forklift enemy
+    (model, texture, functionality), floor textures with variations (x5), wall variations,
+    player model/textures/animation, shooting enemy, strong enemy, boss (art, sound,
+    visual effects), activation switches, patrol GUI, AI refactor, laser coil effect,
+    enemy alert exclamation, animation transitions, combo attack, energy shield,
+    backpack thrust, energy cell, shield/dash UI, player hit sound, attack tuning\n\nAbhishek
+    @akhmin_ak: Story (game intro, boss intro), most item descriptions, gold key
+    2d art, switch flip sound, support beam and column props\n\nMichael \"Misha\"
+    Fewkes: Music and related integration (main, outer ring, boss, and audio system)\n\nRyan
+    Young: Co-level designer (starting room, 1-1, 2-2, 3-1, 3-2, door connections)\n\nEvan
+    Sklarski: Moving room navmesh improvement, assorted bug fixes\n\nChrister \"McFunkypants\"
+    Kaitila: Key, warning strips, crate, rock debris, steel door\n\nChris DeLeon:
+    Forklift attack/damage particles, ramp model, compiled credits\n\nJonathan Peterson:
+    Item description for health pickup\n\nFilipe Dottori: Old computer model\n\nNic
+    Barkdull: Gear model\n\nThis game was developed by members collaborating in the
+    HomeTeamGameDev.com Outpost community"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -576,10 +595,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
+  m_fontSize: 23.25
   m_fontSizeBase: 50
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
