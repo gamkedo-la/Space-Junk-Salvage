@@ -7,6 +7,8 @@ public class ControlPanel : MonoBehaviour
 
     public RingMover mover;
 
+    public bool Active = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,9 +23,14 @@ public class ControlPanel : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "Player" && Active == true)
         {
             mover.ActivateUI();
         }
+    }
+
+    public void Activate()
+    {
+        Active = true;
     }
 }
