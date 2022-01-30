@@ -8,6 +8,8 @@ public class DialogHolder : MonoBehaviour
 
     public string[] dialogEvent;
 
+    public bool EndOfTheGame = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +24,7 @@ public class DialogHolder : MonoBehaviour
 
     void StartDialog()
     {
-        window.DisplayDialog(dialogEvent);
+        window.DisplayDialog(dialogEvent, EndOfTheGame);
     }
 
     private void OnTriggerEnter(Collider other)

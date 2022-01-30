@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class DialogWindow : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class DialogWindow : MonoBehaviour
     public int bookmark = -1;
 
     GameObject Player;
+
+    bool EndGame = false;
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +31,7 @@ public class DialogWindow : MonoBehaviour
         
     }
 
-    public void DisplayDialog(string[] lines)
+    public void DisplayDialog(string[] lines, bool E)
     {
         GetComponent<CanvasGroup>().alpha = 1;
 
@@ -43,7 +46,7 @@ public class DialogWindow : MonoBehaviour
         Player.GetComponent<Inventory>().Actionable = false;
         Time.timeScale = 0;
 
-
+        EndGame = E;
 
         NextLine();               
     }
@@ -63,6 +66,8 @@ public class DialogWindow : MonoBehaviour
                 Player.GetComponent<PlayerMovement>().Actionable = true;
                 Player.GetComponent<PlayerAttacks>().paused = false;
                 Player.GetComponent<Inventory>().Actionable = true;
+                SceneManager.LoadScene("MainMenu");
+
             }
             else
             {

@@ -1140,6 +1140,11 @@ PrefabInstance:
       objectReference: {fileID: 658129365}
     - target: {fileID: 2995365109703879548, guid: 6b131baf0fea4eb419d4e31e48d217eb,
         type: 3}
+      propertyPath: EndOfTheGame
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879548, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
       propertyPath: dialogEvent.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -62634,9 +62639,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6946643208067930571, guid: cfc6ffe3640e5944f8043cb29a4ceb8a,
         type: 3}
+      propertyPath: DG
+      value: 
+      objectReference: {fileID: 658129365}
+    - target: {fileID: 6946643208067930571, guid: cfc6ffe3640e5944f8043cb29a4ceb8a,
+        type: 3}
       propertyPath: HPBar
       value: 
       objectReference: {fileID: 1676250035}
+    - target: {fileID: 6946643208067930571, guid: cfc6ffe3640e5944f8043cb29a4ceb8a,
+        type: 3}
+      propertyPath: GameOver.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6946643208067930571, guid: cfc6ffe3640e5944f8043cb29a4ceb8a,
+        type: 3}
+      propertyPath: GameOver.Array.data[0]
+      value: I have failed
+      objectReference: {fileID: 0}
     - target: {fileID: 6946643208067930589, guid: cfc6ffe3640e5944f8043cb29a4ceb8a,
         type: 3}
       propertyPath: m_Name

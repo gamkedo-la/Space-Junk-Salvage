@@ -22,6 +22,10 @@ public class PlayerHP : MonoBehaviour
 
     public bool invuln = false;
 
+    public string[] GameOver;
+
+    public DialogWindow DG;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -61,7 +65,7 @@ public class PlayerHP : MonoBehaviour
             if (CurrentHP <= 0)
             {
 
-                //Game Over
+                DG.DisplayDialog(GameOver, true);
 
             }
 

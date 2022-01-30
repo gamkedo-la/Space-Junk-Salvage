@@ -62,7 +62,7 @@ public class Inventory : MonoBehaviour
         {
             firstPickup[index] = false;
             dialogString[0] = pickupDialogs[index];
-            dialog.DisplayDialog(dialogString);
+            dialog.DisplayDialog(dialogString, false);
         }
     }
 
