@@ -22,7 +22,12 @@ public class BossActivator : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            Boss.SetActive(true);
+            TurnOn();
         }
+    }
+
+    public void TurnOn()
+    {
+        Boss.SetActive(true);
     }
 }
