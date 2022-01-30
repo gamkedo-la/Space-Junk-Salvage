@@ -76123,6 +76123,180 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1769550267}
   m_Mesh: {fileID: -7602838067139144611, guid: 41be11a00171e4a4182bc9f5c4f54987, type: 3}
+--- !u!1001 &1769977015
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2995365109703879427, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: m_Name
+      value: Room 2-2 easter egg
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879427, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879548, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: window
+      value: 
+      objectReference: {fileID: 658129365}
+    - target: {fileID: 2995365109703879548, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: dialogEvent.Array.size
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879548, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: dialogEvent.Array.data[0]
+      value: Sitting in the debris pile you see a torn note book,
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879548, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: dialogEvent.Array.data[1]
+      value: ... most of the pages are too badly damaged to read.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879548, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: dialogEvent.Array.data[2]
+      value: ...
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879548, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: dialogEvent.Array.data[3]
+      value: However the last page is still legible, writen in a hasty manner.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879548, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: dialogEvent.Array.data[4]
+      value: ...
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879548, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: dialogEvent.Array.data[5]
+      value: '"Just push the off button he says, ha!"'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879548, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: dialogEvent.Array.data[6]
+      value: '"The forklifts are faster and have sharper claws than we do."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879548, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: dialogEvent.Array.data[7]
+      value: '"They have no code of ethics or consideration for their own future."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879548, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: dialogEvent.Array.data[8]
+      value: '"In a fair fight they will win"'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879548, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: dialogEvent.Array.data[9]
+      value: ...
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879548, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: dialogEvent.Array.data[10]
+      value: '"Do not fight the ...."'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879548, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: dialogEvent.Array.data[11]
+      value: What remains of the page is no longer readable.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879549, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 6.3537903
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879549, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 6.762754
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879549, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 4.878296
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879549, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: m_Center.x
+      value: 7.873802
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879549, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: m_Center.y
+      value: -1.618623
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879549, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: m_Center.z
+      value: 10.233147
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879550, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879550, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -99.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879550, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879550, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 99.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879550, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879550, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879550, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879550, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879550, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879550, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2995365109703879550, guid: 6b131baf0fea4eb419d4e31e48d217eb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6b131baf0fea4eb419d4e31e48d217eb, type: 3}
 --- !u!1 &1771380046
 GameObject:
   m_ObjectHideFlags: 0
