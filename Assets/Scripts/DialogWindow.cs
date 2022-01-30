@@ -66,7 +66,11 @@ public class DialogWindow : MonoBehaviour
                 Player.GetComponent<PlayerMovement>().Actionable = true;
                 Player.GetComponent<PlayerAttacks>().paused = false;
                 Player.GetComponent<Inventory>().Actionable = true;
-                SceneManager.LoadScene("MainMenu");
+
+                if (EndGame == true)
+                {
+                    SceneManager.LoadScene("MainMenu");
+                }
 
             }
             else
