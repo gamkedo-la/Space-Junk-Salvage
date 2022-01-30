@@ -1236,8 +1236,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.0118277, z: 1.6102338}
-  m_Center: {x: 0, y: -0.3851714, z: -0.102656126}
+  m_Size: {x: 1, y: 2, z: 1.6102338}
+  m_Center: {x: 0, y: 0, z: -0.102656126}
 --- !u!54 &8616784560306521985
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1272,8 +1272,13 @@ MonoBehaviour:
   HPBar: {fileID: 1978425211308106354}
   BSC: {fileID: 5092122700733082364}
   Player: {fileID: 0}
+  TookDamageEffectPrefab: {fileID: 0}
   BackStabMultiplier: 1.5
   hit: 0
+  destroyOnDeath: 1
+  onDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &8616784560306521991
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1308,6 +1313,7 @@ MonoBehaviour:
   PatrolPoints:
   - {x: -12, y: 1.583333, z: 46}
   - {x: -4.2, y: 1.583333, z: 54}
+  RelativePP: []
   PatrolSpeed: 2
   ChaseSpeed: 3.5
   PatrolPause: 1
