@@ -40,7 +40,7 @@ public class FloorManager : MonoBehaviour
 
     public void UpdateFloorSize(int nX, int nZ)
     {
-        EditorUtility.SetDirty(this);
+        //EditorUtility.SetDirty(this);
 
         if (cX > nX)
         {
