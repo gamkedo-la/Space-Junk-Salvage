@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.49641287, b: 0.5748173, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -559,16 +559,16 @@ MonoBehaviour:
     visual effects), activation switches, patrol GUI, AI refactor, laser coil effect,
     enemy alert exclamation, animation transitions, combo attack, energy shield,
     backpack thrust, energy cell, shield/dash UI, player hit sound, attack tuning\n\nAbhishek
-    @akhmin_ak: Story (game intro, boss intro), most item descriptions, gold key
-    2d art, switch flip sound, support beam and column props\n\nMichael \"Misha\"
-    Fewkes: Music and related integration (main, outer ring, boss, and audio system)\n\nRyan
-    Young: Co-level designer (starting room, 1-1, 2-2, 3-1, 3-2, door connections)\n\nEvan
-    Sklarski: Moving room navmesh improvement, assorted bug fixes\n\nChrister \"McFunkypants\"
-    Kaitila: Key, warning strips, crate, rock debris, steel door\n\nChris DeLeon:
-    Forklift attack/damage particles, ramp model, compiled credits\n\nJonathan Peterson:
-    Item description for health pickup\n\nFilipe Dottori: Old computer model\n\nNic
-    Barkdull: Gear model\n\nThis game was developed by members collaborating in the
-    HomeTeamGameDev.com Outpost community"
+    @akhmin_ak: Story (game intro, boss intro), game title, most item descriptions,
+    gold key 2d art, switch flip sound, support beam and column props\n\nMichael
+    \"Misha\" Fewkes: Music and related integration (main, outer ring, boss, and
+    audio system)\n\nRyan Young: Co-level designer (starting room, 1-1, 2-2, 3-1,
+    3-2, door connections)\n\nEvan Sklarski: Moving room navmesh improvement, assorted
+    bug fixes\n\nChrister \"McFunkypants\" Kaitila: Key, warning strips, crate, rock
+    debris, steel door\n\nChris DeLeon: Forklift attack/damage particles, ramp model,
+    compiled credits\n\nJonathan Peterson: Item description for health pickup\n\nFilipe
+    Dottori: Old computer model\n\nNic Barkdull: Gear model\n\nThis game was developed
+    by members collaborating in the HomeTeamGameDev.com Outpost community"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -11237,12 +11237,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Controls: WASD or Arrow keys to move, J to attack, K, to interact, L to
-    heal, ; to dash
+  m_text: 'Controls: WASD or Arrow keys to move, J to attack, K to interact or advance
+    dialog, L to heal, ; to dash
 
 
-    Gamepad: Left stick to move, Y to Attack, A to interact,
-    X to heal, L or R to dash'
+    Gamepad: Left stick to move, Y to Attack,
+    A to interact, X to heal, L or R to dash'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
