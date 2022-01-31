@@ -50,3 +50,15 @@ MonoBehaviour:
     - 12
     - 20
     fadeTime: 4
+  - musicStem: {fileID: 8300000, guid: 4dd6c9cb924c18345905a602de40499d, type: 3}
+    loopingAsset: 0
+    bpm: 60
+    endTime: 16
+    outTimes: []
+    fadeTime: 4
+  - musicStem: {fileID: 8300000, guid: e4797906139eaca4f997da6c87625e3e, type: 3}
+    loopingAsset: 0
+    bpm: 60
+    endTime: 16
+    outTimes: []
+    fadeTime: 4

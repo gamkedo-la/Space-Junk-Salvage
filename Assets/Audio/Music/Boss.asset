@@ -85,3 +85,21 @@ MonoBehaviour:
     endTime: 14.545
     outTimes: []
     fadeTime: 0.15
+  - musicStem: {fileID: 8300000, guid: 722c44ba0b1dd4444ad49edc56c40336, type: 3}
+    loopingAsset: 0
+    bpm: 132
+    endTime: 18.181
+    outTimes: []
+    fadeTime: 0.15
+  - musicStem: {fileID: 8300000, guid: 09d2a752eebf5894d8637f7e17f96c0b, type: 3}
+    loopingAsset: 0
+    bpm: 132
+    endTime: 14.545
+    outTimes: []
+    fadeTime: 0.15
+  - musicStem: {fileID: 8300000, guid: 05fd5ebd016761c4fa9530e7eb147afe, type: 3}
+    loopingAsset: 0
+    bpm: 132
+    endTime: 14.545
+    outTimes: []
+    fadeTime: 0.15
